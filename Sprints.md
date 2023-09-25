@@ -1,5 +1,5 @@
 # Sprints
-## Telas criadas na 1° Sprint 
+## Sprint 1
 
 > Tela Home:
 

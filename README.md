@@ -201,7 +201,7 @@ Apresentar todos os requisitos estabelecidos pelo cliente, atingindo um nível s
  > <p>:heavy_check_mark: Página de Login </p>
  > <p>:heavy_check_mark: Página de cadastro - Estabelecimmento</p>
  > <p>:heavy_check_mark: Página de cadastro - Parceiros</p>
- > <p>:heavy_check_mark: Criação de modelagem - Lógico e conceitual - Em relação ao cadastro e login dos estabelecimentos e parceiros</p>
+ > <p>:x: Criação de modelagem - Lógico e conceitual - Em relação ao cadastro e login dos estabelecimentos e parceiros</p>
  > <p>:heavy_check_mark: Banco de dados - com relação ao cadastro e login de parceiros e estabelecimentos </p>
  > <p>:heavy_check_mark: Criação do Front - Estabelecimentos </p>
  > <p>:heavy_check_mark: Criação do Front - Parceiros </p>

@@ -258,7 +258,7 @@ Apresentar todos os requisitos estabelecidos pelo cliente, atingindo um nível s
 
 # Sprint
 
-- >  <a href="https://github.com/TechForce-ADS/Greenneat/blob/main/Prot%C3%B3tipo"> Protótipo
+- >  <a href="https://github.com/TechForce-ADS/Greenneat-API/blob/main/Prototipo.md"> Protótipo
  
 - >  <a href=" "> 1° Sprint
 

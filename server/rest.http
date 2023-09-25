@@ -1,0 +1,14 @@
+POST http://localhost:3001/registerEstabelecimento HTTP/1.1
+content-type: application/json
+
+
+{
+    "cnpj": "4564513",
+    "nomeOrganizacao": "parsasceiro",
+    "email": "sdsdsd@mail.com",
+    "endereco": "dsfsdfds",
+    "cidade": "cidadfdfdsde",
+    "horariosFuncionamento": "dfdf",
+    "possuiParceiros": "sdfdf",
+    "senha": "123456789"
+}

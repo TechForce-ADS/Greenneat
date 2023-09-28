@@ -28,6 +28,7 @@ Projeto de API - 4° Semestre de 2023 da Fatec São José dos Campos - GREENNEAT
 - <a href ="#conhecimentos-exigidos"> Conhecimentos exigidos </a>
 - <a href ="#objetivo"> Objetivo </a>
 - <a href ="#requisito-da-aplicação"> Requisitos da Aplicação </a>
+- <a href ="#video-sprint-review-1"> Video Sprint Review 1 </a>
 - <a href ="#metodologia"> Metodologia </a>
 - <a href ="#cronograma-e-sprint"> Cronograma e Sprints </a>
 - <a href ="#tecnologia-utilizadas"> Tecnologias Utilizadas </a>
@@ -181,6 +182,12 @@ Apresentar todos os requisitos estabelecidos pelo cliente, atingindo um nível s
 - Bom tempo de resposta e execução nas transações
 - Boa usabilidade e amigável
 - O sistema deve conter métricas que ajudem a observar o seu comportamento
+
+# Video Sprint Review 1
+
+```
+https://www.youtube.com/watch?v=GK2BFtIIxo0
+```
 
 # Metodologia
 

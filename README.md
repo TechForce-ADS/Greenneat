@@ -127,7 +127,7 @@ ST - Scrum Team
 
 # Projeto
 Sistema Web com Regra de Negócio complexa em ambiente de produção (Deploy) com Preparação e configuração de ambientes para práticas de engenharia, sendo um Gestor de Crédito para economia circular.
-Cerca de 2% do óleo vegetal é reciclado no Brasil, o descarte regular é coletado pelas cooperativas ou profissionais individuais em  restaurantes e depois repassados para usinas de produção de BioDiesel. O projeto sistema circular de produção de saneantes a partir do óleo recuperado, tem o objetivo de envolver os agentes participantes da cadeia de descarte e reciclagem do óleo usado, o projeto consiste em criar uma plataforma que gerencie os créditos a serem usados posteriormente como cobtrapartida no momento da coleta do material pelo parceiro da Greenneat nos estabelecimentos cadastrados, se forma que poderão usar os crédios na compra de saneantesm na loja virtual da Greenneat.
+Cerca de 2% do óleo vegetal é reciclado no Brasil, o descarte regular é coletado pelas cooperativas ou profissionais individuais em  restaurantes e depois repassados para usinas de produção de BioDiesel. O projeto sistema circular de produção de saneantes a partir do óleo recuperado, tem o objetivo de envolver os agentes participantes da cadeia de descarte e reciclagem do óleo usado, o projeto consiste em criar uma plataforma que gerencie os créditos a serem usados posteriormente como contrapartida no momento da coleta do material pelo parceiro da Greenneat nos estabelecimentos cadastrados, de forma que poderão usar os crédios na compra de saneantesm na loja virtual da Greenneat.
 
 
 # Conhecimentos exigidos

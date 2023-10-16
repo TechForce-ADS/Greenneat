@@ -275,6 +275,8 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
  
 - >  <a href="https://github.com/TechForce-ADS/Greenneat-API/blob/main/Sprints.md "> 1° Sprint
 
+ 
+- >  <a href="https://github.com/TechForce-ADS/Greenneat-API/blob/main/Sprints.md "> 2° Sprint
   
 # Burndown do Projeto
 

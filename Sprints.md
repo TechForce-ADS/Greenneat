@@ -43,6 +43,7 @@
 
 <img src = "https://github.com/TechForce-ADS/imagens/blob/main/ImagensGreenneat/Login.jpeg">
 
+> Erro na senha ou usuário:
 <img src = "https://github.com/TechForce-ADS/imagens/blob/main/ImagensGreenneat/UsuarioSenhErradas.jpeg">
 
 > Tela de login como parceiro:
@@ -65,6 +66,7 @@
  <img src = "https://github.com/TechForce-ADS/imagens/blob/main/ImagensGreenneat/SairContaParceiros.jpeg">
 
 > Tela de login de estabelecimento:
+
  <img src = "https://github.com/TechForce-ADS/imagens/blob/main/ImagensGreenneat/Loginestab.jpeg">
  
  <img src = "https://github.com/TechForce-ADS/imagens/blob/main/ImagensGreenneat/LoginEstabOK.jpeg">
@@ -77,9 +79,10 @@
 <img src = "https://github.com/TechForce-ADS/imagens/blob/main/ImagensGreenneat/Perfilestab.jpeg">
 
 > Carrinho de compras do estabelecimento:
-  <img src = "https://github.com/TechForce-ADS/imagens/blob/main/ImagensGreenneat/SemSaldoFinalizarCompra.jpeg" >
  
  <img src = "https://github.com/TechForce-ADS/imagens/blob/main/ImagensGreenneat/VerCarrinho1.jpeg" >
  
  <img src = "https://github.com/TechForce-ADS/imagens/blob/main/ImagensGreenneat/VerCarrinho2.jpeg" >
   
+> Tentativa de compra sem saldo:
+<img src = "https://github.com/TechForce-ADS/imagens/blob/main/ImagensGreenneat/SemSaldoFinalizarCompra.jpeg" >

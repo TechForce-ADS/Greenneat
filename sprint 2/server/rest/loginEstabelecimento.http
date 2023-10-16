@@ -1,0 +1,8 @@
+POST http://localhost:3001/loginEstabelecimento HTTP/1.1
+content-type: application/json
+
+
+{
+    "email": "face@gmail.com",
+    "senha": "123456789"
+}

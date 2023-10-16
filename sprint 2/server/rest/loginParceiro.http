@@ -1,0 +1,8 @@
+POST http://localhost:3001/loginParceiro HTTP/1.1
+content-type: application/json
+
+
+{
+    "email": "seraggi@gmail.com",
+    "senha": "123456789"
+}

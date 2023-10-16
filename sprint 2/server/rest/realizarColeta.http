@@ -1,0 +1,10 @@
+POST http://localhost:3001/realizarColeta HTTP/1.1
+content-type: application/json
+
+
+{
+    "nomeEstabelecimento":"face",
+    "quantidadeDeOleo": 3,
+    "ParceiroId": 1
+    
+}

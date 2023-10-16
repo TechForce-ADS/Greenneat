@@ -216,9 +216,16 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
  
   
  ### Sprint 2</a> - 25/09 -15/10</p>
- > <p>:x: Transações iniciais </p>
- > <p>:x: Painel administrativo</p>
- > <p>:x: Refinar formulário</p>
+ > <p>:heavy_check_mark: Saldo de crédito </p>
+ > <p>:heavy_check_mark: Gestão de estabelecimento </p>
+ > <p>:heavy_check_mark: Controle do óleo coletado e créditos cedidos </p>
+ > <p>:heavy_check_mark: Histórico de compras do parceiro</p>
+ > <p>:heavy_check_mark: Extrato para estabelecimento</p>
+ > <p>:heavy_check_mark: Histórico de compras, trocas de óleo e recebimento de créditos </p>
+ > <p>:heavy_check_mark: Controle e edição de cadastro para estabelecimento e parceiros</p>
+ > <p>:heavy_check_mark: Visualização das informações para o administrador </p>
+ > <p>:heavy_check_mark: Histórico de compras, trocas de óleo e recebimento de créditos </p>
+ 
 
   
  ### Sprint 3</a> - 16/10 - 05/11</p>
@@ -256,7 +263,6 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
 <img src = "https://github.com/TechForce-ADS/imagens/blob/main/back_produto_greenneat.png  " />
 
 
- 
 
 # Modelo de dados
   
@@ -275,4 +281,8 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
 > 1° Sprint
 
 <img src = "https://github.com/TechForce-ADS/imagens/blob/main/burnown-greenneat.png"/>
+
+> 2° Sprint
+
+<img src = "https://github.com/TechForce-ADS/imagens/blob/main/burndown2%20-%20green.png" /> 
  

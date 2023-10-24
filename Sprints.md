@@ -88,10 +88,24 @@
 <img src = "https://github.com/TechForce-ADS/imagens/blob/main/ImagensGreenneat/SemSaldoFinalizarCompra.jpeg" >
 
 > Vídeos das telas desenvolvidas na 2° Sprint:
+> Tela de início
 <img src="https://github.com/TechForce-ADS/imagens/blob/main/Sprint2%20-%20video1.gif">
+
+> Tela de cadastro 
 <img src="https://github.com/TechForce-ADS/imagens/blob/main/Sprint2%20-%20video2.gif">
+
+> Tela de login como parceiro, mostrando que sem pontos não é possível fazer uma transação e que o usuário novo não tem nada no histórico
 <img src="https://github.com/TechForce-ADS/imagens/blob/main/Sprint2%20-%20video3.gif">
+
+>Tela do administrador pode visualizar tabelas dos parceiros e estabelecimentos 
 <img src="https://github.com/TechForce-ADS/imagens/blob/main/Sprint2%20-%20video4.gif">
+
+> O administrador pode transferir pontos para o parceiro
 <img src="https://github.com/TechForce-ADS/imagens/blob/main/Sprint2%20-%20video5.gif">
+
+>Já na tela do parceiro, podemos ver que ele recebeu os pontos do administrador. O parceiro coletou óleo no estabelecimento e transferiu os pontos para ele, os dados ficam armazenados no histórico
+
 <img src="https://github.com/TechForce-ADS/imagens/blob/main/Sprint2%20-%20video6.gif">
+
+> Login como parceiro, ele pode fazer compras e ver seu historico, e tem seu extrato de transações pelo óleo dados e pontos recebidos
 <img src="https://github.com/TechForce-ADS/imagens/blob/main/Sprint2%20-%20video7.gif">

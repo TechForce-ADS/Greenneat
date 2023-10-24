@@ -86,3 +86,12 @@
   
 > Tentativa de compra sem saldo:
 <img src = "https://github.com/TechForce-ADS/imagens/blob/main/ImagensGreenneat/SemSaldoFinalizarCompra.jpeg" >
+
+> Vídeos das telas desenvolvidas na 2° Sprint:
+<img src="https://github.com/TechForce-ADS/imagens/blob/main/Sprint2%20-%20video1.gif">
+<img src="https://github.com/TechForce-ADS/imagens/blob/main/Sprint2%20-%20video2.gif">
+<img src="https://github.com/TechForce-ADS/imagens/blob/main/Sprint2%20-%20video3.gif">
+<img src="https://github.com/TechForce-ADS/imagens/blob/main/Sprint2%20-%20video4.gif">
+<img src="https://github.com/TechForce-ADS/imagens/blob/main/Sprint2%20-%20video5.gif">
+<img src="https://github.com/TechForce-ADS/imagens/blob/main/Sprint2%20-%20video6.gif">
+<img src="https://github.com/TechForce-ADS/imagens/blob/main/Sprint2%20-%20video7.gif">

@@ -248,6 +248,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
  > <p>:x: Painel com todas funções do Administrador agrupadas </p>
  > <p>:x: Painel com todas funções do Parceiro agrupadas </p>
  > <p>:x: Painel com todas funções do Estabelecimento agrupadas </p> 
+ > <p>:x: Tela de contato com as informações da Greenneat na tela inicial </p>
  > <p>:x: Documentação (Github) </p>
  
 # Tecnologia Utilizadas

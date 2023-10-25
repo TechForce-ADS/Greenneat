@@ -233,27 +233,22 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
  > <p>:x: Função de compra de produtos para parceiros </p>
  > <p>:x: Função de compra de créditos para parceiros comprarem da Greenneat   </p>
  > <p>:x: Histórico de compra de produtos para parceiros </p>
- > <p>:x:   </p>
- > <p>:x:  </p>
- > <p>:x:   </p>
- > <p>:x:  </p>
- > <p>:x:   </p>
- > <p>:x:  </p>
- > <p>:x:   </p>
- > <p>:x:  </p>
- > <p>:x:   </p>
- > <p>:x:  </p>
- > <p>:x:   </p>
- > <p>:x:  </p>
- > <p>:x:   </p>
- > <p>:x:  </p>
-      
+ > <p>:x: Administrador receber todos os pedidos de compra  </p>
+ > <p>:x: Função de edição e exclusão na listagem dos estabelecimentos e parceiros (Administrador)</p>
+ > <p>:x: Acréscimo na visualização do Administrador (saldo e transações dos parceiros e estabelecimentos)</p>
+ > <p>:x: Adicionar paginação, filtro de ordenação e barra de pesquisa nas listagens e extratos  </p>
+ > <p>:x: Funçaõ de validação de usuário por email   </p>
+ > <p>:x: Função de esqueci minha senha </p>
+ > <p>:x: Diferenciação de tipos de óleo (usado ou novo)  </p>
 
   
  ### Sprint 4</a> - 06/11 - 26/11</p>
  > <p>:x: Dashboard de rankings </p>
  > <p>:x: Comparador de preços </p>
- > <p>:x: Documentação (Github?) </p>
+ > <p>:x: Painel com todas funções do Administrador agrupadas </p>
+ > <p>:x: Painel com todas funções do Parceiro agrupadas </p>
+ > <p>:x: Painel com todas funções do Estabelecimento agrupadas </p> 
+ > <p>:x: Documentação (Github) </p>
  
 # Tecnologia Utilizadas
 
@@ -268,7 +263,6 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
 > - JavaScript (FrontEnd)
 > - React Bootstrap (FrontEnd)
 > - MySQL (Banco de Dados)
-> - DBeaver (Ferramenta de acesso de banco de dados)
 > - Canva (Protótipo e apresentação)
 > - Pacote Office (Documentação)
 > - GitHub (Repositório)

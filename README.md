@@ -217,21 +217,37 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
   
  ### Sprint 2</a> - 25/09 -15/10</p>
  > <p>:heavy_check_mark: Saldo de crédito </p>
- > <p>:heavy_check_mark: Gestão de estabelecimento </p>
- > <p>:heavy_check_mark: Controle do óleo coletado e créditos cedidos </p>
- > <p>:heavy_check_mark: Histórico de compras do parceiro</p>
- > <p>:heavy_check_mark: Extrato para estabelecimento</p>
- > <p>:heavy_check_mark: Histórico de compras, trocas de óleo e recebimento de créditos </p>
- > <p>:heavy_check_mark: Controle e edição de cadastro para estabelecimento e parceiros</p>
+ > <p>:heavy_check_mark: Gestão de estabelecimento (parceiro visualiza seus estabelecimento cadastrados)   </p>
+ > <p>:heavy_check_mark: Controle do óleo coletado e créditos cedidos (parceiro cede pontos ao estabelecimento) </p>
+ > <p>:heavy_check_mark: Histórico de compras do estabelecimento</p>
+ > <p>:heavy_check_mark: Extrato de entradas e saídas para parceiros e estabelecimentos  </p>
+ > <p>:heavy_check_mark: Histórico de compras para estabelecimento  </p>
+ > <p>:heavy_check_mark: Tela do administrador ceder pontos ao parceiro</p>
  > <p>:heavy_check_mark: Visualização das informações para o administrador </p>
- > <p>:heavy_check_mark: Histórico de compras, trocas de óleo e recebimento de créditos </p>
+
  
 
   
  ### Sprint 3</a> - 16/10 - 05/11</p>
- > <p>:x: Painel dos parceiros  </p>
- > <p>:x: Painel dos estabelecimentos </p>
- 
+ > <p>:x: User Stories  </p>
+ > <p>:x: Função de compra de produtos para parceiros </p>
+ > <p>:x: Função de compra de créditos para parceiros comprarem da Greenneat   </p>
+ > <p>:x: Histórico de compra de produtos para parceiros </p>
+ > <p>:x:   </p>
+ > <p>:x:  </p>
+ > <p>:x:   </p>
+ > <p>:x:  </p>
+ > <p>:x:   </p>
+ > <p>:x:  </p>
+ > <p>:x:   </p>
+ > <p>:x:  </p>
+ > <p>:x:   </p>
+ > <p>:x:  </p>
+ > <p>:x:   </p>
+ > <p>:x:  </p>
+ > <p>:x:   </p>
+ > <p>:x:  </p>
+      
 
   
  ### Sprint 4</a> - 06/11 - 26/11</p>

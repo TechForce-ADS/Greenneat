@@ -200,6 +200,174 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
 > Sprint:
 
  <img src = "https://github.com/TechForce-ADS/imagens/blob/main/back_sprint_greenneat.png" >
+
+
+ # Users Storys
+
+<br>
+<table>
+  <tr>
+    <td>Sprint</td>
+    <td>User Story</td>
+    <td>Tarefa</td>
+    <td>Prioridade</td>
+    <td>Status</td>
+    <td>Entrega</td>
+  </tr>
+  <tr>
+    <td> 1</td>
+    <td> Eu como cliente, quero uma lista das principais tarefas que a ser desenvlvidas </td>
+    <td> Elaborar o Backlog</td>
+    <td> 100</td>
+    <td> :heavy_check_mark:</td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 1</td>
+    <td> Eu como cliente, quero Visualizar um prototipo completo do sistema, para que assim eu consiga ter uma nocao melhor de como vai ficar e onde posso melhorar </td>
+    <td> Elaborar o Prototipo do Projeto</td>
+    <td> 99</td>
+    <td> :heavy_check_mark:</td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 1</td>
+    <td> Eu como cliente, quero uma pagina HOME, onde apareça informações gerais da minha empresa, informações essas como: quem somos, um video para propor melhor entendiemento para o meu publico</td>
+    <td> Pagina HOME</td>
+    <td> 80</td>
+    <td> :heavy_check_mark:</td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 1</td>
+    <td> Eu como usuário, quero que tenha um menu superior, onde deixe de forma facil atalhos para paginas de produtos, contato, login  e perfil para  facilitar a navegação entre as paginas</td>
+    <td> Menu e Rodapé</td>
+    <td> 80</td>
+    <td> :heavy_check_mark:</td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 1</td>
+    <td> Eu como cliente, quero que o sistema me proporcione tres formas de acessar contas, gostaria de login e cadastros de PARCEIROS / ESTABELECIMENTO, para as informações de cada um ficar o mais separdo possivel e claro</td>
+    <td> Pagina de Cadastro Parceiros e Estabelecimento</td>
+    <td> 80</td>
+    <td> :heavy_check_mark:</td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 1</td>
+    <td> Eu como desenvolvedor, quero que o sistema tenha um banco de dados, o mais visual possivel e com as senhas criptografadas</td>
+    <td> Criação e Modelagem do banco de Dados</td>
+    <td> 80</td>
+    <td> :heavy_check_mark:</td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 2</td>
+    <td> Eu como usuário, quero que o sistema seja intuituvo e me mostre quando as senhas estiverem incorretas ou faltando informações cadastrais</td>
+    <td> Validação de Dados</td>
+    <td> 80</td>
+    <td> :heavy_check_mark:</td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 2</td>
+    <td> Eu como parceiro, quero que o sistema me mostre os meus saldos de creditos recebidos pelo ADM, porque com isso eu sei quanto posso mandar para os estebelecimentos</td>
+    <td> Saldo de Créditos</td>
+    <td> 80</td>
+    <td> :heavy_check_mark:</td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 2</td>
+    <td> Eu como parceiro, quero conseguir ver todas as empresas que eu consegui ter na minha arvore, assim sei a quantidade e quais sao os meus de forma clara</td>
+    <td> Carteira Parceiros</td>
+    <td> 80</td>
+    <td> :heavy_check_mark:</td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 2</td>
+    <td> Eu como parceiro, quero conseguir ter um controle dos oléos que ue colete nos estabelecimento podendo assim editar se necessário</td>
+    <td> Controle de óleo coletados</td>
+    <td> 80</td>
+    <td> :heavy_check_mark:</td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 2</td>
+    <td> Eu como estabelecimento, quero um controle de compra (Historico, Extrato e Saldo), assim sei o quanto posso gastar com os produtos Greenneat</td>
+    <td> Carteira Estabelecimento</td>
+    <td> 80</td>
+    <td> :heavy_check_mark:</td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 2</td>
+    <td> Eu como administrador, quero o controle de tudo, cadastro de parceiros e estabelecimento, incluindo o saldo e histórico de cada um</td>
+    <td> Gestão do Administrador</td>
+    <td> 80</td>
+    <td> :heavy_check_mark:</td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 3</td>
+    <td> Eu como administrador, quero conseguir editar as informaçoes dos Parceiros e dos Estabelecimentos quando necessário</td>
+    <td> Permissoes Administrador</td>
+    <td> 80</td>
+    <td>  🛠️ </td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 3</td>
+    <td> Eu como usuário, quero conseguir editar as minhas pórpias informaçoes, sem dependencia dos administradors</td>
+    <td> Permissoes usuario</td>
+    <td> 80</td>
+    <td>  🛠️ </td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 3</td>
+    <td> Eu como usuário, gostaria de algumas melhorias nas paginas, como colocar paginações nas tabelas informadas</td>
+    <td> Paginação</td>
+    <td> 80</td>
+    <td>  🛠️ </td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 3</td>
+    <td> Eu como administrador, quero poder parametrizar o valor do óleo usado ou virgem, sempre que necessário</td>
+    <td> Parametrização</td>
+    <td> 80</td>
+    <td>  🛠️ </td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 4</td>
+    <td> Eu como usuário, quero conseguir visualizar as informações de outras maneiras, como graficos e tabelas, assim fica mais intuitivo e melhor o entendimento</td>
+    <td> Dashboard</td>
+    <td> 80</td>
+    <td> :hourglass:</td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 4</td>
+    <td> Eu como usuário, gostaria de quando necessário entrar em contato com a empresa para tiradas de duvidas sobre o sistema</td>
+    <td> Pagina de Contato</td>
+    <td> 80</td>
+    <td> :hourglass:</td>
+    <td> DATA</td>
+  </tr>
+  <tr>
+    <td> 4</td>
+    <td> Eu como desenvolvedor, seria bom ter uma validação de CNPJ's, CPF's e CEP's, assim evitaremos cadastros de empresas e pessoas fantasmas</td>
+    <td> Validação de Dados</td>
+    <td> 80</td>
+    <td> :hourglass:</td>
+    <td> DATA</td>
+  </tr>
+</table>
+</br>
  
  ### Sprint 1</a> - 04/09 - 24/09</p>
  > <p>:heavy_check_mark: Design e identidade visual </p>

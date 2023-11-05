@@ -31,7 +31,7 @@ Projeto de API - 4° Semestre de 2023 da Fatec São José dos Campos - GREENNEAT
 - <a href ="#video-sprint-review-1"> Video Sprint Review 1 </a>
 - <a href ="#metodologia"> Metodologia </a>
 - <a href ="#cronograma-e-sprint"> Cronograma e Sprints </a>
-- <a href ="#user-story"> User Storys</a>
+- <a href ="#user-storys"> User Storys</a>
 - <a href ="#tecnologia-utilizadas"> Tecnologias Utilizadas </a>
 - <a href ="#modelo-de-dados"> Modelo de dados</a>
 - <a href ="#sprint"> Sprints </a>

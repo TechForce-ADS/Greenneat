@@ -31,7 +31,7 @@ Projeto de API - 4° Semestre de 2023 da Fatec São José dos Campos - GREENNEAT
 - <a href ="#video-sprint-review-1"> Video Sprint Review 1 </a>
 - <a href ="#metodologia"> Metodologia </a>
 - <a href ="#cronograma-e-sprint"> Cronograma e Sprints </a>
-- <a href ="#backlog-do-produto"> Backlog do Produtoss</a>
+- <a href ="#backlog-do-produto"> Backlog do Produtos</a>
 - <a href ="#tecnologia-utilizadas"> Tecnologias Utilizadas </a>
 - <a href ="#modelo-de-dados"> Modelo de dados</a>
 - <a href ="#sprint"> Sprints </a>
@@ -220,7 +220,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Eu como cliente, quero uma lista das principais tarefas que a ser desenvlvidas </td>
     <td> Elaborar o Backlog</td>
     <td> 100</td>
-    <td>> :white_check_mark:</td>
+    <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>
@@ -228,7 +228,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Eu como cliente, quero Visualizar um prototipo completo do sistema, para que assim eu consiga ter uma nocao melhor de como vai ficar e onde posso melhorar </td>
     <td> Elaborar o Prototipo do Projeto</td>
     <td> 99</td>
-    <td>> :white_check_mark:</td>
+    <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>
@@ -236,7 +236,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Eu como cliente, quero uma pagina HOME, onde apareça informações gerais da minha empresa, informações essas como: quem somos, um video para propor melhor entendiemento para o meu publico</td>
     <td> Pagina HOME</td>
     <td> 80</td>
-    <td>> :white_check_mark:</td>
+    <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>
@@ -244,7 +244,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Eu como usuário, quero que tenha um menu superior, onde deixe de forma facil atalhos para paginas de produtos, contato, login  e perfil para  facilitar a navegação entre as paginas</td>
     <td> Menu e Rodapé</td>
     <td> 80</td>
-    <td>> :white_check_mark:</td>
+    <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>
@@ -252,7 +252,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Eu como cliente, quero que o sistema me proporcione tres formas de acessar contas, gostaria de login e cadastros de PARCEIROS / ESTABELECIMENTO, para as informações de cada um ficar o mais separdo possivel e claro</td>
     <td> Pagina de Cadastro Parceiros e Estabelecimento</td>
     <td> 80</td>
-    <td>> :white_check_mark:</td>
+    <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>
@@ -260,7 +260,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Eu como desenvolvedor, quero que o sistema tenha um banco de dados, o mais visual possivel e com as senhas criptografadas</td>
     <td> Criação e Modelagem do banco de Dados</td>
     <td> 80</td>
-    <td>> :white_check_mark:</td>
+    <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>
@@ -268,7 +268,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Eu como usuário, quero que o sistema seja intuituvo e me mostre quando as senhas estiverem incorretas ou faltando informações cadastrais</td>
     <td> Validação de Dados</td>
     <td> 80</td>
-    <td>> :white_check_mark:</td>
+    <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>
@@ -276,7 +276,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Eu como parceiro, quero que o sistema me mostre os meus saldos de creditos recebidos pelo ADM, porque com isso eu sei quanto posso mandar para os estebelecimentos</td>
     <td> Saldo de Créditos</td>
     <td> 80</td>
-    <td>> :white_check_mark:</td>
+    <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>
@@ -284,7 +284,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Eu como parceiro, quero conseguir ver todas as empresas que eu consegui ter na minha arvore, assim sei a quantidade e quais sao os meus de forma clara</td>
     <td> Carteira Parceiros</td>
     <td> 80</td>
-    <td>> :white_check_mark:</td>
+    <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>
@@ -292,7 +292,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Eu como parceiro, quero conseguir ter um controle dos oléos que ue colete nos estabelecimento podendo assim editar se necessário</td>
     <td> Controle de óleo coletados</td>
     <td> 80</td>
-    <td>> :white_check_mark:</td>
+    <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>
@@ -300,7 +300,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Eu como estabelecimento, quero um controle de compra (Historico, Extrato e Saldo), assim sei o quanto posso gastar com os produtos Greenneat</td>
     <td> Carteira Estabelecimento</td>
     <td> 80</td>
-    <td>> :white_check_mark:</td>
+    <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>
@@ -308,7 +308,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Eu como administrador, quero o controle de tudo, cadastro de parceiros e estabelecimento, incluindo o saldo e histórico de cada um</td>
     <td> Gestão do Administrador</td>
     <td> 80</td>
-    <td>> :white_check_mark:</td>
+    <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>

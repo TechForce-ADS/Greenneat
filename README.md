@@ -229,7 +229,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Elaborar o Prototipo do Projeto </td>
     <td> 99 </td>
     <td> :white_check_mark:</td>
-    <td> DATA</td>
+    <td> 08/09/2023 </td>
   </tr>
   <tr>
     <td> 1</td>
@@ -237,7 +237,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Pagina Home</td>
     <td> 80 </td>
     <td> :white_check_mark:</td>
-    <td> DATA</td>
+    <td> 12/09/2023</td>
   </tr>
   <tr>
     <td> 1</td>
@@ -245,7 +245,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Menu e Rodapé </td>
     <td> 80 </td>
     <td> :white_check_mark:</td>
-    <td> DATA</td>
+    <td> 16/09/2023 </td>
   </tr>
   <tr>
     <td> 1</td>
@@ -253,15 +253,15 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Pagina de Cadastro Parceiros e Estabelecimento</td>
     <td> 80</td>
     <td> :white_check_mark:</td>
-    <td> DATA</td>
+    <td> 17/09/2023 </td>
   </tr>
   <tr>
     <td> 1</td>
     <td> Eu como desenvolvedor, quero que o sistema tenha um banco de dados, com todos os dados organizados e com as senhas de todos usuários criptografads</td>
-    <td> Criação e Modelagem do banco de Dados</td>
+    <td> Criação e Modelagem do Banco de Dados</td>
     <td> 80</td>
     <td> :white_check_mark:</td>
-    <td> DATA</td>
+    <td> 08/09/2023</td>
   </tr>
   <tr>
     <td> 2</td>
@@ -269,15 +269,15 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Validação de Dados</td>
     <td> 80</td>
     <td> :white_check_mark:</td>
-    <td> DATA</td>
+    <td> 13/09/2023</td>
   </tr>
   <tr>
     <td> 2</td>
-    <td> Eu como parceiro, quero que o sistema mostre o meu  saldo de credito recebidos pelo administrador, para que haja controle do que enviar para os estabelecimentos </td>
+    <td> Eu como parceiro, quero que o sistema mostre o meu saldo de credito recebidos pelo administrador, para que haja controle do que enviar para os estabelecimentos </td>
     <td> Saldo de Créditos</td>
     <td> 80</td>
     <td> :white_check_mark: </td>
-    <td> DATA</td>
+    <td> 30/09/2023</td>
   </tr>
   <tr>
     <td> 2</td>
@@ -285,7 +285,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Carteira Parceiros</td>
     <td> 80</td>
     <td> :white_check_mark:</td>
-    <td> DATA</td>
+    <td> 03/10/2023</td>
   </tr>
   <tr>
     <td> 2</td>
@@ -293,15 +293,15 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Controle de óleo coletado</td>
     <td> 80</td>
     <td> :white_check_mark:</td>
-    <td> DATA</td>
+    <td> 06/10/2023</td>
   </tr>
   <tr>
     <td> 2</td>
-    <td> Eu como estabelecimento, quero um controle de compra (Histporico, Extrato e Saldo), assim tenho controle doque posso comprar e quanto recebi pelo óleo trocado </td>
+    <td> Eu como estabelecimento, quero um controle de compra (Histórico, Extrato e Saldo), assim tenho controle do que posso comprar e quanto recebi pelo óleo trocado </td>
     <td> Carteira Estabelecimento</td>
     <td> 80</td>
     <td> :white_check_mark:</td>
-    <td> DATA</td>
+    <td> 09/10/2023</td>
   </tr>
   <tr>
     <td> 2</td>

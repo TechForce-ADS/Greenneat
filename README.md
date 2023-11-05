@@ -14,8 +14,8 @@ Projeto de API - 4° Semestre de 2023 da Fatec São José dos Campos - GREENNEAT
   <tr>
     <td> Michel Teixeira </td>
     <td> 4º ADS (Análise e Desenvolvimento de Sistemas) </td>
-    <td> Juliana Martinez</td>
-    <td> Giuliano Bertoti  </td>
+    <td> Fabiano Sabha </td>
+    <td> Juliana Martinez  </td>
     <td> michel.teixeira@greenneat.eco.br </td>
   </tr>
 </table>
@@ -216,40 +216,40 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td>Entrega</td>
   </tr>
   <tr>
+    <td> 1 </td>
+    <td> Eu como cliente, quero uma lista que contenha as principais tarefas a serem desenvolvidas </td>
+    <td> Elaborar o Backlog </td>
+    <td> 100 </td>
+    <td> :white_check_mark:</td>
+    <td> DATA </td>
+  </tr>
+  <tr>
     <td> 1</td>
-    <td> Eu como cliente, quero uma lista das principais tarefas que a ser desenvlvidas </td>
-    <td> Elaborar o Backlog</td>
-    <td> 100</td>
+    <td> Eu como cliente, quero visualizar um protótipo completo do sistema, para que seja possível uma melhor visualização do que sera desenvolvido
+    <td> Elaborar o Prototipo do Projeto </td>
+    <td> 99 </td>
     <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>
     <td> 1</td>
-    <td> Eu como cliente, quero Visualizar um prototipo completo do sistema, para que assim eu consiga ter uma nocao melhor de como vai ficar e onde posso melhorar </td>
-    <td> Elaborar o Prototipo do Projeto</td>
-    <td> 99</td>
+    <td> Eu como cliente, quero uma página "home", onde mostre as informações gerais da minha empresa, tais como: quem somos e um vídeo para propor melhor entendimento para o meu público </td>
+    <td> Pagina Home</td>
+    <td> 80 </td>
     <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>
     <td> 1</td>
-    <td> Eu como cliente, quero uma pagina HOME, onde apareça informações gerais da minha empresa, informações essas como: quem somos, um video para propor melhor entendiemento para o meu publico</td>
-    <td> Pagina HOME</td>
-    <td> 80</td>
+    <td> Eu como usuário, quero que tenha um menu para que mostre as páginas nas quais tenho acesso: produtos, contato, login e perfil, entre outras páginas</td>
+    <td> Menu e Rodapé </td>
+    <td> 80 </td>
     <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>
     <td> 1</td>
-    <td> Eu como usuário, quero que tenha um menu superior, onde deixe de forma facil atalhos para paginas de produtos, contato, login  e perfil para  facilitar a navegação entre as paginas</td>
-    <td> Menu e Rodapé</td>
-    <td> 80</td>
-    <td> :white_check_mark:</td>
-    <td> DATA</td>
-  </tr>
-  <tr>
-    <td> 1</td>
-    <td> Eu como cliente, quero que o sistema me proporcione tres formas de acessar contas, gostaria de login e cadastros de PARCEIROS / ESTABELECIMENTO, para as informações de cada um ficar o mais separdo possivel e claro</td>
+    <td> Eu como cliente, quero que o sistema me proporcione três formas de acessar as contas, como: parceiros, estabelecimento e login, para que haja uma separação clara para o usuário acessar</td>
     <td> Pagina de Cadastro Parceiros e Estabelecimento</td>
     <td> 80</td>
     <td> :white_check_mark:</td>
@@ -257,7 +257,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
   </tr>
   <tr>
     <td> 1</td>
-    <td> Eu como desenvolvedor, quero que o sistema tenha um banco de dados, o mais visual possivel e com as senhas criptografadas</td>
+    <td> Eu como desenvolvedor, quero que o sistema tenha um banco de dados, com todos os dados organizados e com as senhas de todos usuários criptografads</td>
     <td> Criação e Modelagem do banco de Dados</td>
     <td> 80</td>
     <td> :white_check_mark:</td>
@@ -265,7 +265,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
   </tr>
   <tr>
     <td> 2</td>
-    <td> Eu como usuário, quero que o sistema seja intuituvo e me mostre quando as senhas estiverem incorretas ou faltando informações cadastrais</td>
+    <td> Eu como administrador, necessito que o sistema seja intuitivo e mostre quando as senhas estiverem incorretas ou faltando informações cadastrais dos usuários </td>
     <td> Validação de Dados</td>
     <td> 80</td>
     <td> :white_check_mark:</td>
@@ -273,15 +273,15 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
   </tr>
   <tr>
     <td> 2</td>
-    <td> Eu como parceiro, quero que o sistema me mostre os meus saldos de creditos recebidos pelo ADM, porque com isso eu sei quanto posso mandar para os estebelecimentos</td>
+    <td> Eu como parceiro, quero que o sistema mostre o meu  saldo de credito recebidos pelo administrador, para que haja controle do que enviar para os estabelecimentos </td>
     <td> Saldo de Créditos</td>
     <td> 80</td>
-    <td> :white_check_mark:</td>
+    <td> :white_check_mark: </td>
     <td> DATA</td>
   </tr>
   <tr>
     <td> 2</td>
-    <td> Eu como parceiro, quero conseguir ver todas as empresas que eu consegui ter na minha arvore, assim sei a quantidade e quais sao os meus de forma clara</td>
+    <td> Eu como parceiro, preciso ver todas as empresas que tenho relação, assim tenho acesso as informações necessárias para uma melhor organização</td>
     <td> Carteira Parceiros</td>
     <td> 80</td>
     <td> :white_check_mark:</td>
@@ -289,15 +289,15 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
   </tr>
   <tr>
     <td> 2</td>
-    <td> Eu como parceiro, quero conseguir ter um controle dos oléos que ue colete nos estabelecimento podendo assim editar se necessário</td>
-    <td> Controle de óleo coletados</td>
+    <td> Eu como parceiro, quero conseguir ter um controle dos óleos que eu colete nos estabelecimento, podendo editar caso necessário</td>
+    <td> Controle de óleo coletado</td>
     <td> 80</td>
     <td> :white_check_mark:</td>
     <td> DATA</td>
   </tr>
   <tr>
     <td> 2</td>
-    <td> Eu como estabelecimento, quero um controle de compra (Historico, Extrato e Saldo), assim sei o quanto posso gastar com os produtos Greenneat</td>
+    <td> Eu como estabelecimento, quero um controle de compra (Histporico, Extrato e Saldo), assim tenho controle doque posso comprar e quanto recebi pelo óleo trocado </td>
     <td> Carteira Estabelecimento</td>
     <td> 80</td>
     <td> :white_check_mark:</td>
@@ -314,22 +314,22 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
   <tr>
     <td> 3</td>
     <td> Eu como administrador, quero conseguir editar as informaçoes dos Parceiros e dos Estabelecimentos quando necessário</td>
-    <td> Permissoes Administrador</td>
+    <td> Permissões do Administrador</td>
     <td> 80</td>
     <td>  🛠️ </td>
     <td> DATA</td>
   </tr>
   <tr>
     <td> 3</td>
-    <td> Eu como usuário, quero conseguir editar as minhas pórpias informaçoes, sem dependencia dos administradors</td>
-    <td> Permissoes usuario</td>
+    <td> Eu como usuário, quero editar as minhas próprias informaçoes, sem depender do administrador</td>
+    <td> Permissões do usuário</td>
     <td> 80</td>
     <td>  🛠️ </td>
     <td> DATA</td>
   </tr>
   <tr>
     <td> 3</td>
-    <td> Eu como usuário, gostaria de algumas melhorias nas paginas, como colocar paginações nas tabelas informadas</td>
+    <td> Eu como usuário, gostaria de algumas melhorias nas páginas, como colocar paginações nas tabelas informadas</td>
     <td> Paginação</td>
     <td> 80</td>
     <td>  🛠️ </td>
@@ -345,7 +345,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
   </tr>
   <tr>
     <td> 4</td>
-    <td> Eu como usuário, quero conseguir visualizar as informações de outras maneiras, como graficos e tabelas, assim fica mais intuitivo e melhor o entendimento</td>
+    <td> Eu como usuário, quero conseguir visualizar as informações de outras maneiras, como gráficos e tabelas, assim ficando intuitivo e com melhor entendimento</td>
     <td> Dashboard</td>
     <td> 80</td>
     <td> :hourglass:</td>
@@ -353,7 +353,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
   </tr>
   <tr>
     <td> 4</td>
-    <td> Eu como usuário, gostaria de quando necessário entrar em contato com a empresa para tiradas de duvidas sobre o sistema</td>
+    <td> Eu como usuário, gostaria de quando necessário entrar em contato com a empresa para sanar dúvidas sobre o sistema</td>
     <td> Pagina de Contato</td>
     <td> 80</td>
     <td> :hourglass:</td>
@@ -398,17 +398,17 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
 
   
  ### Sprint 3</a> - 16/10 - 05/11</p>
- > <p>:x: User Stories  </p>
- > <p>:x: Função de compra de produtos para parceiros </p>
- > <p>:x: Função de compra de créditos para parceiros comprarem da Greenneat   </p>
- > <p>:x: Histórico de compra de produtos para parceiros </p>
- > <p>:x: Administrador receber todos os pedidos de compra  </p>
- > <p>:x: Função de edição e exclusão na listagem dos estabelecimentos e parceiros (Administrador)</p>
- > <p>:x: Acréscimo na visualização do Administrador (saldo e transações dos parceiros e estabelecimentos)</p>
- > <p>:x: Adicionar paginação, filtro de ordenação e barra de pesquisa nas listagens e extratos  </p>
- > <p>:x: Funçaõ de validação de usuário por email   </p>
- > <p>:x: Função de esqueci minha senha </p>
- > <p>:x: Diferenciação de tipos de óleo (usado ou novo)  </p>
+ > <p>:white_check_mark: User Stories  </p>
+ > <p>:white_check_mark: Função de compra de produtos para parceiros </p>
+ > <p>:white_check_mark: Função de compra de créditos para parceiros comprarem da Greenneat   </p>
+ > <p>:white_check_mark: Histórico de compra de produtos para parceiros </p>
+ > <p>:white_check_mark: Administrador receber todos os pedidos de compra  </p>
+ > <p>:white_check_mark: Função de edição e exclusão na listagem dos estabelecimentos e parceiros (Administrador)</p>
+ > <p>:white_check_mark: Acréscimo na visualização do Administrador (saldo e transações dos parceiros e estabelecimentos)</p>
+ > <p>:white_check_mark: Adicionar paginação, filtro de ordenação e barra de pesquisa nas listagens e extratos  </p>
+ > <p>:white_check_mark: Funçaõ de validação de usuário por email   </p>
+ > <p>:white_check_mark: Função de esqueci minha senha </p>
+ > <p>:white_check_mark: Diferenciação de tipos de óleo (usado ou novo)  </p>
 
   
  ### Sprint 4</a> - 06/11 - 26/11</p>
@@ -455,7 +455,6 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
  
 - >  <a href="https://github.com/TechForce-ADS/Greenneat-API/blob/main/Sprints.md "> 1° Sprint
 
- 
 - >  <a href="https://github.com/TechForce-ADS/Greenneat-API/blob/main/Sprints.md#sprint-2"> 2° Sprint
   
 # Burndown do Projeto
@@ -467,4 +466,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
 > 2° Sprint
 
 <img src = "https://github.com/TechForce-ADS/imagens/blob/main/burndown2%20-%20green.png" /> 
+
+
+
  

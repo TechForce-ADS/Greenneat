@@ -354,7 +354,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
   <tr>
     <td> 4</td>
     <td> Eu como usuário, gostaria de quando necessário entrar em contato com a empresa para sanar dúvidas sobre o sistema</td>
-    <td> Pagina de Contato</td>
+    <td> Página de Contato</td>
     <td> 80</td>
     <td> :hourglass:</td>
     <td> DATA</td>
@@ -382,7 +382,6 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
  > <p>:white_check_mark: Criação do Front - Parceiros </p>
  > <p>:white_check_mark: Criação do Front - Administrador </p>
 
- 
   
  ### Sprint 2</a> - 25/09 -15/10</p>
  > <p>:white_check_mark: Saldo de crédito </p>
@@ -393,8 +392,6 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
  > <p>:white_check_mark: Histórico de compras para estabelecimento  </p>
  > <p>:white_check_mark: Tela do administrador ceder pontos ao parceiro</p>
  > <p>:white_check_mark: Visualização das informações para o administrador </p>
-
- 
 
   
  ### Sprint 3</a> - 16/10 - 05/11</p>
@@ -461,12 +458,14 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
 
 > 1° Sprint
 
-<img src = "https://github.com/TechForce-ADS/imagens/blob/main/burnown-greenneat.png"/>
+<img src = "https://github.com/TechForce-ADS/imagens/blob/main/burnown-greenneat1.png"/>
 
 > 2° Sprint
 
-<img src = "https://github.com/TechForce-ADS/imagens/blob/main/burndown2%20-%20green.png" /> 
+<img src = "https://github.com/TechForce-ADS/imagens/blob/main/burnown-greenneat2.png" /> 
 
+> 3° Sprint
 
+<img src = "https://github.com/TechForce-ADS/imagens/blob/main/burnown-greenneat3.png" /> 
 
  

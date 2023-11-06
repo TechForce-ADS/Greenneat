@@ -313,7 +313,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
   </tr>
   <tr>
     <td> 3</td>
-    <td> Eu como administrador, quero conseguir editar as informaçoes dos Parceiros e dos Estabelecimentos quando necessário</td>
+    <td> Eu como administrador, quero conseguir editar as informações dos Parceiros e dos Estabelecimentos quando necessário</td>
     <td> Permissões do Administrador</td>
     <td> 80</td>
     <td>  🛠️ </td>
@@ -321,7 +321,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
   </tr>
   <tr>
     <td> 3</td>
-    <td> Eu como usuário, quero editar as minhas próprias informaçoes, sem depender do administrador</td>
+    <td> Eu como usuário, quero editar as minhas próprias informações, sem depender do administrador</td>
     <td> Permissões do usuário</td>
     <td> 80</td>
     <td>  🛠️ </td>
@@ -400,8 +400,6 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
  > <p>:white_check_mark: Função de compra de créditos para parceiros comprarem da Greenneat   </p>
  > <p>:white_check_mark: Histórico de compra de produtos para parceiros </p>
  > <p>:white_check_mark: Administrador receber todos os pedidos de compra  </p>
- > <p>:white_check_mark: Função de edição e exclusão na listagem dos estabelecimentos e parceiros (Administrador)</p>
- > <p>:white_check_mark: Acréscimo na visualização do Administrador (saldo e transações dos parceiros e estabelecimentos)</p>
  > <p>:white_check_mark: Adicionar paginação, filtro de ordenação e barra de pesquisa nas listagens e extratos  </p>
  > <p>:white_check_mark: Função de validação de usuário por email   </p>
  > <p>:white_check_mark: Diferenciação de tipos de óleo (usado ou novo)  </p>

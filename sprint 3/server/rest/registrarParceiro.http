@@ -1,0 +1,15 @@
+POST http://localhost:3001/registerParceiro HTTP/1.1
+content-type: application/json
+
+
+{
+    "cnpj": "456451322",
+    "nomeOrganizacao": "brener",
+    "email": "brenertestando@gmail.com",
+    "endereco": "sp",
+    "cidade": "sjc",
+    "horariosFuncionamento": "1212",
+    "parceiros": "não",
+    "senha": "123123123"
+}
+

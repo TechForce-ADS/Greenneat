@@ -6,7 +6,7 @@ import * as yup from 'yup';
 import Swal from 'sweetalert2';
 
 const validationCadastro = yup.object().shape({
-  cnpj: yup.string().required('CNPJ é obrigatório'),
+  cnpj: yup.string().required('CNPJ é obrigatório').length(14,'CPNJ inválido'),
   nomeOrganizacao: yup.string().required('Nome da organização é obrigatório'),
   email: yup.string().email('Insira um e-mail válido').required('E-mail é obrigatório'),
   senha: yup.string().required('Senha é obrigatório').min(8, 'Senha deve ter 8 caracteres no mínimo'),

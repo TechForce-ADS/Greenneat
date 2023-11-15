@@ -12,8 +12,6 @@ const nodemailer = require('nodemailer');
 const jwt = require('jsonwebtoken');
 
 
-//Brener é meu amigo
-
 
 // Use cookie-parser middleware
 app.use(cookieParser());
@@ -912,6 +910,83 @@ app.get("/TodosasComprasCredito", async (req, res) => {
 });
 
 
+app.post("/recuperarSenhaEstabelecimento", async (req, res) => {
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'brenertestando@gmail.com',
+      pass: 'fpbvjzgaiyzuneek',
+    },
+  });
+
+  const { email } = req.body;
+
+  try {
+    const estabelecimento = await Estabelecimento.findOne({ where: { email } });
+
+    if (!estabelecimento) {
+      return res.status(404).json({ error: 'Usuário não encontrado' });
+    }
+
+    const resetUrl = 'http://localhost:3000/recuperarSenhaEstabelecimento';
+
+    const token = jwt.sign(
+      { estabelecimentoId: estabelecimento.id },
+      'd#7Hj&f$23sPc89!TqA',
+      { expiresIn: '1h' }
+    );
+
+    await estabelecimento.update({ token });
+
+    const mailOptions = {
+      from: 'brenertestando@gmail.com',
+      to: estabelecimento.email,
+      subject: 'Recuperação de senha',
+      text: `Para redefinir sua senha, acesse o seguinte link: ${resetUrl}?token=${token}`,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error('Erro ao enviar o e-mail:', error);
+        return res.status(500).json({ error: 'Erro interno do servidor' });
+      }
+      console.log('E-mail enviado com sucesso:', info.response);
+      return res.json({ message: 'Token enviado para o e-mail' });
+    });
+  } catch (error) {
+    console.error('Erro ao recuperar usuário', error);
+    return res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
+app.post("/resetarSenhaEstabelecimento", async (req, res) => {
+  const { token, newPassword } = req.body;
+
+    try {
+      const decodedToken = jwt.verify(token, 'd#7Hj&f$23sPc89!TqA');
+
+      const estabelecimento = await Estabelecimento.findOne({ where: { id: decodedToken.estabelecimentoId } });
+
+      if (!estabelecimento || estabelecimento.token !== token) {
+        return res.status(400).json({ error: 'Token inválido' });
+      }
+
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+      estabelecimento.senha = hashedPassword;
+      estabelecimento.token = null;
+      await estabelecimento.save();
+
+      res.json({ message: 'Senha redefinida com sucesso' });
+    } catch (error) {
+      console.error('Erro ao redefinir senha', error);
+      res.status(500).json({ error: 'Erro interno do servidor' });
+    }
+});
+
+
+
 
 app.get("/confirmatoken=:token", async (req, res) => {
   try {
@@ -1236,6 +1311,7 @@ app.put('/editarParceiro/:id', async (req, res) => {
     return res.status(500).json(error);
   }
 });
+
 
 app.listen(3001, () => {
   console.log("Server is running on port 3001");

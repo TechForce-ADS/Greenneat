@@ -13,8 +13,8 @@ const handleDefinirPreco = (values) => {
     Swal.fire({
       icon: 'success',
       title: 'Preço definido!',
-      showConfirmButton: false,
-      timer: 1500
+      showConfirmButton: false, 
+      timer: 1500, 
     });
   })
   .catch((error) => {

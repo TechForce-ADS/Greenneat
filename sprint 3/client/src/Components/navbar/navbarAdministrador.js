@@ -19,11 +19,14 @@ function Navbar({ activeLink }) {
 
         <div className="navbar-pages">
          
-          <Link to="/transacoes" className={activeLink === '/transacoes' ? 'active-link' : ''}>
-            Transações
+          <Link to="/painel" className={activeLink === '/painel' ? 'active-link' : ''}>
+            Painel
           </Link>
           <Link to="/dashboard" className={activeLink === '/dashboard' ? 'active-link' : ''}>
             Dashboard
+          </Link>
+          <Link to="/transacoesADM" className={activeLink === '/transacoesADM' ? 'active-link' : ''}>
+            Transações
           </Link>
           <Link to="/comparador" className={activeLink === '/comparador' ? 'active-link' : ''}>
            Comparador

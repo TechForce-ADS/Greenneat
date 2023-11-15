@@ -5,7 +5,7 @@ function HistoricoCompras() {
   const [compras, setCompras] = useState([]);
   const [estabelecimento, setEstabelecimento] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 3; // Definindo quantos itens mostrar por página
+  const itemsPerPage = 5; // Definindo quantos itens mostrar por página
 
   useEffect(() => {
     const email = localStorage.getItem('email');

@@ -70,54 +70,57 @@ function Produtos() {
   
   
 
- 
-  
-  const handleCheckout = async () => {
-    try {
-      if (!parceiro || !parceiro.id) {
-        throw new Error('Parceiro não selecionado.');
-      }
-  
-      const produtos = cart.map(item => ({
-        productName: item.productName,
-        quantity: item.quantity,
-        price: item.price,
-        
-   
-      }));
-  
-      const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  
-      const response = await axios.post('http://localhost:3001/CompraParceiro', {
-        produtos,
-        total,
-        EstabelecimentoId: parceiro.id,
-        tipo: "parceiro"
-      });
-  
-      console.log('Pedido processado com sucesso:', response.data);
-  
-      // Exibe um pop-up de sucesso após a compra bem-sucedida
-      Swal.fire({
-        icon: 'success',
-        title: 'Compra realizada com sucesso!',
-        text: 'A compra foi realizada com sucesso.',
-        showConfirmButton: true
-      });
-  
-      setCart([]); // Limpa o carrinho após a compra bem-sucedida
-    } catch (error) {
-      console.error('Erro ao processar o pedido:', error);
-  
-      // Exibe um pop-up de erro em caso de falha no processamento do pedido
-      Swal.fire({
-        icon: 'error',
-        title: 'Erro ao processar o pedido',
-        text: 'Não há saldo disponível para a transação.',
-        showConfirmButton: true
-      });
+ const handleCheckout = async () => {
+  try {
+    if (!parceiro || !parceiro.id) {
+      throw new Error('Parceiro não selecionado.');
     }
-  };
+
+    const produtos = cart.map(item => ({
+      productName: item.productName,
+      quantity: item.quantity,
+      price: item.price,
+    }));
+
+    const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+    const response = await axios.post('http://localhost:3001/CompraParceiro', {
+      produtos,
+      total,
+      EstabelecimentoId: parceiro.id,
+      tipo: "parceiro"
+    });
+
+    const novaCompra = response.data;
+
+    console.log('Pedido processado com sucesso:', novaCompra);
+
+    // Atualiza o número de compras localmente
+    setParceiro(prevParceiro => ({ ...prevParceiro, compras: prevParceiro.compras + 1 }));
+
+    // Exibe um pop-up de sucesso após a compra bem-sucedida
+    Swal.fire({
+      icon: 'success',
+      title: 'Compra realizada com sucesso!',
+      text: 'A compra foi realizada com sucesso.',
+      showConfirmButton: true
+    });
+
+    setCart([]); // Limpa o carrinho após a compra bem-sucedida
+  } catch (error) {
+    console.error('Erro ao processar o pedido:', error);
+
+    // Exibe um pop-up de erro em caso de falha no processamento do pedido
+    Swal.fire({
+      icon: 'error',
+      title: 'Erro ao processar o pedido',
+      text: 'Não há saldo disponível para a transação.',
+      showConfirmButton: true
+    });
+  }
+};
+
+
   
   
   

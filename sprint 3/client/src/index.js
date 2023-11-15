@@ -23,12 +23,17 @@ import ProdutoC from './Pages/Comum/produtos';
 import ProdutoE from './Pages/Parceiro/produtos';
 import Gestao from './Pages/Administrador/gestao';
 import Creditos from './Pages/Administrador/creditos';
+import Painel from './Pages/Administrador/painel';
+import Dashboard from './Pages/Administrador/dashboard';
+import HomeADM from './Pages/Administrador/home';
 import Pedidos from './Pages/Administrador/pedidos'
 import ComprarCreditos from './Pages/Parceiro/comprarCreditos';
 import Compras from './Pages/Parceiro/compras';
 import ConfirmaEmail from './Pages/confirmaEmail'
 import ConfirmaParceiro from './Pages/confirmaParceiro'
 import HistoricoCredito from './Pages/Parceiro/historicoCredito'
+import TransacoesADM from './Pages/Administrador/transacoes'
+
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
@@ -42,6 +47,7 @@ ReactDOM.render(
         <Route path="/logoutE" element={<LogoutE />} />
         <Route path="/dadosE" element={<DadosE />} />
         <Route path="/transacoes" element={<Transacoes />} />
+        <Route path="/transacoesADM" element={<TransacoesADM />} />
         <Route path="/saldoE" element={<SaldoE />} />
         <Route path="/creditos" element={<Creditos />} />
         <Route path="/pedidos" element={<Pedidos />} />
@@ -62,6 +68,9 @@ ReactDOM.render(
         <Route path="/confirmaParceiro" element={ < ConfirmaParceiro />} />
         <Route path="/ComprarCredito" element={<ComprarCreditos />} />
         <Route path="/HistoricoCredito" element={<HistoricoCredito />} />
+        <Route path="/painel" element={<Painel />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/alabama" element={<HomeADM />} />
       </Routes>
     <Footer />
     </Router>

@@ -1,5 +1,5 @@
 import NavbarE from '../../Components/navbar/navbarEstabelecimento.js';
-import HistoricoCompras from '../../Components/HistCompras.js';
+import ExtratoEstabelecimento from '../../Components/extratoEstabelecimento.js';
 import { useEffect } from 'react';
 
 
@@ -18,7 +18,7 @@ function ExtratoE() {
     return (
         <>
             <NavbarE activeLink="/extratoE" />
-            <HistoricoCompras />
+            <ExtratoEstabelecimento />
         </>
     )
 };

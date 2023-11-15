@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { FaUserAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
-import { FaUserAlt  } from 'react-icons/fa';
 
 function PerfilParceiro() {
     const [parceiro, setParceiro] = useState(null);
     const [formData, setFormData] = useState({
-        nomeOrganizacao: "",
-        email: "",
-        endereco: "",
-        cidade: "",
-        horariosFuncionamento: "",
-        possuiParceiros: false // Default value, assuming a boolean
+        // ...
     });
     const [showModal, setShowModal] = useState(false);
 
@@ -45,27 +40,26 @@ function PerfilParceiro() {
             },
             body: JSON.stringify(formData)
         })
-        .then((response) => response.json())
-        .then((data) => {
-            // Handle success message or update state if needed
-            console.log(data.message); // Log success message
+            .then((response) => response.json())
+            .then((data) => {
+                // Handle success message or update state if needed
+                console.log(data.message); // Log success message
 
-            // Exibir o modal de sucesso
-            showSuccessModal();
-        })
-        .catch((error) => {
-            // Handle error
-            console.error("Erro ao atualizar estabelecimento:", error);
-        });
-    };
+                // Exibir notificação de sucesso com o Swal
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Perfil atualizado com sucesso!',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
 
-    const showSuccessModal = () => {
-        Swal.fire({
-            icon: 'success',
-            title: 'Perfil atualizado com sucesso!',
-            showConfirmButton: false,
-            timer: 1500
-        });
+                // Você pode fechar o modal ou fazer outras ações aqui, se necessário
+
+            })
+            .catch((error) => {
+                // Handle error
+                console.error("Erro ao atualizar parceiro:", error);
+            });
     };
 
     const openModal = () => {
@@ -111,61 +105,62 @@ function PerfilParceiro() {
                     </li>
                 </ul>
 
+                {/* Botão para abrir o modal */}
                 <button id="botaoEditar" onClick={openModal}>Editar</button>
 
                 {/* Modal */}
                 {showModal && (
-                    <div className="modal">
+                    <div className="modalEditar">
                         <div className="modalContent">
                             <span className="close" onClick={closeModal}>
                                 &times;
                             </span>
                             <h2 className="editarTitulo">Editar Informações</h2>
                             <form onSubmit={handleSubmit}>
-                            <label htmlFor="nomeOrganizacao">Nome da Organização:</label>
-                        <input
-                            type="text"
-                            name="nomeOrganizacao"
-                            value={formData.nomeOrganizacao}
-                            onChange={handleChange}
-                        />
-                            <label htmlFor="email">Email:</label>
-                        <input
-                            type="text"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                        />
-                        <label htmlFor="endereco">Endereço:</label>
-                        <input
-                            type="text"
-                            name="endereco"
-                            value={formData.endereco}
-                            onChange={handleChange}
-                        />
-                        <label htmlFor="cidade">Cidade:</label>
-                        <input
-                            type="text"
-                            name="cidade"
-                            value={formData.cidade}
-                            onChange={handleChange}
-                        />
-                        <label htmlFor="horariosFuncionamento">Horário de Funcionamento:</label>
-                        <input
-                            type="text"
-                            name="horariosFuncionamento"
-                            value={formData.horariosFuncionamento}
-                            onChange={handleChange}
-                        />
-                        <label htmlFor="possuiParceiros">Possui Parceiros:</label>
-                        <input
-                            type="text"
-                            name="possuiParceiros"
-                            value={formData.possuiParceiros}
-                            onChange={handleChange}
-                        />
-                        <button id="botaoEditar" type="submit">Salvar Alterações</button>
-                    </form>
+                                <label htmlFor="nomeOrganizacao">Nome da Organização:</label>
+                                <input
+                                    type="text"
+                                    name="nomeOrganizacao"
+                                    value={formData.nomeOrganizacao}
+                                    onChange={handleChange}
+                                />
+                                <label htmlFor="email">Email:</label>
+                                <input
+                                    type="text"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                />
+                                <label htmlFor="endereco">Endereço:</label>
+                                <input
+                                    type="text"
+                                    name="endereco"
+                                    value={formData.endereco}
+                                    onChange={handleChange}
+                                />
+                                <label htmlFor="cidade">Cidade:</label>
+                                <input
+                                    type="text"
+                                    name="cidade"
+                                    value={formData.cidade}
+                                    onChange={handleChange}
+                                />
+                                <label htmlFor="horariosFuncionamento">Horário de Funcionamento:</label>
+                                <input
+                                    type="text"
+                                    name="horariosFuncionamento"
+                                    value={formData.horariosFuncionamento}
+                                    onChange={handleChange}
+                                />
+                                <label htmlFor="possuiParceiros">Possui Parceiros:</label>
+                                <input
+                                    type="text"
+                                    name="possuiParceiros"
+                                    value={formData.possuiParceiros}
+                                    onChange={handleChange}
+                                />
+                                <button id="botaoEditar" type="submit">Salvar Alterações</button>
+                            </form>
                         </div>
                     </div>
                 )}

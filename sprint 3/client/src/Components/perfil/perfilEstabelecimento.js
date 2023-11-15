@@ -21,7 +21,7 @@ function PerfilEstabelecimento() {
             .then((response) => response.json())
             .then((data) => {
                 setEstabelecimento(data);
-                setFormData(data); 
+                setFormData(data);
             })
             .catch((error) => console.error("Erro ao obter dados do perfil:", error));
     }, []);
@@ -45,18 +45,18 @@ function PerfilEstabelecimento() {
             },
             body: JSON.stringify(formData)
         })
-        .then((response) => response.json())
-        .then((data) => {
-            // Handle success message or update state if needed
-            console.log(data.message); // Log success message
-            
-            // Exibir o modal de sucesso
-            showSuccessModal();
-        })
-        .catch((error) => {
-            // Handle error
-            console.error("Erro ao atualizar estabelecimento:", error);
-        });
+            .then((response) => response.json())
+            .then((data) => {
+                // Handle success message or update state if needed
+                console.log(data.message); // Log success message
+
+                // Exibir o modal de sucesso
+                showSuccessModal();
+            })
+            .catch((error) => {
+                // Handle error
+                console.error("Erro ao atualizar estabelecimento:", error);
+            });
     };
 
     const showSuccessModal = () => {
@@ -131,12 +131,12 @@ function PerfilEstabelecimento() {
                                     onChange={handleChange}
                                 />
                                 <label htmlFor="email">Email:</label>
-                        <input
-                            type="text"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                        />
+                                <input
+                                    type="text"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                />
                                 <label htmlFor="endereco">Endereço:</label>
                                 <input
                                     type="text"
@@ -165,7 +165,7 @@ function PerfilEstabelecimento() {
                                     value={formData.possuiParceiros}
                                     onChange={handleChange}
                                 />
-                                <button id ="botaoEditar" type="submit">Salvar Alterações</button>
+                                <button id="botaoEditar" type="submit">Salvar Alterações</button>
                             </form>
                         </div>
                     </div>

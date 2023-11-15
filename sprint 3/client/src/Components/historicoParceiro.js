@@ -80,13 +80,13 @@ function Transacoes() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div style={{ marginTop: '20px', textAlign: 'center' }}>
-      <div style={{ marginBottom: '20px' }}>
-        <button onClick={handleSort}>
+    <div style={{ marginTop: '20px', textAlign: 'center', }}>
+      <div style={{ marginBottom: '20px',  }}>
+        <button className='ordenacao' onClick={handleSort}>
           Ordenação alfabética 
         </button>
         <span style={{ margin: '0 10px' }}></span>
-        <button onClick={handleSortByOilQuantity}>
+        <button className='ordenacao' onClick={handleSortByOilQuantity}>
           Ordenar por Quantidade de Óleo {ordenarPor === 'quantidade' ? (ordem === 'asc' ? ': CRESCENTE' : ': DECRESCENTE') : ''}
         </button>
       </div>
@@ -98,7 +98,7 @@ function Transacoes() {
             <th>Créditos cedidos</th>
             <th>Estabelecimento</th>
             <th>Data da Transação</th>
-            <th>Tipo de Óleo</th>
+            <th>Tipo de Óleo</th> 
           </tr>
         </thead>
         <tbody>
@@ -108,7 +108,7 @@ function Transacoes() {
               <td>{coleta.quantidade * 10}</td>
               <td>{coleta.Estabelecimento ? coleta.Estabelecimento.nomeOrganizacao : 'N/A'}</td>
               <td>{formatarData(coleta.createdAt)}</td>
-              <td>{coleta.tipo}</td> {/* Exibindo o tipo de óleo */}
+               <td>{coleta.tipo}</td>  
             </tr>
           ))}
         </tbody>
@@ -128,3 +128,4 @@ function Transacoes() {
 }
 
 export default Transacoes;
+

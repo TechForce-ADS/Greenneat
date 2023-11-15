@@ -3,6 +3,6 @@ content-type: application/json
 
 {
   "nomeOrganizacao": "",
-  "credito": 100000
+  "credito": 1000
 }
 

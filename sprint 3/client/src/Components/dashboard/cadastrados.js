@@ -19,7 +19,7 @@ const App = () => {
   }, []); 
 
   return (
-    <div>
+    <>
       {data.parceiros && data.estabelecimentos ? (
         <Pie
           data={{
@@ -27,8 +27,20 @@ const App = () => {
             datasets: [
               {
                 data: [data.parceiros, data.estabelecimentos],
-                backgroundColor: ['#FF6384', '#36A2EB'],
-                hoverBackgroundColor: ['#FF6384', '#36A2EB'],
+                backgroundColor: [
+                  '#87BC87',  
+                   
+                  '#7ED957',  
+                 
+                ],
+                hoverBackgroundColor: [
+                  '#009f57', 
+                  '#80D080', 
+                  '#2B8C2B', 
+                  '#6DBF6D', 
+                  '#79A079', 
+                  '#AACC99', 
+                ],
               },
             ],
           }}
@@ -36,7 +48,7 @@ const App = () => {
       ) : (
         <p>Carregando...</p>
       )}
-    </div>
+    </>
   );
 };
 

@@ -26,7 +26,7 @@ body {
   padding: 2%;
   margin-top: 5%;
   width: clamp(300px, 35%, 1000px);
-  height: 100vh;
+  height: 120%;
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -127,31 +127,15 @@ header {
   background: linear-gradient(3deg, rgba(2, 88, 37, 1) 0%, rgba(6, 134, 58, 1) 100%);
 }
 
-/*.navbar {
-
-background-color: #136936; Cor antiga
-
-  VERSÃO DA NAVBAR DIFERENTE
-
-  width: 100%;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  z-index: 2; 
-  position: relative; 
-  background: linear-gradient(0deg, rgba(2,113,48,1) 0%, rgba(76,171,115,1) 100%, rgba(29,203,100,1) 100%); 
-  box-shadow: 0px 2px 20px 2px black;
-}*/
-
-
 
 .navbar-pages {
-  width: 50%;
+  width: 95%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   color: #FFF;
-  margin-left: clamp(5%, 40%, 700px);
+  margin-right: 5%;
+  margin-left: clamp(5%, 25%, 700px);
 }
 
 .navbar-pages a {
@@ -396,13 +380,28 @@ background-color: #136936; Cor antiga
 }
 
 
+.ordenacao {
+  border: none;
+  font-size: 18px;
+  border-radius: 20px;
+  height: 12%;
+  background-color: #d1dbab;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.ordenacao:hover {
+  background-color: #aab392;
+}
+
 
 
 
 .boxDivisao {
   padding: 1%;
   width: clamp(300px, 30%, 1000px);
-  height: 50vh;
+  height: 55vh;
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -411,6 +410,22 @@ background-color: #136936; Cor antiga
   animation: fadeIn 1s;
   margin-top: 5%;
 }
+
+
+
+.transacaoBox {
+  padding: 1%;
+  width: clamp(300px, 30%, 1000px);
+  height: 65vh;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5%;
+  animation: fadeIn 1s;
+  margin-top: 5%;
+}
+
 
 .formLogin {
   width: 100%;
@@ -432,6 +447,7 @@ background-color: #136936; Cor antiga
   background-color: #D8DFBE;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .formLogin button:hover {
@@ -457,6 +473,140 @@ background-color: #136936; Cor antiga
   align-items: center;
   flex-direction: column;
 }
+
+
+.containerDashboard {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  margin-top: 5%;
+  gap: 20px;
+
+}
+
+.sectionDashboard1{
+  width: 30%;
+  align-items: center;
+  
+}
+
+.sectionDashboard2{
+  width: 40%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sectionDashboard3{
+  width: 30%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.OleosContainer{
+  width: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  background-color: white;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: space-around;
+  
+
+}
+
+.PedidosContainer{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  background-color: white;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+
+.TransacoesContainer{
+  width: 600px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 215px;
+  background-color: white;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+.ComparadorContainer{
+  width: 600px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  background-color: white;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+
+.GraficoContainer{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+/*----- DASHBOARD -----*/
+
+.graficos{
+  width: 80%;
+  height: 80%;
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+.DashboardContainer{
+  width: 450px;
+ text-align: center;
+  border-radius: 15px;
+ 
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .containerProduto {
   width: 100%;
@@ -860,75 +1010,6 @@ tr:hover {
   margin-bottom: 10px;
 }
 
-.containerEmail {
-  width: 100%;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-
-.containerEmail button {
-  width: 50%;
-  cursor: pointer;
-  margin-bottom: 10px;
-  border-radius: 5%;
-  border: none;
-  background-color: #1eca63;
-  height: 40px;
-  margin-top: 20%;
-}
-
-#botaoEditar{
-  background-color: #138842;
-  width: 30%;
-  height: 40px;
-  display: flex;
-  border: none;
-  border-radius: 8px;
-  text-align: center;
-  color: white;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  margin-top: 5px;
-}
-
-.modal{
-  display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #FFF;
-    margin-top: 200px;
-    border-radius: 10%;
-    padding: 30px;
-    height: 690px;
-    width: 800px;
-    margin-left: 600px;
-}
-
-.modalContent input {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.editarTitulo{
-  display: block;
-    font-size: 1.5em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    margin-left: 25px;
-    margin-top: 5px;
-}
-
-
 
 
 
@@ -1010,9 +1091,19 @@ tr:hover {
   animation: fadeIn 1s;
 }
 
+.pedidosTable{
+background-color: rgba(255, 255, 255, 0.836);
+}
 
-
-
+.pedidosTable th{
+  background-color: #00BF63;
+  }
+  
+.containerTotal{
+  width: 100%;
+  text-align: center;
+  margin-top: 2%;
+}
 
 
 @media (max-width: 730px) {
@@ -1226,6 +1317,48 @@ tr:hover {
 
 }
 
+.modalEditarGestao {
+  position: fixed;
+  z-index: 1;
+  bottom: 100px;
+  left: 30%;
+  background-color: #fff;
+  padding: 30px;
+  height: 690px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-content-gestao {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-content-gestao button {
+  width: 20%;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 5%;
+  border: none;
+  background-color: #1eca63;
+  height: 40px;
+}
+
+
+.modal-content-gestao input {
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Preenchimento total do elemento pai */
+}
 
 .modalEditar {
   position: fixed;
@@ -1295,14 +1428,13 @@ tr:hover {
   border-radius: 4px;
 }
 
-/* Style the wrapper */
+
 .inputWrapper {
   margin: 10px;
 }
 
-/* Style the select element */
 .form-field {
-  width: 520px;
+  width: 50%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -1314,14 +1446,12 @@ tr:hover {
   color: black;
 }
 
-/* Style the options */
+
 .form-field option {
   font-size: 16px;
   padding: 8px;
   background-color: white;
-  /* Change this as needed */
   color: black;
-  /* Change this as needed */
 }
 
 #botaoDefinirPreco {
@@ -1351,4 +1481,20 @@ tr:hover {
   margin-inline-end: 0px;
   font-weight: bold;
   margin-left: 170px;
+}
+
+
+
+#OleoButton {
+  background-color: #138842;
+  width: 125px;
+  font-size: 15px;
+  height: 40px;
+
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

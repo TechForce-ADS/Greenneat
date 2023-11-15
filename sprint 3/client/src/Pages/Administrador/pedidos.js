@@ -5,6 +5,8 @@ import NavbarP from '../../Components/navbar/navbarAdministrador';
 function HistoricoComprasADM() {
     const [compras, setCompras] = useState([]);
     const [totalGanho, setTotalGanho] = useState(0); // Variável para acompanhar o total ganho
+    const [currentPage, setCurrentPage] = useState(0);
+    const itemsPerPage = 5; // Definindo quantos itens mostrar por página
 
     useEffect(() => {
         async function fetchData() {
@@ -23,10 +25,6 @@ function HistoricoComprasADM() {
         fetchData();
     }, []);
 
-    if (compras.length === 0) {
-        return <div>Carregando...</div>;
-    }
-
     const formatarData = (dataOriginal) => {
         const data = new Date(dataOriginal);
         const ano = data.getFullYear();
@@ -35,23 +33,29 @@ function HistoricoComprasADM() {
         return `${dia}-${mes}-${ano}`;
     };
 
+    const indexOfLastItem = (currentPage + 1) * itemsPerPage;
+    const indexOfFirstItem = currentPage * itemsPerPage;
+    const currentItems = compras.slice(indexOfFirstItem, indexOfLastItem);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
     return (
         <>
             <NavbarP activeLink="/" />
-    
-            <table>
+           <div className='containerTotal'> <h2>VALOR TOTAL DE VENDAS: R${totalGanho.toFixed(2)}</h2></div>
+            <table className='pedidosTable'>
                 <thead>
                     <tr>
-                        
+
                         <th>Produtos</th>
-                        <th>Nome da Organização</th> 
+                        <th>Nome da Organização</th>
                         <th>Data da Transação</th>
-                        <th>Tipo</th>       
+                        <th>Tipo</th>
                         <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {compras.map((compra) => (
+                    {currentItems.map((compra) => (
                         <tr key={compra.id}>
                             <td>
                                 {compra.produtos.map((produto, index) => (
@@ -63,9 +67,9 @@ function HistoricoComprasADM() {
                                     </div>
                                 ))}
                             </td>
-                            <td>{compra.nomeOrganizacao}</td> 
+                            <td>{compra.nomeOrganizacao}</td>
                             <td>{formatarData(compra.createdAt)}</td>
-                            <td> <p>Tipo: {compra.tipo}</p></td>                   
+                            <td> <p>Tipo: {compra.tipo}</p></td>
                             <td>
                                 {compra.total !== undefined && compra.total !== null
                                     ? `$${compra.total.toFixed(2)}`
@@ -75,8 +79,27 @@ function HistoricoComprasADM() {
                     ))}
                 </tbody>
             </table>
+
             <div className='container'>
-                <h3>Total ganho: ${totalGanho.toFixed(2)}</h3> 
+                <div style={{ marginTop: '20px' }}>
+                    <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 0}>
+                        Anterior
+                    </button>
+                    <span style={{ margin: '0 20px' }}>Página {currentPage + 1}</span>
+                    <button onClick={() => paginate(currentPage + 1)} disabled={indexOfLastItem >= compras.length}>
+                        Próximo
+                    </button>
+                </div>
+                
+            </div>
+            <div>
+                <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 0}>
+                    Anterior
+                </button>
+                <span style={{ margin: '0 20px' }}>Página {currentPage + 1}</span>
+                <button onClick={() => paginate(currentPage + 1)} disabled={indexOfLastItem >= compras.length}>
+                    Próximo
+                </button>
             </div>
         </>
     );

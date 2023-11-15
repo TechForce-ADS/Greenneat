@@ -112,12 +112,12 @@ function HistoricoEstabelecimento() {
         <thead>
           <tr>
             <th>
-              <button onClick={sortListByOil}>
+              <button className='organizacao' onClick={sortListByOil}>
                 Óleo cedido (L) {orderByOil === 'asc' ? 'Crescente' : 'Decrescente'}
               </button>
             </th>
             <th>
-              <button onClick={sortListByCredits}>
+              <button className='organizacao' onClick={sortListByCredits}>
                 Créditos recebidos {orderByCredits === 'asc' ? 'Crescente' : 'Decrescente'}
               </button>
             </th>
@@ -126,6 +126,7 @@ function HistoricoEstabelecimento() {
                 Parceiro {orderByPartner === 'asc' ? 'Z-A' : 'A-Z'}
               </button>
             </th>
+            <th>Tipo</th>
             <th>Data da Transação</th>
           </tr>
         </thead>
@@ -133,8 +134,11 @@ function HistoricoEstabelecimento() {
           {currentColetas.map((coleta) => (
             <tr key={coleta.id}>
               <td>{coleta.quantidade}</td>
+            
               <td>{coleta.quantidade * 10}</td>
+              
               <td>{coleta.Parceiro.nomeOrganizacao}</td>
+              <td>{coleta.tipo}</td>
               <td>{formatarData(coleta.createdAt)}</td>
             </tr>
           ))}

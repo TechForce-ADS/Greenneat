@@ -82,7 +82,6 @@ function Produtos() {
         productName: item.productName,
         quantity: item.quantity,
         price: item.price,
-       
       }));
   
       const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -95,6 +94,9 @@ function Produtos() {
       });
   
       console.log('Pedido processado com sucesso:', response.data);
+  
+      // Atualiza o número de compras localmente
+      setEstabelecimento(prevEstabelecimento => ({ ...prevEstabelecimento, compras: prevEstabelecimento.compras + 1 }));
   
       // Exibe um pop-up de sucesso após a compra bem-sucedida
       Swal.fire({

@@ -25,32 +25,32 @@ function Coleta() {
       nomeEstabelecimento: values.nomeEstabelecimento,
       quantidadeDeOleo: values.quantidadeDeOleo,
       tipoOleo: values.tipoOleo,
-      nomeParceiro: values.nomeParceiro,
+      ParceiroId: parceiro.id,
     })
-    .then(response => {
-      Swal.fire({
-        icon: 'success',
-        title: 'Sucesso!',
-        text: 'Coleta realizada com sucesso.',
+      .then(response => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Sucesso!',
+          text: 'Coleta realizada com sucesso.',
+        });
+        console.log("Resposta do servidor:", response.data);
+      })
+      .catch(error => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Erro!',
+          text: 'Erro ao realizar a coleta.',
+        });
+        console.error("Erro ao fazer a requisição:", error);
+        if (error.response && error.response.data) {
+          console.error("Mensagem de erro do servidor:", error.response.data.error);
+        }
       });
-      console.log("Resposta do servidor:", response.data);
-    })
-    .catch(error => {
-      Swal.fire({
-        icon: 'error',
-        title: 'Erro!',
-        text: 'Erro ao realizar a coleta.',
-      });
-      console.error("Erro ao fazer a requisição:", error);
-      if (error.response && error.response.data) {
-        console.error("Mensagem de erro do servidor:", error.response.data.error);
-      }
-    });
   };
 
   return (
     <>
-      <div className="boxDivisao">
+      <div className="transacaoBox">
         <img src={LogoQ} alt="LogoQ" className="logoQuadDivi" />
         <Formik
           initialValues={{
@@ -65,18 +65,11 @@ function Coleta() {
               <i><FaUser /></i>
               <Field
                 name="nomeEstabelecimento"
-                placeholder='Estabelecimento'
+                placeholder="Estabelecimento"
                 className="form-field"
               />
             </div>
-            <div className="inputWrapper">
-              <i><FaUser /></i>
-              <Field
-                name="nomeParceiro"
-                placeholder='Parceiro'
-                className="form-field"
-              />
-            </div>
+
             <div className="inputWrapper">
               <i><FaKiwiBird /></i>
               <Field

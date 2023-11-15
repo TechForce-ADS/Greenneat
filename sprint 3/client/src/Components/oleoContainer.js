@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const OleoContainer = ({ oleos }) => {
   return (
     <div>
@@ -7,7 +8,7 @@ const OleoContainer = ({ oleos }) => {
       {oleos.map((oleo) => (
         <div key={oleo.id}>
           <span>Valor do óleo {oleo.tipo}:</span>
-          <span style={{ marginLeft: '10px' }}>{`R$ ${oleo.preco.toFixed(2)}`}</span>
+          <span style={{ marginLeft: '10px' }}><b>{`R$ ${oleo.preco.toFixed(2)}`}</b></span>
         </div>
       ))}
     </div>

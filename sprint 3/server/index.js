@@ -359,7 +359,10 @@ app.post("/realizarColeta", async (req, res) => {
       await parceiro.save();
 
       estabelecimento.credito += credito;
+      estabelecimento.oleoCedido += quantidadeDeOleo;
       await estabelecimento.save();
+
+
 
       novaColeta = new Coleta({
         quantidade: quantidadeDeOleo,
@@ -596,6 +599,36 @@ app.get("/parceirosGrafico", async (req, res) => {
     return res.status(500).json({ message: "Falha ao listar parceiros" });
   }
 });
+
+
+app.get("/estabelecimentoGrafico", async (req, res) => {
+  try {
+    const estabelecimento = await Estabelecimento.findAll({});
+
+    const estabelecimentoOleoCedido = await Promise.all(
+      estabelecimento.map(async (estabelecimento) => {
+
+        return {
+          ...estabelecimento.toJSON(),
+
+        };
+      })
+    );
+
+    const estabelecimentoFiltrados = estabelecimentoOleoCedido.filter(
+      (estabelecimento) => estabelecimento.oleoCedido > 0
+    );
+
+    return res.status(200).json(estabelecimentoFiltrados);
+  } catch (error) {
+    console.error("Erro ao obter dados dos parceiros:", error);
+    return res.status(500).json({ message: "Falha ao listar parceiros" });
+  }
+});
+
+
+
+
 
 
 app.get("/estabelecimentosParceirosGrafico", async (req, res) => {
@@ -1026,31 +1059,6 @@ app.post("/definirPreco", async (req, res) => {
     res.send(erro);
   }
 });
-
-app.post("/definirPreco", async (req, res) => {
-  try {
-    const { preco, tipo } = req.body;
-    const oleoTipoExistente = await Oleo.findOne({ where: { tipo: tipo } });
-
-    if (oleoTipoExistente) {
-      oleoTipoExistente.preco = preco;
-      await oleoTipoExistente.save()
-    }
-
-    if (!oleoTipoExistente) {
-      const novoOleo = new Oleo({
-        tipo: tipo,
-        preco: preco,
-      });
-      const oleo = await novoOleo.save();
-      console.log(oleo)
-      res.status(200).json(oleo);
-    }
-  } catch (erro) {
-    res.send(erro);
-  }
-});
-
 
 
 

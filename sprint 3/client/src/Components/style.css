@@ -472,6 +472,7 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
+  animation: fadeIn 1s;
 }
 
 
@@ -514,8 +515,22 @@ header {
   border-radius: 15px;
   align-items: center;
   justify-content: space-around;
-  
 
+
+}
+
+.OleosInfo{
+  width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  background-color: white;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+  
 }
 
 .PedidosContainer{
@@ -1417,6 +1432,7 @@ background-color: rgba(255, 255, 255, 0.836);
   margin-top: 5%;
   align-items: center;
   width: 580px;
+  animation: fadeIn 1s;
 }
 
 .setOilPriceForm input {

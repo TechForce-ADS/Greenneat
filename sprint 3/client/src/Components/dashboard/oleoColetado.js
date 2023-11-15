@@ -37,12 +37,7 @@ const OleoColetado = () => {
 
   const chartOptions = {
     scales: {
-      x: { 
-        title: {
-          display: true,
-          text: 'Parceiros',
-        },
-      },
+    
       y: {
         beginAtZero: true,
         title: {

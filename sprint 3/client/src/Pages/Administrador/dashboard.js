@@ -5,6 +5,7 @@ import Grafico from '../../Components/dashboard/parceiroCompras';
 import Estabelecimento from '../../Components/dashboard/estabelecimentoCompras';
 import OleoColetado from '../../Components/dashboard/oleoColetado';
 import ColetaporMes from '../../Components/dashboard/ColetaporMes';
+import OleoCedido from '../../Components/dashboard/oleoCedido';
 
 function Dashboard() {
 
@@ -31,10 +32,7 @@ function Dashboard() {
                             <h3>Parceiros que mais fizeram compras</h3>
                             <Grafico options={options} />
                         </div>
-                        <div className='DashboardContainer'>
-                            <h3>Estabelecimentos que mais fizeram compras</h3>
-                            <Estabelecimento options={options} />
-                        </div>
+                       
                     </div>
 
                     <div className='graficos'>
@@ -46,9 +44,17 @@ function Dashboard() {
                             <h3>Óleo coletado por mês(L)</h3>
                             <ColetaporMes options={options} />
                         </div>
+                       
                     </div>
                     <div className='graficos'>
-                    
+                    <div className='DashboardContainer'>
+                            <h3>Estabelecimentos que mais cederam óleo</h3>
+                            <OleoCedido options={options} />
+                        </div>
+                        <div className='DashboardContainer'>
+                            <h3>Estabelecimentos que mais fizeram compras</h3>
+                            <Estabelecimento options={options} />
+                        </div>
                     </div>
                 </div>
             </body>

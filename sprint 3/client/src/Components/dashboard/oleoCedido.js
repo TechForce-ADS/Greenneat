@@ -1,7 +1,3 @@
-//EU TO USANDO ESSA PAGINA PARA TESTES
-//NÃO DELETA ELA
-
-
 import React, { useEffect, useState } from 'react';
 import { Pie } from 'react-chartjs-2'; // Mudança para Bar
 import axios from 'axios';

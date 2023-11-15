@@ -120,7 +120,7 @@ function Historico() {
             {currentItemsSliced.map((coleta) => (
               <tr key={coleta.id}>
                 <td>{coleta.quantidade}</td>
-                <td>{coleta.quantidade * 10}</td>
+                <td>{coleta.credito}</td>
                 <td>{coleta.Estabelecimento ? coleta.Estabelecimento.nomeOrganizacao : 'N/A'}</td>
                 <td>{formatarData(coleta.createdAt)}</td>
                 <td>{coleta.tipo}</td>

@@ -21,6 +21,7 @@ const Estabelecimento = sequelize.define('Estabelecimento', {
   senha: Sequelize.STRING,
   credito:Sequelize.FLOAT,
   compras:Sequelize.FLOAT,
+  oleoCedido:Sequelize.FLOAT,
   token: {
     type: Sequelize.STRING,
     allowNull: true
@@ -72,6 +73,7 @@ const Administrador = sequelize.define("Administrador", {
 const Coleta = sequelize.define('Coleta', {
   quantidade: Sequelize.FLOAT,
   tipo:Sequelize.STRING,
+  credito:Sequelize.FLOAT,
 });
 
 const Credito = sequelize.define('Credito', {

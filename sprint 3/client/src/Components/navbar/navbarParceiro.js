@@ -22,7 +22,7 @@ function NavbarParceiro({ activeLink }) {
             Inicio
           </Link>
           <Link to="/transacoes" className={activeLink === '/transacoes' ? 'active-link' : ''}>
-            Transações
+            Coleta
           </Link>
           <Link to="/historico" className={activeLink === '/historico' ? 'active-link' : ''}>
             Histórico
@@ -37,7 +37,7 @@ function NavbarParceiro({ activeLink }) {
             Creditos
           </Link>
           <Link to="/historicoCredito" className={activeLink === '/historicoCredito' ? 'active-link' : ''}>
-            GREE
+            Extrato
           </Link>
           <Link to="/dadosP" className={activeLink === '/dadosP' ? 'active-link' : ''}>
             Perfil

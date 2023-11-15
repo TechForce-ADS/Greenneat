@@ -80,9 +80,36 @@ const handleClickLogin = (values) => {
   });
 };
 
+function handleForgotPassword(email) {
+  axios
+    .post('http://localhost:3001/recuperarSenhaEstabelecimento', {
+      email: email,
+    })
+    .then((response) => {
+      console.log(response.data);
+      Swal.fire({
+        icon: 'success',
+        title: 'Email de recuperação de senha enviado com sucesso',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    })
+    .catch((error) => {
+      console.log(error.response.data);
+      let errorMessage = 'Ocorreu um erro ao enviar o email de recuperação de senha';
 
-
-
+      if (error.response && error.response.status === 400) {
+        const { message } = error.response.data;
+        errorMessage = message;
+      }
+      Swal.fire({
+        iconColor: '#fc5d00',
+        icon: 'error',
+        confirmButtonColor: '#fc5d00',
+        text: errorMessage,
+      });
+    });
+}
 
 function formLoginEstabelecimento() {
   const validationLogin = yup.object().shape({
@@ -96,33 +123,27 @@ function formLoginEstabelecimento() {
         <img src={LogoQ} alt="LogoQ" className="logoQuadlogin" />
         <h2>Entrar como Estabelecimento</h2>
         <Formik initialValues={{}} onSubmit={handleClickLogin} validationSchema={validationLogin}>
-          {({ errors, touched }) => (
-            
+          {({ errors, touched, values }) => (
             <Form action="submit" className="formLogin">
-             
               <div className="inputWrapper">
                 <i><FaUser /></i>
-                <Field name="email" 
-                placeholder='Email' 
-                className="form-field" />
+                <Field name="email" placeholder='Email' className="form-field" />
               </div>
-      
               <div className="inputWrapper">
                 <i><FaLock /></i>
-                <Field name="senha"
-                type="password" 
-                placeholder='Senha' 
-                className="form-field" />
+                <Field name="senha" type="password" placeholder='Senha' className="form-field" />
               </div>
-
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+              <a className="password" href="#" onClick={() => handleForgotPassword(values.email)}>
+                Esqueceu sua senha?
+              </a>
               {errors.email && touched.email && <span className="form-error">{errors.email}</span>}
               {errors.senha && touched.senha && <span className="form-error">{errors.senha}</span>}
-
               <button type="submit">Conectar</button>
             </Form>
           )}
         </Formik>
-            <h4>Não tem uma conta?<button onClick={ShowDivisao} className='cadastre'>Cadastre-se</button></h4>
+        <h4>Não tem uma conta?<button onClick={ShowDivisao} className='cadastre'>Cadastre-se</button></h4>
       </div>
     </>
   );

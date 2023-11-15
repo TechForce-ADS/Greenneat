@@ -32,7 +32,7 @@ import ConfirmaParceiro from './Pages/confirmaParceiro'
 import HistoricoCredito from './Pages/Parceiro/historicoCredito'
 import TransacoesADM from './Pages/Administrador/transacoes'
 import Comparador from './Pages/Administrador/comparador'
-
+import ResetarSenha from './Pages/resetarSenha'
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
@@ -65,6 +65,7 @@ ReactDOM.render(
         <Route path="/Compras" element={<Compras />} />
         <Route path="/confirmaEmail" element={ < ConfirmaEmail />} />
         <Route path="/confirmaParceiro" element={ < ConfirmaParceiro />} />
+        <Route path="/resetarSenha" element={ < ResetarSenha />} />
         <Route path="/ComprarCredito" element={<ComprarCreditos />} />
         <Route path="/HistoricoCredito" element={<HistoricoCredito />} />
         <Route path="/painel" element={<Painel />} />

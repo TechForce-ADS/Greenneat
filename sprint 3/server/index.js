@@ -928,7 +928,7 @@ app.post("/recuperarSenhaEstabelecimento", async (req, res) => {
       return res.status(404).json({ error: 'Usuário não encontrado' });
     }
 
-    const resetUrl = 'http://localhost:3000/recuperarSenhaEstabelecimento';
+    const resetUrl = 'http://localhost:3000/resetarSenha';
 
     const token = jwt.sign(
       { estabelecimentoId: estabelecimento.id },

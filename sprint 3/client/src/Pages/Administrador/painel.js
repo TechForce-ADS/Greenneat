@@ -39,7 +39,7 @@ function Dashboard() {
               <div className='GraficoContainer'>
                 <h2><FaChartPie style={{ transform: 'translateY(3px) ', color: 'green' }} /> Parceiros que mais compraram</h2>
                 <Grafico options={options} />
-                <Link to="/"> <button id="OleoButton" >Ver mais</button> </Link>
+                <Link to="/dashboard"> <button id="OleoButton" >Ver mais</button> </Link>
               </div>
             </div>  
 

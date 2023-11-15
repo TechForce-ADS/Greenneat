@@ -7,9 +7,7 @@ import HomeE from './Pages/Estabelecimento/home';
 import ExtratoE from './Pages/Estabelecimento/extrato'; 
 import HistoricoE from './Pages/Estabelecimento/historico'; 
 import DadosE from './Pages/Estabelecimento/dadosE'; 
-import Comparador from './Pages/Parceiro/comparador'; 
 import Transacoes from './Pages/Parceiro/transacoes'; 
-import SaldoE from './Pages/Estabelecimento/saldo'; 
 import Historico from './Pages/Parceiro/historico'; 
 import DadosP from './Pages/Parceiro/dados'; 
 import Login from './Pages/Comum/login';
@@ -33,6 +31,7 @@ import ConfirmaEmail from './Pages/confirmaEmail'
 import ConfirmaParceiro from './Pages/confirmaParceiro'
 import HistoricoCredito from './Pages/Parceiro/historicoCredito'
 import TransacoesADM from './Pages/Administrador/transacoes'
+import Comparador from './Pages/Administrador/comparador'
 
 const rootElement = document.getElementById('root');
 
@@ -48,7 +47,6 @@ ReactDOM.render(
         <Route path="/dadosE" element={<DadosE />} />
         <Route path="/transacoes" element={<Transacoes />} />
         <Route path="/transacoesADM" element={<TransacoesADM />} />
-        <Route path="/saldoE" element={<SaldoE />} />
         <Route path="/creditos" element={<Creditos />} />
         <Route path="/pedidos" element={<Pedidos />} />
         <Route path="/extratoE" element={<ExtratoE />} />
@@ -63,6 +61,7 @@ ReactDOM.render(
         <Route path="/contato" element={<Contato />} />
         <Route path="/dados" element={<Dados />} />
         <Route path="/gestao" element={<Gestao />} />
+        <Route path="/comparador" element={<Comparador />} />
         <Route path="/Compras" element={<Compras />} />
         <Route path="/confirmaEmail" element={ < ConfirmaEmail />} />
         <Route path="/confirmaParceiro" element={ < ConfirmaParceiro />} />

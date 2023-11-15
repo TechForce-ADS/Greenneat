@@ -12,6 +12,8 @@ const nodemailer = require('nodemailer');
 const jwt = require('jsonwebtoken');
 
 
+//Serragi é meu amigo
+
 
 // Use cookie-parser middleware
 app.use(cookieParser());

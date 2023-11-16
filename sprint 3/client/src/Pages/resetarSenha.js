@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import LogoQ from '../img/logoquad.png';
+
 
 function ResetarSenha() {
   const [serverError, setServerError] = useState('');
@@ -52,16 +54,17 @@ function ResetarSenha() {
   });
 
   return (
-    <div className='recuperar'>
-      <div className='recBorder'>
-        <div className='recContainer'>
+    <div className='containerLogin'>
+      <div className="RecuperarSenha">
+      <img src={LogoQ} alt="LogoQ" className="logoQuadDivi" />
           <h1>Redefinição de Senha</h1>
           <form onSubmit={formik.handleSubmit}>
-            <label htmlFor="password">Nova senha:</label>
+        
             <input
               type="password"
               id="password"
               name="password"
+              placeholder='Nova senha'
               value={formik.values.password}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -71,11 +74,12 @@ function ResetarSenha() {
               <div className="error">{formik.errors.password}</div>
             )}
 
-            <label htmlFor="confirmPassword">Confirmar senha:</label>
+         
             <input
               type="password"
               id="confirmPassword"
               name="confirmPassword"
+              placeholder='Comfirme a senha'
               value={formik.values.confirmPassword}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -92,7 +96,7 @@ function ResetarSenha() {
           {serverError && <div className="error">{serverError}</div>}
         </div>
       </div>
-    </div>
+    
   );
 }
 

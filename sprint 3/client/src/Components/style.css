@@ -607,9 +607,56 @@ header {
 }
 
 
+.RecuperarSenha {
+  padding: 1%;
+  width: clamp(300px, 30%, 1000px);
+  height: 500px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5%;
+  animation: fadeIn 1s;
+  margin-top: 10%;
+  align-items: center;
+  justify-content: center;
+}
 
+.RecuperarSenha button {
+  width: 150px;
+  border: none;
+  font-size: 18px;
+  border-radius: 20px;
+  height: 50px;
+  background-color: #D8DFBE;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
 
+.RecuperarSenha form{
+  height: 250px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.RecuperarSenha button:hover {
+  background-color: #bfc5a9;
+}
+
+.RecuperarSenha input {
+  width: 70%;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  margin-bottom: 5%;
+  background-color: #FAF7E1;
+  padding: 0px 0px 0px 10px;
+}
 
 
 

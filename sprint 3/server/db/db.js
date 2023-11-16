@@ -54,6 +54,13 @@ const Parceiro = sequelize.define('Parceiro', {
   
 });
 
+
+const VinculoParceiroEstabelecimento = sequelize.define('VinculoParceiroEstabelecimento', {
+});
+
+
+
+
 const Administrador = sequelize.define("Administrador", {
   nome: Sequelize.STRING,
   email:Sequelize.STRING,
@@ -113,7 +120,8 @@ Estabelecimento.hasMany(Coleta);
 Parceiro.hasMany(Coleta);
 Coleta.belongsTo(Estabelecimento);
 Coleta.belongsTo(Parceiro);
-
+Parceiro.belongsToMany(Estabelecimento, { through: VinculoParceiroEstabelecimento });
+Estabelecimento.belongsToMany(Parceiro, { through: VinculoParceiroEstabelecimento });
 
 
 const syncDB = async () => {
@@ -124,12 +132,13 @@ const syncDB = async () => {
     await Credito.sync({ force: false});
     await Administrador.sync({force:false});
     await Oleo.sync({force:false});
+    await VinculoParceiroEstabelecimento.sync({force:false});
     console.log("database synchronized");
  };
    
  syncDB();
  
- module.exports = { sequelize, Estabelecimento, Parceiro, Coleta, Compra, Credito, Administrador, Oleo };
+ module.exports = { sequelize, Estabelecimento, VinculoParceiroEstabelecimento, Parceiro, Coleta, Compra, Credito, Administrador, Oleo };
  
  sequelize.authenticate()
    .then(() => {

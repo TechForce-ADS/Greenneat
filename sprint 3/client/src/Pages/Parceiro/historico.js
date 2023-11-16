@@ -7,7 +7,7 @@ function Historico() {
   const [coletas, setColetas] = useState([]);
   const [parceiro, setParceiro] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 3;
+  const itemsPerPage = 6;
   const [ordenarPor, setOrdenarPor] = useState(null);
   const [ordem, setOrdem] = useState('asc');
 

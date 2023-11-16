@@ -1,14 +1,12 @@
-import NavbarP from '../../Components/navbar/navbarAdministrador';
+import NavbarP from '../../Components/navbar/navbarParceiro';
 import React, { useEffect} from 'react';
 import VincularEstabelecimento from '../../Components/Carteira/vincular';
 import Tabela from '../../Components/Carteira/vinculos';
-import Carteira from '../../Components/Carteira/carteira';
+import Administrar from '../../Components/Carteira/carteira';
  
 
-//EU USO ESSA TELA PARA TESTE
-//NÃO DELETE ELA
 
-function Comparador() {
+function Carteira() {
 
 
   useEffect(() => {
@@ -27,11 +25,11 @@ function Comparador() {
           <div className='containerLogin'>
             <VincularEstabelecimento />
             <Tabela />
-            <Carteira />
+            <Administrar />
 
           </div>
       </>
   )
 };
 
-export default Comparador;
+export default Carteira;

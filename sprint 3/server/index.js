@@ -3,7 +3,7 @@ const app = express();
 const mysql = require("mysql2");
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
-const { Estabelecimento, Parceiro, Coleta, Oleo, Compra, Credito, sequelize } = require("./db/db");
+const { Estabelecimento, Parceiro, Coleta, Oleo, Compra, Credito, VinculoParceiroEstabelecimento ,sequelize } = require("./db/db");
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, './.env') });
 const session = require('express-session');
@@ -481,6 +481,119 @@ app.get("/historicoComprasParceiro", async (req, res) => {
     return res.status(200).json(compras);
   } catch (error) {
     return res.status(400).json({ message: "Falha ao listar as compras" });
+  }
+});
+
+
+
+
+
+
+// Exemplo de rota para obter dados do estabelecimento relacionado a um parceiro
+app.get("/dadosEstabelecimentoParceiro/:email", async (req, res) => {
+  try {
+    const email = req.params.email;
+    console.log("Email do Parceiro:", email);
+
+    // Encontrar o parceiro pelo email
+    const parceiro = await Parceiro.findOne({ where: { email: email } });
+
+    if (!parceiro) {
+      return res.status(404).json({ error: 'Parceiro não encontrado' });
+    }
+
+    // Encontrar os estabelecimentos relacionados a este parceiro
+    const vinculos = await VinculoParceiroEstabelecimento.findAll({
+      where: { ParceiroId: parceiro.id }
+    });
+
+    const estabelecimentosIds = vinculos.map(vinculo => vinculo.EstabelecimentoId);
+
+    // Encontrar detalhes dos estabelecimentos relacionados
+    const estabelecimentos = await Estabelecimento.findAll({
+      where: { id: estabelecimentosIds }
+    });
+
+    console.log("Estabelecimentos do Parceiro:", estabelecimentos);
+
+    return res.status(200).json({ estabelecimentos });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
+
+
+// Add this route to your server code
+app.delete("/desvincularEstabelecimento/:parceiroId/:estabelecimentoId", async (req, res) => {
+  try {
+    const { parceiroId, estabelecimentoId } = req.params;
+
+    // Verificar se o vínculo existe
+    const vinculo = await VinculoParceiroEstabelecimento.findOne({
+      where: {
+        ParceiroId: parceiroId,
+        EstabelecimentoId: estabelecimentoId
+      }
+    });
+
+    if (!vinculo) {
+      return res.status(404).json({ error: 'Vínculo não encontrado' });
+    }
+
+    // Excluir o vínculo na tabela de junção
+    await vinculo.destroy();
+
+    res.status(200).json({ message: 'Vínculo excluído com sucesso' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
+
+
+app.post("/vincularEstabelecimento", async (req, res) => {
+  try {
+    const { emailParceiro, nomeOrganizacaoEstabelecimento } = req.body;
+
+    // Encontrar o parceiro pelo email
+    const parceiro = await Parceiro.findOne({ where: { email: emailParceiro } });
+
+    if (!parceiro) {
+      return res.status(404).json({ error: 'Parceiro não encontrado' });
+    }
+
+    // Encontrar o estabelecimento pelo nome da organização
+    const estabelecimento = await Estabelecimento.findOne({ where: { nomeOrganizacao: nomeOrganizacaoEstabelecimento } });
+
+    if (!estabelecimento) {
+      return res.status(404).json({ error: 'Estabelecimento não encontrado' });
+    }
+
+    // Verificar se já existe um vínculo entre o parceiro e o estabelecimento
+    const vinculoExistente = await VinculoParceiroEstabelecimento.findOne({
+      where: {
+        ParceiroId: parceiro.id,
+        EstabelecimentoId: estabelecimento.id
+      }
+    });
+
+    if (vinculoExistente) {
+      return res.status(400).json({ message: 'Este estabelecimento já está vinculado a este parceiro' });
+    }
+
+    // Criar o vínculo na tabela de junção
+    await VinculoParceiroEstabelecimento.create({
+      ParceiroId: parceiro.id,
+      EstabelecimentoId: estabelecimento.id
+    });
+
+    res.status(200).json({ message: 'Vínculo criado com sucesso' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
 
@@ -1311,6 +1424,16 @@ app.put('/editarParceiro/:id', async (req, res) => {
     return res.status(500).json(error);
   }
 });
+
+
+
+
+
+
+
+
+
+
 
 
 app.listen(3001, () => {

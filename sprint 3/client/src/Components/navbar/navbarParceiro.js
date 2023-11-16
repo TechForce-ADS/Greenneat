@@ -21,6 +21,9 @@ function NavbarParceiro({ activeLink }) {
           <Link to="/homeP" className={activeLink === '/homeP' ? 'active-link' : ''}>
             Inicio
           </Link>
+          <Link to="/carteira" className={activeLink === '/carteira' ? 'active-link' : ''}>
+              Administrar
+          </Link>
           <Link to="/transacoes" className={activeLink === '/transacoes' ? 'active-link' : ''}>
             Coleta
           </Link>

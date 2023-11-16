@@ -660,17 +660,74 @@ header {
 
 
 
+/* TELA DA CARTEIRA*/
 
+.VincularBox{
+  padding: 1%;
+  width: 350px;
+  height: 200px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5%;
+  animation: fadeIn 1s;
+  margin-top: 10%;
+  align-items: center;
+ 
+}
+.Vinculos{
+  padding: 1%;
+  width: 350px;
+  height: 500px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5%;
+  animation: fadeIn 1s;
+  margin-top: 10%;
+  align-items: center;
+ 
+}
 
+.Vinculos{
+  padding: 1%;
+  width: 350px;
+  height: 500px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5%;
+  animation: fadeIn 1s;
+  margin-top: 10%;
+  align-items: center;
+ 
+}
 
+.Vinculos button {
+  width: 150px;
+  border: none;
+  font-size: 18px;
+  border-radius: 20px;
+  height: 30px;
+  background-color: #D8DFBE;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-left: 10px;
 
+}
+.Vinculos button:hover {
+  background-color: #bfc5a9;
+}
 
-
-
-
-
-
-
+.Vinculos li {
+  list-style: none;
+  font-size: 18px;
+  font-weight: bolder;
+}
 
 .containerProduto {
   width: 100%;
@@ -1155,6 +1212,16 @@ tr:hover {
   animation: fadeIn 1s;
 }
 
+
+#bt-voltar2 {
+  width: 10%;
+  height: 40px;
+  margin-top: 2%;
+  margin-bottom: 0%;
+  transition: all 0.2s ease-in-out;
+  animation: fadeIn 1s;
+}
+
 .pedidosTable{
 background-color: rgba(255, 255, 255, 0.836);
 }
@@ -1548,7 +1615,18 @@ background-color: rgba(255, 255, 255, 0.836);
   margin-left: 170px;
 }
 
+.td7{
+  border: none;
+}
 
+.estabelecimentos-table{
+  animation: fadeIn 1s;
+}
+
+
+.estabelecimentos-table:hover td:nth-child(7){
+  background-color: #FAF7E1;
+}
 
 #OleoButton {
   background-color: #138842;

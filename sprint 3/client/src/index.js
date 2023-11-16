@@ -33,6 +33,7 @@ import HistoricoCredito from './Pages/Parceiro/historicoCredito'
 import TransacoesADM from './Pages/Administrador/transacoes'
 import Comparador from './Pages/Administrador/comparador'
 import ResetarSenha from './Pages/resetarSenha'
+import Carteira from './Pages/Parceiro/carteira'
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
@@ -70,7 +71,11 @@ ReactDOM.render(
         <Route path="/HistoricoCredito" element={<HistoricoCredito />} />
         <Route path="/painel" element={<Painel />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/carteira" element={<Carteira />} />
+
+        
         <Route path="/alabama" element={<HomeADM />} />
+     
       </Routes>
     <Footer />
     </Router>

@@ -3,7 +3,7 @@ import OleoContainer from '../../Components/oleoContainer.js';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import {FaMapMarker, FaMoneyBillWave, FaChartLine,  FaUsers } from 'react-icons/fa';
+import {FaMapMarker, FaMoneyBillWave, FaChartLine,  FaUsers, FaHandHoldingWater } from 'react-icons/fa';
 import { GiCardboardBoxClosed } from "react-icons/gi";
 import { Link } from 'react-router-dom';
 
@@ -46,9 +46,9 @@ function PainelEstabelecimento() {
                
               </div>
               <div className='ListaContainer' style={{marginTop:'20px'}}>
-                <h2><FaUsers style={{ transform: 'translateY(3px) scale(1.3) ', color: 'green', marginRight: '5px'}} /> Ultimas coletas</h2>
+                <h2><FaHandHoldingWater style={{ transform: 'translateY(3px) scale(1.3) ', color: 'green', marginRight: '5px'}} /> Ultimas coletas</h2>
                 <HistoricoE />
-               
+                <Link to="/historicoE"> <button style={{marginTop:'20px'}} id="OleoButton" >Ver mais</button> </Link>
               </div>
             </div>  
 

@@ -510,7 +510,7 @@ header {
   text-align: center;
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 215px;
   background-color: white;
   border-radius: 15px;
   align-items: center;
@@ -745,6 +745,12 @@ header {
   width: 25%;
   margin-bottom: 5%;
 }
+
+/* 
+.logoTeste {
+  width: 10%;
+  margin-bottom: 5%;
+} */
 
 .inputWrapper {
   position: relative;
@@ -1383,6 +1389,17 @@ background-color: rgba(255, 255, 255, 0.836);
   }
 
 
+
+  .containerDashboard {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    gap: 20px;
+  
+  }
+
 }
 
 
@@ -1624,7 +1641,7 @@ background-color: rgba(255, 255, 255, 0.836);
 }
 
 
-.estabelecimentos-table:hover td:nth-child(7){
+.estabelecimentos-table:hover td:nth-child(9){
   background-color: #FAF7E1;
 }
 

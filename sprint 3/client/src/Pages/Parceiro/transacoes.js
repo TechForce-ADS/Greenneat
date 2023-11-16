@@ -51,7 +51,7 @@ function Transacoes() {
                 Swal.fire({
                     icon: 'error',
                     title: 'Erro!',
-                    text: 'Erro ao realizar a coleta.',
+                    text: 'Não há óleo suficiente no estabelecimento',
                 });
                 console.error("Erro ao fazer a requisição:", error);
                 if (error.response && error.response.data) {

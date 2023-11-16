@@ -6,7 +6,7 @@ import LogoQ from '../../img/logoquad.png';
 import { FaKiwiBird } from 'react-icons/fa';
 import { Formik, Form, Field } from 'formik';
 
-function Creditos() {
+function Estoque() {
 
 
   useEffect(() => {
@@ -17,7 +17,7 @@ function Creditos() {
     }
   }, []);
 
-  const handleClickAdicionarCredito = (values) => {
+  const handleClickAdicionarOleo= (values) => {
     axios.post("http://localhost:3001/oleoDisponivel", {
       email: localStorage.email,
       oleo: parseFloat(values.oleo),
@@ -47,18 +47,18 @@ function Creditos() {
 
   return (
     <>
-      <Navbar activeLink="/ComprarCredito" />
+      <Navbar activeLink="/Estoque" />
       <body>
         <div className='containerLogin'>
           <div className="boxDivisao">
             <img src={LogoQ} alt="LogoQ" className="logoQuadDivi" />
-            <h2>Comprar Créditos</h2>
+            <h2>Adicionar óleo no estoque</h2>
             <Formik
               initialValues={{
                 tipo: 'novo',
                 oleo: '',
               }}
-              onSubmit={handleClickAdicionarCredito}
+              onSubmit={handleClickAdicionarOleo}
             >
               <Form className="formLogin">
                 <div className="inputWrapper">
@@ -66,17 +66,18 @@ function Creditos() {
                   <Field
                     name="oleo"
                     type="number"
-                    placeholder='OleoDisponivel'
+                    placeholder='Oleo disponivel'
                     className="form-field"
                   />
                 </div>
+
                 <div className="inputWrapper">
                   <Field as="select" name="tipo" className="form-field">
                     <option value="novo">Óleo Virgem</option>
                     <option value="usado">Óleo Usado</option>
                   </Field>
                 </div>
-                <button type="submit">Adicionar Crédito</button>
+                <button type="submit">Adicionar</button>
               </Form>
             </Formik>
           </div>
@@ -86,4 +87,4 @@ function Creditos() {
   );
 }
 
-export default Creditos;
+export default Estoque;

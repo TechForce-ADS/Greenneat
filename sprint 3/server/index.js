@@ -3,7 +3,7 @@ const app = express();
 const mysql = require("mysql2");
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
-const { Estabelecimento, Parceiro, Coleta, Oleo, Compra, Credito, VinculoParceiroEstabelecimento ,sequelize } = require("./db/db");
+const { Estabelecimento, Parceiro, Coleta, Oleo, Compra, Credito, VinculoParceiroEstabelecimento, sequelize } = require("./db/db");
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, './.env') });
 const session = require('express-session');
@@ -46,11 +46,39 @@ app.post("/comprarCredito", async (req, res) => {
 
     await Credito.create({
       credito: credito,
-      valor: credito, // Pode ser necessário ajustar este valor de acordo com sua lógica de negócios
+      valor: credito * 1.29, // Pode ser necessário ajustar este valor de acordo com sua lógica de negócios
       ParceiroId: parceiro.id
     });
 
     res.status(200).json({ message: 'Crédito adicionado com sucesso', novoCredito: parceiro.credito });
+  } catch (erro) {
+    console.log(erro);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
+app.post("/oleoDisponivel", async (req, res) => {
+  try {
+    const email = req.body.email;
+    const oleo = req.body.oleo;
+    const tipo = req.body.tipo;
+
+
+    const estabelecimento = await Estabelecimento.findOne({ where: { email: email } });
+
+    if (!estabelecimento) {
+      return res.status(404).json({ error: 'Estabelecimento não encontrado' });
+    }
+
+    if (tipo === 'novo') {
+      estabelecimento.oleoNovo += oleo;
+    } else {
+      estabelecimento.oleoUsado += oleo;
+    }
+
+    await estabelecimento.save();
+
+    res.status(200).json({ message: 'Óleo adicionado com sucesso' });
   } catch (erro) {
     console.log(erro);
     res.status(500).json({ error: 'Erro interno do servidor' });
@@ -335,6 +363,8 @@ app.post("/realizarColeta", async (req, res) => {
     const tipoOleo = req.body.tipoOleo
     const estabelecimento = await Estabelecimento.findOne({ where: { nomeOrganizacao: nomeEstabelecimento } });
 
+
+
     if (!estabelecimento) {
       console.log('Estabelecimento não encontrado');
       return res.status(404).json({ error: 'Estabelecimento não encontrado' });
@@ -347,9 +377,25 @@ app.post("/realizarColeta", async (req, res) => {
       return res.status(404).json({ error: 'Parceiro não encontrado' });
     }
 
-    const oleo = await Oleo.findOne({ where: { tipo: tipoOleo } });
 
+    const oleo = await Oleo.findOne({ where: { tipo: tipoOleo } });
     const credito = quantidadeDeOleo * oleo.preco;
+
+
+    if (tipoOleo === 'novo') {
+      if (estabelecimento.oleoNovo >= quantidadeDeOleo) {
+        estabelecimento.oleoNovo -= quantidadeDeOleo;
+      } else {
+        return res.status(400).json({ error: 'Não há óleo novo suficiente no estabelecimento' });
+      }
+    } else if (tipoOleo === 'usado') {
+      if (estabelecimento.oleoUsado >= quantidadeDeOleo) {
+        estabelecimento.oleoUsado -= quantidadeDeOleo;
+      } else {
+        return res.status(400).json({ error: 'Não há óleo usado suficiente no estabelecimento' });
+      }
+    }
+    
 
     parceiro.litrosColetados += quantidadeDeOleo;
     await parceiro.save();
@@ -1075,27 +1121,27 @@ app.post("/recuperarSenhaEstabelecimento", async (req, res) => {
 app.post("/resetarSenhaEstabelecimento", async (req, res) => {
   const { token, newPassword } = req.body;
 
-    try {
-      const decodedToken = jwt.verify(token, 'd#7Hj&f$23sPc89!TqA');
+  try {
+    const decodedToken = jwt.verify(token, 'd#7Hj&f$23sPc89!TqA');
 
-      const estabelecimento = await Estabelecimento.findOne({ where: { id: decodedToken.estabelecimentoId } });
+    const estabelecimento = await Estabelecimento.findOne({ where: { id: decodedToken.estabelecimentoId } });
 
-      if (!estabelecimento || estabelecimento.token !== token) {
-        return res.status(400).json({ error: 'Token inválido' });
-      }
-
-      const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash(newPassword, salt);
-
-      estabelecimento.senha = hashedPassword;
-      estabelecimento.token = null;
-      await estabelecimento.save();
-
-      res.json({ message: 'Senha redefinida com sucesso' });
-    } catch (error) {
-      console.error('Erro ao redefinir senha', error);
-      res.status(500).json({ error: 'Erro interno do servidor' });
+    if (!estabelecimento || estabelecimento.token !== token) {
+      return res.status(400).json({ error: 'Token inválido' });
     }
+
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+    estabelecimento.senha = hashedPassword;
+    estabelecimento.token = null;
+    await estabelecimento.save();
+
+    res.json({ message: 'Senha redefinida com sucesso' });
+  } catch (error) {
+    console.error('Erro ao redefinir senha', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
 });
 
 

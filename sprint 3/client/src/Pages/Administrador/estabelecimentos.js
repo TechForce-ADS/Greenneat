@@ -114,8 +114,7 @@ function ListaEstabelecimentos() {
             <th>Cidade</th>
             <th>Horários</th>
             <th>Crédito</th>
-            <th>Possui Parceiros</th>
-            <th></th>
+            <th>Ações</th>
           </tr>
         </thead>
         <tbody>
@@ -129,7 +128,7 @@ function ListaEstabelecimentos() {
               <td>{estabelecimento.cidade}</td>
               <td>{estabelecimento.horariosFuncionamento}</td>
               <td>{estabelecimento.credito}</td>
-              <td>{estabelecimento.possuiParceiros}</td>
+      
               <td>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                   <FaEye title='Visualizar' onClick={() => openModal(estabelecimento.id)} style={{ cursor: 'pointer', margin: '10px' }} />

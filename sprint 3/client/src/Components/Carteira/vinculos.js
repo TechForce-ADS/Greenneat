@@ -9,7 +9,7 @@ function VincularEstabelecimento() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [parceiro, setParceiro] = useState(null);
-  
+
   useEffect(() => {
     const email = localStorage.getItem("email");
 
@@ -17,7 +17,7 @@ function VincularEstabelecimento() {
       .then((response) => response.json())
       .then((data) => {
         setParceiro(data);
-       
+
       })
       .catch((error) => console.error("Erro ao obter dados do perfil:", error));
   }, []);
@@ -49,7 +49,7 @@ function VincularEstabelecimento() {
   }, []);
 
 
-  
+
   const handleDelete = async (estabelecimentoId) => {
     Swal.fire({
       title: 'Você tem certeza?',
@@ -62,7 +62,7 @@ function VincularEstabelecimento() {
       if (result.isConfirmed) {
         try {
           const parceiroId = parceiro.id;
-        
+
           await axios.delete(`http://localhost:3001/desvincularEstabelecimento/${parceiroId}/${estabelecimentoId}`);
           setEstabelecimentos((prevEstabelecimentos) =>
             prevEstabelecimentos.filter((estabelecimento) => estabelecimento.id !== estabelecimentoId)
@@ -93,9 +93,11 @@ function VincularEstabelecimento() {
               <th>E-mail</th>
               <th>CNPJ</th>
               <th>Óleo cedido</th>
+              <th>Óleo Virgem</th>
+              <th>Óleo Usado</th>
               <th>Endereço</th>
               <th>Créditos</th>
-            
+
             </tr>
           </thead>
           <tbody>
@@ -107,6 +109,8 @@ function VincularEstabelecimento() {
                 <td>{estabelecimento.email}</td>
                 <td>{estabelecimento.cnpj}</td>
                 <td>{estabelecimento.oleoCedido}</td>
+                <td>{estabelecimento.oleoNovo > 0 ? estabelecimento.oleoNovo : 'Vazio'}</td>
+                <td>{estabelecimento.oleoUsado > 0 ? estabelecimento.oleoUsado : 'Vazio'}</td>
                 <td>{estabelecimento.endereco}</td>
                 <td>{estabelecimento.credito}</td>
                 <td className='td7'>

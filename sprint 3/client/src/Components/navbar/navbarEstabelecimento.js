@@ -21,6 +21,9 @@ function Navbar({ activeLink }) {
           <Link to="/homeE" className={activeLink === '/homeE' ? 'active-link' : ''}>
             Inicio
           </Link>
+          <Link to="/Estoque" className={activeLink === '/Estoque' ? 'active-link' : ''}>
+          Estoque
+          </Link>
           <Link to="/produto" className={activeLink === '/produto' ? 'active-link' : ''}>
             Produtos
           </Link>

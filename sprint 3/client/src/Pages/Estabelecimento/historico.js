@@ -148,7 +148,7 @@ function HistoricoE() {
             {currentColetas.map((coleta) => (
               <tr key={coleta.id}>
                 <td>{coleta.quantidade}</td>
-                <td>{coleta.quantidade * 10}</td>
+                <td>{coleta.credito}</td>
                 <td>{coleta.Parceiro ? coleta.Parceiro.nomeOrganizacao : 'Parceiro Deletado'}</td>
                 <td>{coleta.tipo}</td>
                 <td>{formatarData(coleta.createdAt)}</td>

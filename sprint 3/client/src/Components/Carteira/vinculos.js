@@ -29,18 +29,18 @@ function VincularEstabelecimento() {
     async function fetchData() {
       try {
         const response = await axios.get(`http://localhost:3001/dadosEstabelecimentoParceiro/${email}`);
-        // Verifique se a resposta contém a propriedade 'estabelecimentos'
+  
         if (response.data.estabelecimentos && Array.isArray(response.data.estabelecimentos)) {
           setEstabelecimentos(response.data.estabelecimentos);
         } else {
-          console.error('A resposta da API não contém a propriedade "estabelecimentos" ou não é um array:', response.data);
+         
           setError('Resposta inválida da API');
         }
       } catch (error) {
         console.error('Erro ao buscar estabelecimentos:', error);
         setError('Erro ao buscar estabelecimentos');
       } finally {
-        // Marca que o carregamento foi concluído, independentemente do resultado
+        
         setIsLoading(false);
       }
     }

@@ -35,6 +35,7 @@ import Comparador from './Pages/Administrador/comparador'
 import ResetarSenha from './Pages/resetarSenha'
 import Carteira from './Pages/Parceiro/carteira'
 import Estoque from './Pages/Estabelecimento/Estoque';
+import PainelEstabelecimento from './Pages/Estabelecimento/painelEstabelecimento';
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
@@ -74,6 +75,7 @@ ReactDOM.render(
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/carteira" element={<Carteira />} />
         <Route path="/Estoque" element={<Estoque />} />
+        <Route path="/painelEstabelecimento" element={<PainelEstabelecimento />} />
 
         
         <Route path="/alabama" element={<HomeADM />} />

@@ -16,7 +16,7 @@ function Dados() {
 
   const [parceiro, setParceiro] = useState(null);
   const [formData, setFormData] = useState({
-    // ...
+
   });
   const [showModal, setShowModal] = useState(false);
 
@@ -42,7 +42,7 @@ function Dados() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const id = parceiro.id; // Assuming the ID is available in the fetched data
+    const id = parceiro.id; 
 
     fetch(`http://localhost:3001/editarParceiro/${id}`, {
       method: 'PUT',
@@ -53,22 +53,16 @@ function Dados() {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Handle success message or update state if needed
-        console.log(data.message); // Log success message
-
-        // Exibir notificação de sucesso com o Swal
+    
+        console.log(data.message); 
         Swal.fire({
           icon: 'success',
           title: 'Perfil atualizado com sucesso!',
           showConfirmButton: false,
           timer: 1500
         });
-
-        // Você pode fechar o modal ou fazer outras ações aqui, se necessário
-
       })
       .catch((error) => {
-        // Handle error
         console.error("Erro ao atualizar parceiro:", error);
       });
   };

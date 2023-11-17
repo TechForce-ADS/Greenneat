@@ -31,10 +31,10 @@ function Navbar({ activeLink }) {
             Produtos
           </Link>
           <Link to="/extratoE" className={activeLink === '/extratoE' ? 'active-link' : ''}>
-            Extrato
+            Histórico
           </Link>
           <Link to="/historicoE" className={activeLink === '/historicoE' ? 'active-link' : ''}>
-            Histórico
+            Extrato
           </Link>
          
           <Link to="/dadosE" className={activeLink === '/dadosE' ? 'active-link' : ''}>

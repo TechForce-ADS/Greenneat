@@ -67,9 +67,7 @@ function PainelEstabelecimento() {
 
               <div className="ComparadorContainer">
                 <h2><FaChartLine style={{ transform: 'translateY(3px) ', color: 'green' }} /> Comparador de preços</h2>
-                <h4>To  pensando em pegar esse "seus parceiro" e jogar ali na direita, mas ai eu acho q ia ficar muito junto</h4>
-                <h4>tambem quero deixar as linha alinhadas, tudo acabar na mesma linha </h4>
-                <h4>Eu não sei oq mais colocar</h4>
+                <br></br> <br></br>
                 <Link to="/"> <button id="OleoButton" >Ver mais</button> </Link>
               </div>
             </div>

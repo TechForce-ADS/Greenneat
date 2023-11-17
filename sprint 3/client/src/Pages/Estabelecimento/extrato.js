@@ -69,31 +69,35 @@ function ExtratoE() {
           <tr>
             <th>Produtos</th>
             <th>Data da Transação</th>
-            <th>Saldo</th>
+            <th>Total</th>
           </tr>
         </thead>
         <tbody>
-          {compras.map((compra) => (
-            <tr key={compra.id}>
-              <td>
-                {compra.produtos.map((produto, index) => (
-                  <div key={index}>
-                    {compra.total !== undefined && compra.total !== null
-                      ? `$${compra.total.toFixed(2)}`
-                      : 'N/A'}
-                  </div>
+        {compras.map((compra) => (
+                    <tr key={compra.id}>
+                        <td>
+                            {compra.produtos.map((produto, index) => (
+                                <div key={index}>
+                                    <p>Produto: {produto.productName}</p>
+                                    {produto.price ? <p>Preço: ${produto.price.toFixed(2)}</p> : null}
+                                    <p>Quantidade: {produto.quantity}</p>
+                                    <p>_________________</p>
+
+                                </div>
+                            ))}
+                        </td>
+                        <td>{formatarData(compra.createdAt)}</td>
+                        <td>
+                            {compra.total !== undefined && compra.total !== null
+                                ? `$${compra.total.toFixed(2)}`
+                                : 'N/A'}
+                        </td>
+                    </tr>
                 ))}
-              </td>
-              <td>{formatarData(compra.createdAt)}</td>
-              <td>
-                <p>Saldo: {(estabelecimento.credito - compra.total)}</p>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+            </tbody>
 
 
-      </table>
+        </table>
     </>
   )
 };

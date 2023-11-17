@@ -85,7 +85,7 @@ function ExtratoE() {
                       <p>Quantidade: {produto.quantity}</p>
                       <p>_________________</p>
                     </div>
-                  ))}
+                  ))} 
                 </td>
                 <td>{formatarData(compra.createdAt)}</td>
                 <td>

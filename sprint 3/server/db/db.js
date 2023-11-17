@@ -36,6 +36,7 @@ const Estabelecimento = sequelize.define('Estabelecimento', {
 // Definição do modelo da tabela "parceiros"
 const Parceiro = sequelize.define('Parceiro', {
   nomeOrganizacao: Sequelize.STRING,
+  //cpf: Sequelize.STRING,
   email: Sequelize.STRING,
   endereco: Sequelize.STRING,
   cidade: Sequelize.STRING,

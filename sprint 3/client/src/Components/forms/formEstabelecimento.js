@@ -69,6 +69,19 @@ function FormEstabelecimento() {
       });
   };
 
+  const handleCEPBlur = async (cepValue, setFieldValue) => {
+    try {
+      const cepResponse = await axios.get(`https://viacep.com.br/ws/${cepValue}/json/`);
+
+      if (!cepResponse.data.erro) {
+        setFieldValue('endereco', `${cepResponse.data.logradouro}, ${cepResponse.data.bairro}`);
+        setFieldValue('cidade', cepResponse.data.localidade);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   if (reloadPage) {
     window.location.reload();
   }
@@ -86,7 +99,7 @@ function FormEstabelecimento() {
         <img src={LogoQ} alt='LogoQ' className='logoQuad' />
         <h3>Crie sua conta como estabelecimento:</h3>
         <Formik initialValues={{}} onSubmit={handleClickRegister} validationSchema={validationCadastro}>
-          {({ errors, touched }) => (
+          {({ errors, touched,setFieldValue }) => (
             <Form className='formCadastro'>
               <div className='inputWrapper'>
                 <Field type='text' name='cnpj' placeholder='CNPJ' className='form-field' />
@@ -98,6 +111,21 @@ function FormEstabelecimento() {
 
               <div className='inputWrapper'>
                 <Field type='text' name='email' placeholder='Email' className='form-field' />
+              </div>
+
+              <div className='inputWrapper'>
+                <Field
+                  type='text'
+                  name='cep'
+                  placeholder='CEP'
+                  className='form-field'
+                  onBlur={(e) => {
+                    const cepValue = e.target.value.replace(/\D/g, ''); 
+                    if (cepValue.length === 8) {
+                      handleCEPBlur(cepValue, setFieldValue);
+                    }
+                  }}
+                />
               </div>
 
               <div className='inputWrapper'>

@@ -2,12 +2,10 @@ import NavbarE from '../../Components/navbar/navbarEstabelecimento.js';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-
-
 function ExtratoE() {
   const [compras, setCompras] = useState([]);
   const [estabelecimento, setEstabelecimento] = useState(null);
-
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     // Verificar se há um usuário logado
@@ -23,12 +21,10 @@ function ExtratoE() {
     fetch(`http://localhost:3001/perfil/${email}`)
       .then(response => response.json())
       .then(data => {
-
         setEstabelecimento(data);
       })
       .catch(error => console.error("Erro ao obter dados do perfil:", error));
   }, []);
-
 
   useEffect(() => {
     if (estabelecimento && estabelecimento.id) {
@@ -45,11 +41,13 @@ function ExtratoE() {
       fetchData();
     }
   }, [estabelecimento]);
-  if (compras.length === 0) {
-    return <div>Carregando...</div>;
-  }
 
+  const itemsPerPage = 5;
+  const lastIndex = currentPage * itemsPerPage;
+  const firstIndex = lastIndex - itemsPerPage;
+  const currentItems = compras.slice(firstIndex, lastIndex);
 
+  const totalPages = Math.ceil(compras.length / itemsPerPage);
 
   const formatarData = (dataOriginal) => {
     const data = new Date(dataOriginal);
@@ -59,7 +57,17 @@ function ExtratoE() {
     return `${dia}-${mes}-${ano}`;
   };
 
+  const nextPage = () => {
+    setCurrentPage(currentPage + 1);
+  };
 
+  const prevPage = () => {
+    setCurrentPage(currentPage - 1);
+  };
+
+  if (compras.length === 0) {
+    return <div>Carregando...</div>;
+  }
 
   return (
     <>
@@ -73,33 +81,35 @@ function ExtratoE() {
           </tr>
         </thead>
         <tbody>
-        {compras.map((compra) => (
-                    <tr key={compra.id}>
-                        <td>
-                            {compra.produtos.map((produto, index) => (
-                                <div key={index}>
-                                    <p>Produto: {produto.productName}</p>
-                                    {produto.price ? <p>Preço: ${produto.price.toFixed(2)}</p> : null}
-                                    <p>Quantidade: {produto.quantity}</p>
-                                    <p>_________________</p>
-
-                                </div>
-                            ))}
-                        </td>
-                        <td>{formatarData(compra.createdAt)}</td>
-                        <td>
-                            {compra.total !== undefined && compra.total !== null
-                                ? `$${compra.total.toFixed(2)}`
-                                : 'N/A'}
-                        </td>
-                    </tr>
+          {currentItems.map((compra) => (
+            <tr key={compra.id}>
+              <td>
+                {compra.produtos.map((produto, index) => (
+                  <div key={index}>
+                    <p>Produto: {produto.productName}</p>
+                    {produto.price ? <p>Preço: ${produto.price.toFixed(2)}</p> : null}
+                    <p>Quantidade: {produto.quantity}</p>
+                    <p>_________________</p>
+                  </div>
                 ))}
-            </tbody>
-
-
-        </table>
+              </td>
+              <td>{formatarData(compra.createdAt)}</td>
+              <td>
+                {compra.total !== undefined && compra.total !== null
+                  ? `$${compra.total.toFixed(2)}`
+                  : 'N/A'}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div style={{ textAlign: 'center', marginTop: '10px' }}>
+        <button onClick={prevPage} disabled={currentPage === 1}>Anterior</button>
+        <span style={{ margin: '0 10px' }}>Página {currentPage} de {totalPages}</span>
+        <button onClick={nextPage} disabled={currentItems.length < itemsPerPage}>Próximo</button>
+      </div>
     </>
-  )
-};
+  );
+}
 
 export default ExtratoE;

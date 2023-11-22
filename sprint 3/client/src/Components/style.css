@@ -346,7 +346,56 @@ header {
   background-color: #138842;
 }
 
+/*---------- TELA CONTATO ------------*/
 
+.boxContato{
+  width: 500px;
+  height: 600px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  text-align: center;
+  margin-top: 5%;
+}
+
+
+.boxContato input{
+  width: 90%;
+  height: 20%;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  margin-bottom: 5%;
+  background-color: #FAF7E1;
+  padding: 0px 0px 0px 10px;
+}
+
+.boxContato textarea{
+  width: 90%;
+  height: 50%;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+
+  background-color: #FAF7E1;
+  padding: 0px 0px 0px 10px;
+  resize: none;
+
+}
+
+.boxContato button {
+  width: 35%;
+  border: none;
+  font-size: 18px;
+  border-radius: 20px;
+  height: 50px;
+  background-color: #D8DFBE;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
 
 
 

@@ -56,7 +56,7 @@ function ConfirmaEmail() {
   };
 
   return (
-    <div className='confirmContainer'>
+    <div className='confirmContainer' style={{marginTop: "10%"}}>
       {!emailConfirmed ? (
         <div>
           <h1>Confirmação de Email</h1>

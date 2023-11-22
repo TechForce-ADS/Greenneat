@@ -81,16 +81,16 @@ function handleForgotPassword(email) {
     })
     .catch((error) => {
       console.log(error.response.data);
-      let errorMessage = 'Ocorreu um erro ao enviar o email de recuperação de senha';
+      let errorMessage = 'Este email não existe';
 
       if (error.response && error.response.status === 400) {
         const { message } = error.response.data;
         errorMessage = message;
       }
       Swal.fire({
-        iconColor: '#fc5d00',
+        iconColor: '#FF0000',
         icon: 'error',
-        confirmButtonColor: '#fc5d00',
+        confirmButtonColor: '#FF0000',
         text: errorMessage,
       });
     });

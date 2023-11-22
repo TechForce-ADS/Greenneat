@@ -55,7 +55,7 @@ function ResetarSenhaParceiro() {
 
   return (
     <div className='containerLogin'>
-      <div className="RecuperarSenhaParceiro">
+      <div className="RecuperarSenha">
       <img src={LogoQ} alt="LogoQ" className="logoQuadDivi" />
           <h1>Redefinição de Senha</h1>
           <form onSubmit={formik.handleSubmit}>

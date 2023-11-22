@@ -56,15 +56,14 @@ function ExtratoE() {
   return (
     <>
       {comprasExibidas.map((compra) => (
-        <div style={{ marginBottom: '20px' }} key={compra.id}>
+        <div style={{ marginBottom: '5px' }} key={compra.id}>
           <p>
-            <b>Data da Transação:</b> {formatarData(compra.createdAt)}
-          </p>
-          <p>
-            <b>Valor Total</b>:{' '}
+            <b>Data:</b> {formatarData(compra.createdAt)}
+            {' - '}
+            <b>Valor</b>:{' '}
             {compra.total !== undefined && compra.total !== null ? `$${compra.total.toFixed(2)}` : 'N/A'}
           </p>
-          <hr />
+          
         </div>
       ))}
     </>

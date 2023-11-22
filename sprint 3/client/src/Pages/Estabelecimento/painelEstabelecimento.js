@@ -44,15 +44,25 @@ function PainelEstabelecimento() {
               <div className='ListaContainer'>
                 <h2><FaUsers style={{ transform: 'translateY(3px) scale(1.3) ', color: 'green', marginRight: '5px'}} /> Seus parceiros</h2>
                 <Tabela />
-               
               </div>
+
+
               <div className='ListaContainer' style={{marginTop:'20px'}}>
                 <h2><FaHandHoldingWater style={{ transform: 'translateY(3px) scale(1.3) ', color: 'green', marginRight: '5px'}} /> Ultimas coletas</h2>
                 <HistoricoE />
                 <Link to="/historicoE"> <button style={{marginTop:'20px'}} id="OleoButton" >Ver mais</button> </Link>
               </div>
-            </div>  
 
+
+              <div className="SaldoContainer"  style={{marginTop:'20px'}}>
+                 <h2><FaMoneyBillWave style={{ transform: 'translateY(3px) ', color: 'green' }} />  Seus saldo</h2>
+                <Saldo />
+              </div> 
+
+
+
+            </div>  
+            
 
             <div className='sectionDashboard2'>
 
@@ -85,17 +95,12 @@ function PainelEstabelecimento() {
                 
               </div>
 
-              <div className='ListaContainer' style={{marginTop:'20px'}}>
-                <h2><FaHandHoldingWater style={{ transform: 'translateY(3px) scale(1.3) ', color: 'green', marginRight: '5px'}} /> Histórico </h2>
+              <div className='ExtratoContainer' style={{marginTop:'20px'}}>
+                <h2><FaHandHoldingWater style={{ transform: 'translateY(3px) scale(1.3) ', color: 'green', marginRight: '5px'}} /> Extrato </h2>
                 <ExtratoE />
                 <Link to="/extratoE"> <button style={{marginTop:'20px'}} id="OleoButton" >Ver mais</button> </Link>
               </div>
-                <div className="SaldoContainer">
-                 <h2><FaMoneyBillWave style={{ transform: 'translateY(3px) ', color: 'green' }} />  Seus saldo</h2>
-                <Saldo />
-               
-              </div> 
-
+                
 
 
 

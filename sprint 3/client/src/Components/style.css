@@ -24,9 +24,9 @@ body {
 
 .containerCadastro {
   padding: 2%;
-  margin-top: 5%;
+  margin-top: 3%;
   width: clamp(300px, 35%, 1000px);
-  height: 120%;
+  height: 1350px;
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -192,6 +192,7 @@ header {
   font-size: 20px;
   background-color: transparent;
   margin-left: 5px;
+  
   font-weight: bold;
   cursor: pointer;
 }
@@ -247,7 +248,7 @@ header {
   border: none;
   font-size: 18px;
   border-radius: 20px;
-  height: 12%;
+  height: 50px;
   background-color: #D8DFBE;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
@@ -554,25 +555,7 @@ header {
   flex-direction: column;
 }
 
-/* 
-.containerDashboard{
-  display: flex;
-  justify-content: center;
-}
 
-.sectionEstabelecimento2{
-  width: 50%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.sectionEstabelecimento3{
-  width: 50%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-} */
 
 .OleosContainer{
   width: 400px;
@@ -624,6 +607,19 @@ header {
   align-items: center;
   justify-content: space-evenly;
   margin-top: 15px;
+  margin-left: 5%;
+}
+
+.ExtratoContainer{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 15px;
+  
 }
 
 
@@ -660,7 +656,6 @@ header {
   text-align: center;
   display: flex;
   height: 100%;
-
   align-items: end;
   gap: 5%;
 }
@@ -729,6 +724,8 @@ header {
   width: 90%;
   margin-left: 5%;
 }
+
+
 .nomesParceiros{
   margin-top: 2%;
 }

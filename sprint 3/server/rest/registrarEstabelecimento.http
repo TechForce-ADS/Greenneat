@@ -3,7 +3,7 @@ content-type: application/json
 
 
 {
-    "cnpj": "456451223",
+    "cnpj": "12312312311234",
     "nomeOrganizacao": "pedro",
     "email": "breneerestudos@gmail.com",
     "endereco": "dsfsdfds22",

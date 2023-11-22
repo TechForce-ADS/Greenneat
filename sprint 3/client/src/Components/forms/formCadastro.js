@@ -35,7 +35,7 @@ function FormCadastro() {
           });
           setTimeout(() => {
             setReloadPage(true);
-          }, 2000);
+          }, 3000);
           resetForm();
         } else {
           Swal.fire({
@@ -47,24 +47,23 @@ function FormCadastro() {
         }
       })
       .catch((error) => {
+        console.error(error);
+        
+        let errorMessage = 'Algo deu errado. Tente novamente mais tarde.';
+
         if (error.response && error.response.status === 400) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Erro ao registrar usuário',
-            text: error.response.data,
-            confirmButtonColor: '#fc5d00',
-          });
-        } else {
-          console.log(error);
-          Swal.fire({
-            icon: 'error',
-            title: 'Erro ao registrar usuário',
-            text: 'Algo deu errado. Tente novamente mais tarde.',
-            confirmButtonColor: '#fc5d00',
-          });
+          if (error.response.data.message.includes('Email')) {
+            errorMessage = 'Email já cadastrado. Por favor, escolha outro email';
+          }
         }
+        Swal.fire({
+          icon: 'error',
+          text: errorMessage,
+          confirmButtonColor: '#FF0000',
+        });
       });
   };
+
 
   const handleCEPBlur = async (cepValue, setFieldValue) => {
     try {

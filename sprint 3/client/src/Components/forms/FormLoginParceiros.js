@@ -24,43 +24,48 @@ function ShowDivisao() {
 
 
 const handleClickLoginParceiro = (values) => {
-  axios.post('http://localhost:3001/loginParceiro', {
+  axios
+    .post('http://localhost:3001/loginParceiro', {
       email: values.email,
       senha: values.senha,
-  })
-  .then((response) => {
+    })
+    .then((response) => {
       Swal.fire({
-          icon: 'success',
-          title: 'Login efetuado com sucesso!',
-          showConfirmButton: false,
-          timer: 1500
+        icon: 'success',
+        title: 'Login efetuado com sucesso!',
+        showConfirmButton: false,
+        timer: 1500,
       }).then(() => {
-          localStorage.setItem('isLoggedIn', true);
-          saveLoginData(values.email, values.senha);
-          window.location.href = 'http://localhost:3000/HomeP';
+        localStorage.setItem('isLoggedIn', true);
+        saveLoginData(values.email, values.senha);
+        window.location.href = 'http://localhost:3000/HomeP';
       });
-  })
-  .catch((error) => {
-      let errorMessage = 'Erro ao fazer login. Por favor, tente novamente mais tarde.';
-      let confirmButtonColor = 'red'; // 
+    })
+    .catch((error) => {
+      let errorMessage = 'Usuário ou senha incorretos';
+      let confirmButtonColor = 'red'; 
+
       if (error.response) {
-          if (error.response.status === 400) {
-              if (error.response.data === 'parceiro não encontrado') {
-                  errorMessage = 'Este email não está registrado';
-              } else if (error.response.data === 'senha incorreta') {
-                  errorMessage = 'Email ou senha incorretos';
-              }
+        if (error.response.status === 400) {
+          if (error.response.data === 'parceiro não encontrado') {
+            errorMessage = 'Este email não está registrado';
+          } else if (error.response.data === 'senha incorreta') {
+            errorMessage = 'Email ou senha incorretos';
           }
+        } else if (error.response.status === 401) {
+          errorMessage = 'Usuário ou senha incorretos';
+        }
       }
 
       Swal.fire({
-          icon: 'error',
-          text: errorMessage,
-          iconColor: 'red',
-          confirmButtonColor: confirmButtonColor
+        icon: 'error',
+        text: errorMessage,
+        iconColor: '#FF0000',
+        confirmButtonColor: confirmButtonColor,
       });
-  });
+    });
 };
+
 
 
 function handleForgotPassword(email) {

@@ -188,10 +188,11 @@ app.post("/registerParceiro", async (req, res) => {
     }
 
     const emailExistente = await Parceiro.findOne({ where: { email } });
-
+    
     if (emailExistente) {
       return res.status(400).json({ message: "Email já cadastrado" });
     }
+
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -713,9 +714,6 @@ app.post("/CompraParceiro", async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
-
-
-
 
 
 

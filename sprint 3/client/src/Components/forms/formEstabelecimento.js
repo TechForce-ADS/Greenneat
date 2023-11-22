@@ -6,7 +6,7 @@ import * as yup from 'yup';
 import Swal from 'sweetalert2';
 
 const validationCadastro = yup.object().shape({
-  cnpj: yup.string().required('CNPJ é obrigatório').length(14,'CPNJ inválido'),
+  cnpj: yup.string().required('CNPJ é obrigatório').length(14,'CPNJ inválido').matches(/^\d+$/, 'CNPJ deve conter apenas números'),
   nomeOrganizacao: yup.string().required('Nome da organização é obrigatório'),
   email: yup.string().email('Insira um e-mail válido').required('E-mail é obrigatório'),
   senha: yup.string().required('Senha é obrigatório').min(8, 'Senha deve ter 8 caracteres no mínimo'),
@@ -50,22 +50,23 @@ function FormEstabelecimento() {
         }
       })
       .catch((error) => {
+        console.error(error);
+        
+        let errorMessage = 'Algo deu errado. Tente novamente mais tarde.';
+
         if (error.response && error.response.status === 400) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Erro ao registrar usuário',
-            text: error.response.data,
-            confirmButtonColor: '#fc5d00',
-          });
-        } else {
-          console.log(error);
-          Swal.fire({
-            icon: 'error',
-            title: 'Erro ao registrar usuário',
-            text: 'Algo deu errado. Tente novamente mais tarde.',
-            confirmButtonColor: '#fc5d00',
-          });
+          if (error.response.data.message.includes('Email')) {
+            errorMessage = 'Email já cadastrado. Por favor, escolha outro email';
+          } else if (error.response.data.message.includes('CNPJ')) {
+            errorMessage = 'CNPJ já cadastrado. Por favor, escolha outro CNPJ';
+          }
         }
+
+        Swal.fire({
+          icon: 'error',
+          text: errorMessage,
+          confirmButtonColor: '#FF0000',
+        });
       });
   };
 

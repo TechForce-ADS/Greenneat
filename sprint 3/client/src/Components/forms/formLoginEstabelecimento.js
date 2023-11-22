@@ -40,47 +40,30 @@ const handleClickLogin = (values) => {
       });
   })
   .catch((error) => {
-      if (error.response) {
-          if (error.response.status === 400) {
-              if (error.response.data === 'estabelecimento não encontrado') {
-                  Swal.fire({
-                      icon: 'error',
-                      iconColor: 'red',
-                      text: 'Este email não está registrado',
-                      confirmButtonColor: 'red'
-                  });
-              } else if (error.response.data === 'senha incorreta') {
-                  Swal.fire({
-                      icon: 'error',
-                      iconColor: 'red',
-                      text: 'Email ou senha incorretos',
-                      confirmButtonColor: 'red'
-                  });
-              } else {
-                  Swal.fire({
-                      icon: 'error',
-                      title: 'Oops...',
-                      text: 'Erro ao fazer login.',
-                  });
-              }
-          } else {
-              Swal.fire({
-                  icon: 'error',
-                  title: 'Oops...',
-                  text: 'Erro ao fazer login.',
-              });
-          }
-      } else {
-          Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: 'Erro na requisição.',
-          });
+    let errorMessage = 'Email ou senha incorretos';
+    let confirmButtonColor = 'red'; 
+
+    if (error.response) {
+      if (error.response.status === 400) {
+        if (error.response.data === 'parceiro não encontrado') {
+          errorMessage = 'Este email não está registrado';
+        } else if (error.response.data === 'senha incorreta') {
+          errorMessage = 'Email ou senha incorretos';
+        }
+      } else if (error.response.status === 401) {
+        errorMessage = 'Usuário ou senha incorretos';
       }
+    }
+
+    Swal.fire({
+      icon: 'error',
+      text: errorMessage,
+      iconColor: 'red',
+      confirmButtonColor: confirmButtonColor,
+    });
   });
 };
 
-//brener
 
 function handleForgotPassword(email) {
   axios

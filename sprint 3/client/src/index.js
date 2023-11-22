@@ -33,6 +33,7 @@ import HistoricoCredito from './Pages/Parceiro/historicoCredito'
 import TransacoesADM from './Pages/Administrador/transacoes'
 import Comparador from './Pages/Administrador/comparador'
 import ResetarSenha from './Pages/resetarSenha'
+import ResetarSenhaParceiro from './Pages/resetarSenhaParceiro'
 import Carteira from './Pages/Parceiro/carteira'
 import Estoque from './Pages/Estabelecimento/Estoque';
 import PainelEstabelecimento from './Pages/Estabelecimento/painelEstabelecimento';
@@ -69,6 +70,7 @@ ReactDOM.render(
         <Route path="/confirmaEmail" element={ < ConfirmaEmail />} />
         <Route path="/confirmaParceiro" element={ < ConfirmaParceiro />} />
         <Route path="/resetarSenha" element={ < ResetarSenha />} />
+        <Route path="/resetarSenhaParceiro" element={ < ResetarSenhaParceiro />} />
         <Route path="/ComprarCredito" element={<ComprarCreditos />} />
         <Route path="/HistoricoCredito" element={<HistoricoCredito />} />
         <Route path="/painel" element={<Painel />} />

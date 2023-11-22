@@ -1175,6 +1175,80 @@ app.post("/resetarSenhaEstabelecimento", async (req, res) => {
   }
 });
 
+app.post("/recuperarSenhaParceiro", async (req, res) => {
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'brenertestando@gmail.com',
+      pass: 'fpbvjzgaiyzuneek',
+    },
+  });
+
+  const { email } = req.body;
+
+  try {
+    const parceiro = await Parceiro.findOne({ where: { email } });
+
+    if (!parceiro) {
+      return res.status(404).json({ error: 'Usuário não encontrado' });
+    }
+
+    const resetUrl = 'http://localhost:3000/resetarSenhaParceiro';
+
+    const token = jwt.sign(
+      { parceiroId: parceiro.id },
+      'd#7Hj&f$23sPc89!TqA',
+      { expiresIn: '1h' }
+    );
+
+    await parceiro.update({ token });
+
+    const mailOptions = {
+      from: 'brenertestando@gmail.com',
+      to: parceiro.email,
+      subject: 'Recuperação de senha',
+      text: `Para redefinir sua senha, acesse o seguinte link: ${resetUrl}?token=${token}`,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error('Erro ao enviar o e-mail:', error);
+        return res.status(500).json({ error: 'Erro interno do servidor' });
+      }
+      console.log('E-mail enviado com sucesso:', info.response);
+      return res.json({ message: 'Token enviado para o e-mail' });
+    });
+  } catch (error) {
+    console.error('Erro ao recuperar usuário', error);
+    return res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
+app.post("/resetarSenhaParceiro", async (req, res) => {
+  const { token, newPassword } = req.body;
+
+  try {
+    const decodedToken = jwt.verify(token, 'd#7Hj&f$23sPc89!TqA');
+
+    const parceiro = await Parceiro.findOne({ where: { id: decodedToken.parceiroId } });
+
+    if (!parceiro || parceiro.token !== token) {
+      return res.status(400).json({ error: 'Token inválido' });
+    }
+
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+    parceiro.senha = hashedPassword;
+    parceiro.token = null;
+    await parceiro.save();
+
+    res.json({ message: 'Senha redefinida com sucesso' });
+  } catch (error) {
+    console.error('Erro ao redefinir senha', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
 
 
 

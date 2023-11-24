@@ -3,7 +3,7 @@ const app = express();
 const mysql = require("mysql2");
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
-const { Estabelecimento, Parceiro, Coleta, Oleo, Compra, Credito, VinculoParceiroEstabelecimento, sequelize } = require("./db/db");
+const { Estabelecimento, Parceiro, Coleta, Oleo, Compra, Credito, Administrador, VinculoParceiroEstabelecimento, sequelize } = require("./db/db");
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, './.env') });
 const session = require('express-session');
@@ -162,7 +162,7 @@ app.post("/registerEstabelecimento", async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedSenha = await bcrypt.hash(senha, salt);
 
-        const EstabelecimentoCriado = await Estabelecimento.create({ nomeOrganizacao, email, cnpj, senha: hashedSenha, endereco, cidade, horariosFuncionamento, possuiParceiros, token, emailConfirmed: false });
+        const EstabelecimentoCriado = await Estabelecimento.create({ nomeOrganizacao, email, cnpj, senha: hashedSenha, endereco, cidade, horariosFuncionamento,  token, emailConfirmed: false });
 
         console.log('E-mail enviado com sucesso:', info.response);
         return res.json({ message: 'Token enviado para o e-mail' });
@@ -1476,22 +1476,19 @@ app.post("/loginAdm", async (req, res) => {
       return res.status(404).json({ message: 'Usuário não encontrado' });
     }
 
-    //if (!adm.emailConfirmed) {
-    //return res.status(401).json("E-mail não confirmado. Por favor, confirme seu e-mail para fazer login.");
-    //}
-
-    // Verificar se a senha fornecida corresponde à senha armazenada no banco de dados
-    const match = await bcrypt.compare(senha, adm.senha);
-    if (!match) {
+    // Comparar senhas sem hashing (plaintext)
+    if (senha !== adm.senha) {
       return res.status(401).json({ message: 'Senha incorreta' });
     }
 
     return res.status(200).json({ adm });
 
   } catch (error) {
+    console.error('Error during authentication:', error);
     return res.status(400).json({ message: 'Falha ao autenticar administrador' });
   }
 });
+
 
 
 //editar informações do estabelecimento

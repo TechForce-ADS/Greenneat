@@ -1,6 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const ExibeParceiroModal = ({ isOpen, onClose }) => {
+
+
+    useEffect(() => {
+        // Verificar se há um usuário logado
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const adm = localStorage.getItem('adm');
+        
+        if (isLoggedIn || adm) {
+          window.location.href = 'http://localhost:3000/';
+        }
+      }, []);
+      
+
+
     return (
         isOpen && (
             <div className="modal">

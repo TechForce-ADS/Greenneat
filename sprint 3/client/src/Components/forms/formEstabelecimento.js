@@ -27,7 +27,7 @@ function FormEstabelecimento() {
         endereco: values.endereco,
         cidade: values.cidade,
         horariosFuncionamento: values.horariosFuncionamento,
-        possuiParceiros: values.possuiParceiros,
+       
         senha: values.senha,
       });
 
@@ -144,10 +144,7 @@ function FormEstabelecimento() {
                 <Field type='text' name='horariosFuncionamento' placeholder='Seus Horários e dias de funcionamento' className='form-field' />
               </div>
 
-              <div className='inputWrapper'>
-                <Field type='text' name='possuiParceiros' placeholder='Possui algum parceiro para a coleta no local?' className='form-field' />
-              </div>
-
+             
               <div className='inputWrapper'>
                 <Field type='password' name='senha' placeholder='Defina uma senha' className='form-field' />
               </div>

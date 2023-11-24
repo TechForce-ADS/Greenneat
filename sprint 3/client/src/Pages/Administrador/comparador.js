@@ -4,6 +4,9 @@ import Navbar from '../../Components/navbar/navbarAdministrador';
 
 
 function Comparador() {
+
+
+  
   return (
     <>
         <Navbar activeLink="/comparador"/>

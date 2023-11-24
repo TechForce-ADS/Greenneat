@@ -25,6 +25,19 @@ function HistoricoComprasADM() {
         fetchData();
     }, []);
 
+
+
+    useEffect(() => {
+        // Verificar se há um usuário logado
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const adm = localStorage.getItem('adm');
+        
+        if (isLoggedIn || adm) {
+          window.location.href = 'http://localhost:3000/';
+        }
+      }, []);
+      
+
     const formatarData = (dataOriginal) => {
         const data = new Date(dataOriginal);
         const ano = data.getFullYear();

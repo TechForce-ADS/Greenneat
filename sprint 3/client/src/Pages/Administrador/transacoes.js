@@ -29,6 +29,20 @@ function Transacoes() {
     fetchData();
   }, []);
 
+
+
+  useEffect(() => {
+    // Verificar se há um usuário logado
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const adm = localStorage.getItem('adm');
+    
+    if (isLoggedIn || adm) {
+      window.location.href = 'http://localhost:3000/';
+    }
+  }, []);
+  
+
+
   const indexOfLastTransaction = currentPage * transactionsPerPage;
   const indexOfFirstTransaction = indexOfLastTransaction - transactionsPerPage;
   const currentTransactions = transacoes.slice(indexOfFirstTransaction, indexOfLastTransaction);

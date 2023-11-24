@@ -10,7 +10,7 @@ import axios from 'axios';
 function saveLoginData(email, senha) {
   localStorage.setItem('email', email);
   localStorage.setItem('senha', senha);
-  localStorage.setItem('parceiro', true);
+  localStorage.setItem('adm', false);
 }
 
 

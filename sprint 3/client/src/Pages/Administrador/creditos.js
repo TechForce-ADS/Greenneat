@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import LogoQ from '../../img/logoquad.png';
 import { FaUser, FaKiwiBird } from 'react-icons/fa';
 import { Formik, Form, Field } from 'formik';
 import Navbar from '../../Components/navbar/navbarAdministrador';
+
+
+
 
 
 
@@ -38,6 +41,16 @@ function Creditos() {
       });
   };
 
+  useEffect(() => {
+    // Verificar se há um usuário logado
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const adm = localStorage.getItem('adm');
+    
+    if (isLoggedIn || adm) {
+      window.location.href = 'http://localhost:3000/';
+    }
+  }, []);
+  
 
   return (
     <>

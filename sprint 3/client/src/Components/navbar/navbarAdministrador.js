@@ -40,7 +40,9 @@ function Navbar({ activeLink }) {
           <Link to="/creditos" className={activeLink === '/creditos' ? 'active-link' : ''}>
             Creditos
           </Link>
-        
+          <Link to="/logoutA" className={activeLink === '/logout' ? 'active-link' : ''}>
+            logout
+          </Link>
         </div>
         <div className='mobile-menu-icon'>
           <button onClick={menuShow}>

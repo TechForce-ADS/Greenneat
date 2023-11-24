@@ -66,7 +66,12 @@ function ExtratoE() {
   };
 
   if (compras.length === 0) {
-    return <div>Carregando...</div>;
+    return (
+      <>
+    <NavbarE activeLink="/extratoE" />
+    <div>Nenhuma compra encotrada...</div>;
+    </>
+    )
   }
 
   return (

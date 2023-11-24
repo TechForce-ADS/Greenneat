@@ -73,7 +73,7 @@ function FormLoginADM() {
 
   return (
     <>
-      <div id="boxLoginADM" className="boxLoginParceiro ">
+      <div id="boxLoginADM" className="boxLoginParceiro hide ">
         <img src={LogoQ} alt="LogoQ" className="logoQuadlogin" />
         <h2>Entrar como Administrador</h2>
         <Formik initialValues={{}} onSubmit={handleClickLoginADM} validationSchema={validationLogin}>

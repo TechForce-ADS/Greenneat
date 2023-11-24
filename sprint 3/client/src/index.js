@@ -17,6 +17,7 @@ import Dados from './Pages/Comum/dados';
 import Footer from './Components/footer';
 import Logout from './Pages/Parceiro/logout';
 import LogoutE from './Pages/Estabelecimento/logout';
+import LogoutA from './Pages/Administrador/logout';
 import ProdutoC from './Pages/Comum/produtos';
 import ProdutoE from './Pages/Parceiro/produtos';
 import Gestao from './Pages/Administrador/gestao';
@@ -48,6 +49,7 @@ ReactDOM.render(
         <Route path="/comparador" element={<Comparador />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/logoutE" element={<LogoutE />} />
+        <Route path="/logoutA" element={<LogoutA />} />
         <Route path="/dadosE" element={<DadosE />} />
         <Route path="/transacoes" element={<Transacoes />} />
         <Route path="/transacoesADM" element={<TransacoesADM />} />

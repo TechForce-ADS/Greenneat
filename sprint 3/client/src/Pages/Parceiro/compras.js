@@ -45,7 +45,11 @@ function ExtratoE() {
   }, [estabelecimento]);
 
   if (compras.length === 0) {
-    return <div>Carregando...</div>;
+
+    return <>
+      <NavbarE activeLink="/Compras" />
+      <div><h2>Nenhuma compra encotrada...</h2></div>
+    </>;
   }
 
   const formatarData = dataOriginal => {
@@ -85,7 +89,7 @@ function ExtratoE() {
                       <p>Quantidade: {produto.quantity}</p>
                       <p>_________________</p>
                     </div>
-                  ))} 
+                  ))}
                 </td>
                 <td>{formatarData(compra.createdAt)}</td>
                 <td>
@@ -108,6 +112,7 @@ function ExtratoE() {
           </button>
         </div>
       </div>
+      
     </>
   )
 };

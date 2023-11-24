@@ -5,7 +5,7 @@ import { Formik, Form, Field } from 'formik';
 import { FaUser, FaKiwiBird } from 'react-icons/fa';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-
+import Historico from '../Parceiro/historico.js'
 
 
 function Transacoes() {
@@ -60,12 +60,22 @@ function Transacoes() {
             });
     };
 
-
+    function ShowCHistorico() {
+        let historicoColeta = document.querySelector('#historicoColeta');
+        let Coleta = document.querySelector('#coletas');
+        let VerColetas = document.querySelector('#verColetas');
+        let Coletar = document.querySelector('#coletar');
+    
+        historicoColeta.classList.remove('hide')
+        Coleta.classList.add('hide')
+        VerColetas.classList.add('hide')
+        Coletar.classList.remove('hide')
+      }
 
     return (
         <>
             <NavbarP activeLink="/transacoes" />
-            <div className='containerLogin'>
+            <div className='containerLogin' id="coletas">
                 <div className="transacaoBox">
                     <img src={LogoQ} alt="LogoQ" className="logoQuadDivi" />
                     <Formik
@@ -105,7 +115,11 @@ function Transacoes() {
                         </Form>
                     </Formik>
                 </div>
+
+                <button className='buttonCreditos' id='verColetas' onClick={ShowCHistorico}>Ver Historico</button>
             </div>
+
+            <Historico />
         </>
     )
 };

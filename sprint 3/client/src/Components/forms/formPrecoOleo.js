@@ -50,7 +50,7 @@ const FormDefinirPreco = () => {
   return (
     <div className="setOilPriceForm">
       <h2 id="tituloDefinirPreco">Definir Preço do Óleo</h2>
-      <Formik initialValues={{ preco: '', tipo: '' }} onSubmit={handleDefinirPreco} validationSchema={validationOilPrice}>
+      <Formik initialValues={{ preco: '', tipo: 'novo' }} onSubmit={handleDefinirPreco} validationSchema={validationOilPrice}>
         {({ errors, touched }) => (
           <Form className="formSetOilPrice">
             <div className="inputWrapper">

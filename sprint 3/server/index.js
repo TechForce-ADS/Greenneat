@@ -602,6 +602,39 @@ app.get("/parceiroDoEstabelecimento/:email", async (req, res) => {
   }
 });
 
+app.get("/EstabelecimentoDoParceiro/:email", async (req, res) => {
+  try {
+    const email = req.params.email;
+
+   
+    const parceiro = await Parceiro.findOne({ where: { email: email } });
+
+    if (!parceiro) {
+      return res.status(404).json({ error: 'parceiro não encontrado' });
+    }
+
+    // Encontrar os estabelecimentos relacionados a este parceiro
+    const vinculos = await VinculoParceiroEstabelecimento.findAll({
+      where: { ParceiroId: parceiro.id }
+    });
+
+    const estabelecimentosIds = vinculos.map(vinculo => vinculo.EstabelecimentoId);
+
+    // Encontrar detalhes dos estabelecimentos relacionados
+    const estabelecimentos = await Estabelecimento.findAll({
+      where: { id: estabelecimentosIdsIds }
+    });
+
+    console.log("Parceiros do Estabelecimento:", estabelecimentos);
+
+    return res.status(200).json({ estabelecimentos });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
+
 
 // Add this route to your server code
 app.delete("/desvincularEstabelecimento/:parceiroId/:estabelecimentoId", async (req, res) => {

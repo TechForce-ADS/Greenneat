@@ -38,6 +38,7 @@ import ResetarSenhaParceiro from './Pages/resetarSenhaParceiro'
 import Carteira from './Pages/Parceiro/carteira'
 import Estoque from './Pages/Estabelecimento/Estoque';
 import PainelEstabelecimento from './Pages/Estabelecimento/painelEstabelecimento';
+import PainelParceiros from './Pages/Parceiro/painelParceiros';
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
@@ -80,6 +81,7 @@ ReactDOM.render(
         <Route path="/carteira" element={<Carteira />} />
         <Route path="/Estoque" element={<Estoque />} />
         <Route path="/painelEstabelecimento" element={<PainelEstabelecimento />} />
+        <Route path="/painelParceiros" element={<PainelParceiros />} />
 
         
         <Route path="/alabama" element={<HomeADM />} />

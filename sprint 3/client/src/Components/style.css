@@ -500,6 +500,22 @@ header {
   margin-bottom: 20px;
 }
 
+
+.buttonCreditos {
+  width: 10%;
+  margin-top: 3%;
+  border: none;
+  font-size: 18px;
+  border-radius: 20px;
+  height: 50px;
+  background-color: #D8DFBE;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 20px;
+  animation: fadeIn 1s;
+}
+
+
 .formLogin button:hover {
   background-color: #bfc5a9;
 }
@@ -562,7 +578,7 @@ header {
   text-align: center;
   display: flex;
   flex-direction: column;
-  height: 215px;
+  height: 115px;
   background-color: white;
   border-radius: 15px;
   align-items: center;
@@ -598,7 +614,7 @@ header {
 }
 
 .SaldoContainer{
-  width: 400px;
+  width: 90%;
   display: flex;
   flex-direction: column;
   height: 200px;
@@ -607,7 +623,7 @@ header {
   align-items: center;
   justify-content: space-evenly;
   margin-top: 15px;
-  margin-left: 5%;
+  
 }
 
 .ExtratoContainer{
@@ -1140,7 +1156,7 @@ table {
   margin: 0 auto;
   /* Centraliza a tabela na página */
   border-collapse: collapse;
-  /* Junta as bordas das células */
+  animation: fadeIn 1s;
   margin-top: 20px;
   /* Espaçamento superior */
 }

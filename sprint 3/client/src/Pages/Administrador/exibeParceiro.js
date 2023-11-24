@@ -8,7 +8,7 @@ const ExibeParceiroModal = ({ isOpen, onClose }) => {
         const isLoggedIn = localStorage.getItem('isLoggedIn');
         const adm = localStorage.getItem('adm');
         
-        if (isLoggedIn || adm) {
+        if (!isLoggedIn || !adm) {
           window.location.href = 'http://localhost:3000/';
         }
       }, []);

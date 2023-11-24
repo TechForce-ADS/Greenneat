@@ -1,17 +1,17 @@
-import Navbar from '../../Components/navbar/navbarEstabelecimento.js';
+import Navbar from '../../Components/navbar/navbarParceiro.js';
 import OleoContainer from '../../Components/oleoContainer.js';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import {FaMapMarker, FaMoneyBillWave, FaChartLine,  FaUsers, FaHandHoldingWater } from 'react-icons/fa';
+import {FaMapMarker, FaMoneyBillWave, FaChartLine,  FaUsers, FaHandHoldingWater, FaShoppingCart } from 'react-icons/fa';
 import { GiCardboardBoxClosed } from "react-icons/gi";
 import { Link } from 'react-router-dom';
 
-import HistoricoE from '../../Components/PainelEstabelecimento/historico.js'
-import Saldo from '../../Components/PainelEstabelecimento/saldo.js'
-import Estoque from '../../Components/PainelEstabelecimento/Estoque.js'
-import Tabela from '../../Components/PainelEstabelecimento/vinculos.js'
-import ExtratoE from '../../Components/PainelEstabelecimento/extratoNotificacao.js'
+import HistoricoE from '../../Components/PainelParceiro/historicoColeta.js'
+import Saldo from '../../Components/PainelParceiro/saldo.js'
+import Estoque from '../../Components/PainelParceiro/Estabelecimentos.js'
+import Tabela from '../../Components/PainelParceiro/EstabelecimentosParceiro.js'
+import ExtratoE from '../../Components/PainelParceiro/extratoNotificacao.js'
 
 
 
@@ -35,14 +35,14 @@ function PainelEstabelecimento() {
 
   return (
     <>
-      <Navbar activeLink="/painelEstabelecimento" />
+      <Navbar activeLink="/painelParceiros" />
       <body>
-      <div className='containerLogin'> {/* PARA CENTRALIZAR TUDO */}
+      <div className='containerLogin'> 
           <div className='containerDashboard'>
 
             <div className='sectionDashboard1'>
               <div className='ListaContainer'>
-                <h2><FaUsers style={{ transform: 'translateY(3px) scale(1.3) ', color: 'green', marginRight: '5px'}} /> Seus parceiros</h2>
+                <h2><FaUsers style={{ transform: 'translateY(3px) scale(1.3) ', color: 'green', marginRight: '5px'}} /> Seus estabelecimentos</h2>
                 <Tabela />
               </div>
 
@@ -50,11 +50,12 @@ function PainelEstabelecimento() {
               <div className='ListaContainer' style={{marginTop:'20px'}}>
                 <h2><FaHandHoldingWater style={{ transform: 'translateY(3px) scale(1.3) ', color: 'green', marginRight: '5px'}} /> Ultimas coletas</h2>
                 <HistoricoE />
-                <Link to="/historicoE"> <button style={{marginTop:'20px'}} id="OleoButton" >Ver mais</button> </Link>
+                <Link to="/transacoes"> <button style={{marginTop:'20px'}} id="OleoButton" >Ver mais</button> </Link>
               </div>
 
 
-          
+
+
 
             </div>  
             
@@ -63,11 +64,11 @@ function PainelEstabelecimento() {
 
 
               <div className="EstoqueContainer">
-                <h2><GiCardboardBoxClosed  style={{ transform: 'translateY(3px) scale(1.3) ', color: 'green' }} />  Seu estoque</h2>
-                <div className='EstoqueOleo'>
+                <h2><GiCardboardBoxClosed  style={{ transform: 'translateY(3px) scale(1.3) ', color: 'green' }} />  Seus estabelecimentos / Óleo Disponivel</h2>
+                
                 <Estoque />
-                </div>
-                <Link to="/Estoque"> <button id="OleoButton" >Adicionar mais</button> </Link>
+                
+                <Link to="/carteira"> <button id="OleoButton" >Ver mais</button> </Link>
               </div>
 
 
@@ -91,17 +92,16 @@ function PainelEstabelecimento() {
               </div>
 
               <div className='ExtratoContainer' style={{marginTop:'20px'}}>
-                <h2><FaHandHoldingWater style={{ transform: 'translateY(3px) scale(1.3) ', color: 'green', marginRight: '5px'}} /> Extrato </h2>
+                <h2><FaShoppingCart style={{ transform: 'translateY(3px) scale(1.1) ', color: 'green', marginRight: '5px'}} /> Extrato </h2>
                 <ExtratoE />
-                <Link to="/extratoE"> <button style={{marginTop:'20px'}} id="OleoButton" >Ver mais</button> </Link>
+                <Link to="/Compras"> <button style={{marginTop:'20px'}} id="OleoButton" >Ver mais</button> </Link>
               </div>
                 
+
               <div className="SaldoContainer"  style={{marginTop:'20px'}}>
                  <h2><FaMoneyBillWave style={{ transform: 'translateY(3px) ', color: 'green' }} />  Seus saldo</h2>
                 <Saldo />
               </div> 
-
-
 
 
 

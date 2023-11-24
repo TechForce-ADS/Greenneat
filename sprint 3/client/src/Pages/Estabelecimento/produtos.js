@@ -117,6 +117,7 @@ function Produto() {
         showConfirmButton: true
       });
 
+      closeModal();
       setCart([]); // Limpa o carrinho após a compra bem-sucedida
     } catch (error) {
       console.error('Erro ao processar o pedido:', error);

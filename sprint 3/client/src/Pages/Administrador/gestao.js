@@ -48,9 +48,7 @@ function Gestao() {
           <ListaEstabelecimentos />
           <Modal />
           <FormDefinirPreco />
-          <div className="OleosInfo">
-          <OleoContainer oleos={oleos} />
-          </div>
+          
         </div>
       </body>
     </>

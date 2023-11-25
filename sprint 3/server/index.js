@@ -1382,6 +1382,27 @@ app.put("/estabelecimento/:id", async (req, res) => {
   }
 });
 
+app.put("/parceiro/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const { nomeOrganizacao, email, senha, endereco, cidade, horariosFuncionamento, possuiParceiros } = req.body;
+
+    await Parceiro.update(
+      { nomeOrganizacao, email, senha, endereco, cidade, horariosFuncionamento, possuiParceiros },
+      {
+        where: {
+          id: id,
+        },
+      }
+    );
+
+    return res.status(200).json({ message: "Usuário atualizado" });
+  } catch (erro) {
+    return res.status(400).json({ message: "Falha ao atualizar o usuário" })
+  }
+});
+
 // Rota para remover um estabelecimento pelo ID
 app.delete("/parceiro/:id", async (req, res) => {
   try {

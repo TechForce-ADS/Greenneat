@@ -56,6 +56,11 @@ const Parceiro = sequelize.define('Parceiro', {
   
 });
 
+const OleoInfo = sequelize.define('Oleoinfo', {
+  preco: Sequelize.FLOAT,
+  tipo: Sequelize.STRING,
+})
+
 
 const VinculoParceiroEstabelecimento = sequelize.define('VinculoParceiroEstabelecimento', {
 });
@@ -148,14 +153,15 @@ const syncDB = async () => {
     await Compra.sync({ force: false});
     await Credito.sync({ force: false});
     await Administrador.sync({force:false});
+    await OleoInfo.sync({force: false});
     await Oleo.sync({force:false});
     await VinculoParceiroEstabelecimento.sync({force:false});
     console.log("database synchronized");
  };
    
- syncDB();
+ syncDB();  
  
- module.exports = { sequelize, Estabelecimento, VinculoParceiroEstabelecimento, Parceiro, Coleta, Compra, Credito, Administrador, Oleo };
+ module.exports = { sequelize, Estabelecimento, OleoInfo, VinculoParceiroEstabelecimento, Parceiro, Coleta, Compra, Credito, Administrador, Oleo };
  
  sequelize.authenticate()
    .then(() => {

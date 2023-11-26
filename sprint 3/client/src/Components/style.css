@@ -758,6 +758,26 @@ header {
   
 }
 
+.DashboardContainer2{
+  width: 500px;
+ text-align: center;
+  border-radius: 15px;
+ background-color: white;
+ margin: 25px;
+ padding: 20px;
+  
+}
+
+.DashboardContainer1{
+  width: 800px;
+ text-align: center;
+  border-radius: 15px;
+ background-color: white;
+ margin: 25px;
+ padding: 20px;
+  
+}
+
 
 .DashboardContainer{
   width: 470px;

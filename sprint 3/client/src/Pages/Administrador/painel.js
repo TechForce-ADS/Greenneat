@@ -3,6 +3,7 @@ import Navbar from '../../Components/navbar/navbarAdministrador';
 import Grafico from '../../Components/dashboard/parceiroCompras';
 import OleoContainer from '../../Components/oleoContainer';
 import Pedidos from '../../Components/dashboard/pedidoNotificação';
+import ComparadorP from '../../Components/comparadorP';
 import Transações from '../../Components/dashboard/transacaoNotificacao';
 import axios from 'axios';
 import {FaMapMarker, FaShoppingCart, FaMoneyBillWave, FaChartLine, FaChartPie} from 'react-icons/fa';
@@ -67,8 +68,8 @@ function Dashboard() {
               </div>
               <div className="ComparadorContainer">
                 <h2><FaChartLine style={{ transform: 'translateY(3px) ', color: 'green' }} /> Comparador de preços</h2>
-                <br></br><br></br><br></br>
-                <Link to="/"> <button id="OleoButton" >Ver mais</button> </Link>
+                <ComparadorP />
+                <Link to="/comparador"> <button id="OleoButton" >Ver mais</button> </Link>
               </div>
             </div>
 

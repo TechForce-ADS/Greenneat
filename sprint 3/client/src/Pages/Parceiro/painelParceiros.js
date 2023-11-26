@@ -1,5 +1,6 @@
 import Navbar from '../../Components/navbar/navbarParceiro.js';
 import OleoContainer from '../../Components/oleoContainer.js';
+import ComparadorP from '../../Components/comparadorP';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -74,8 +75,7 @@ function PainelEstabelecimento() {
 
               <div className="ComparadorContainer">
                 <h2><FaChartLine style={{ transform: 'translateY(3px) ', color: 'green' }} /> Comparador de preços</h2>
-                <br></br> <br></br>
-                <Link to="/"> <button id="OleoButton" >Ver mais</button> </Link>
+                <ComparadorP />
               </div>
             </div>
 

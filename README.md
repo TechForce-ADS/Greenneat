@@ -409,13 +409,15 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
 
   
  ### Sprint 4</a> - 06/11 - 26/11</p>
- > <p>:x: Dashboard de rankings </p>
- > <p>:x: Comparador de preços </p>
- > <p>:x: Painel com todas funções do Administrador agrupadas </p>
- > <p>:x: Painel com todas funções do Parceiro agrupadas </p>
- > <p>:x: Painel com todas funções do Estabelecimento agrupadas </p> 
- > <p>:x: Tela de contato com as informações da Greenneat na tela inicial </p>
- > <p>:x: Documentação (Github) </p>
+ > <p> :white_check_mark: Dashboard de rankings </p>
+ > <p> :white_check_mark:</p> Comparador de preços </p>
+ > <p>:white_check_mark: Painel com todas funções do Administrador agrupadas </p>
+ > <p>:white_check_mark: Painel com todas funções do Parceiro agrupadas </p>
+ > <p>:white_check_mark: Painel com todas funções do Estabelecimento agrupadas </p> 
+ > <p>:white_check_mark: Tela de contato com as informações da Greenneat na tela inicial </p>
+ > <p>:white_check_mark: Preenchimento de endereço usando CEP </p>
+ > <p>:white_check_mark: Função esqueci minha senha  </p>
+ > <p>:white_check_mark: Documentação (Github) </p>
  
 # Tecnologia Utilizadas
 
@@ -468,4 +470,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
 
 <img src = "https://github.com/TechForce-ADS/imagens/blob/main/burnown-greenneat3.png" /> 
 
+> 4° Sprint
+
+< img src = "https://github.com/TechForce-ADS/imagens/blob/main/burnown-greenneat4.png"/>
  

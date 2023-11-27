@@ -57,7 +57,7 @@ function NavbarParceiro({ activeLink }) {
       <div className='mobile-menu'>
         <ul>
           <li mobile-nav-item><Link to="/">
-            Inicio
+            Início
           </Link></li>
           <li mobile-nav-item><Link to="/produto">
             Produtos

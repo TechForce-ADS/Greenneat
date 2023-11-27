@@ -41,7 +41,7 @@ function Navbar({ activeLink }) {
             Créditos
           </Link>
           <Link to="/logoutA" className={activeLink === '/logout' ? 'active-link' : ''}>
-            logout
+            Logout
           </Link>
         </div>
         <div className='mobile-menu-icon'>
@@ -53,7 +53,7 @@ function Navbar({ activeLink }) {
       <div className='mobile-menu'>
         <ul>
           <li mobile-nav-item><Link to="/">
-            Inicio
+            Início
           </Link></li>
           <li mobile-nav-item><Link to="/produto">
             Produtos

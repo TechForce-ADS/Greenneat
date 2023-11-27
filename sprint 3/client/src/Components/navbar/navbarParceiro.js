@@ -37,7 +37,7 @@ function NavbarParceiro({ activeLink }) {
             Compras
           </Link>
           <Link to="/ComprarCredito" className={activeLink === '/ComprarCredito' ? 'active-link' : ''}>
-            Creditos
+            Créditos
           </Link>
         
           <Link to="/dadosP" className={activeLink === '/dadosP' ? 'active-link' : ''}>
@@ -57,7 +57,7 @@ function NavbarParceiro({ activeLink }) {
       <div className='mobile-menu'>
         <ul>
           <li mobile-nav-item><Link to="/">
-            Inicio
+            Início
           </Link></li>
           <li mobile-nav-item><Link to="/produto">
             Produtos

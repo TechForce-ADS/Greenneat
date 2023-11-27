@@ -88,7 +88,7 @@ function Creditos() {
                     onChange={(e) => setCredito(e.target.value)}
                   />
                 </div>
-                <button type="button" onClick={handleClickAdicionarCredito}>Adicionar Crédito</button>
+                <button type="button" onClick={handleClickAdicionarCredito}>Adicionar crédito</button>
               </Form>
             </Formik>
           </div>

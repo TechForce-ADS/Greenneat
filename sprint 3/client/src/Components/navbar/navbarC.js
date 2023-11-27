@@ -19,7 +19,7 @@ function NavbarC({ activeLink }) {
 
         <div className="navbar-pages">
           <Link to="/" className={activeLink === '/' ? 'active-link' : ''}>
-            Inicio
+            Início
           </Link>
           <Link to="/contato" className={activeLink === '/contato' ? 'active-link' : ''}>
             Contato
@@ -40,7 +40,7 @@ function NavbarC({ activeLink }) {
       <div className='mobile-menu'>
         <ul>
           <li mobile-nav-item><Link to="/">
-            Inicio
+            Início
           </Link></li>
           <li mobile-nav-item><Link to="/produto">
             Produtos

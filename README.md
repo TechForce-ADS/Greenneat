@@ -403,7 +403,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
   
  ### Sprint 4</a> - 06/11 - 26/11</p>
  > <p> :white_check_mark: Dashboard de rankings </p>
- > <p> :white_check_mark:</p> Comparador de preços </p>
+ > <p> :white_check_mark: Comparador de preços </p>
  > <p>:white_check_mark: Painel com todas funções do Administrador agrupadas </p>
  > <p>:white_check_mark: Painel com todas funções do Parceiro agrupadas </p>
  > <p>:white_check_mark: Painel com todas funções do Estabelecimento agrupadas </p> 

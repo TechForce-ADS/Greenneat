@@ -79,7 +79,7 @@ function ResetarSenha() {
               type="password"
               id="confirmPassword"
               name="confirmPassword"
-              placeholder='Comfirme a senha'
+              placeholder='Confirme a senha'
               value={formik.values.confirmPassword}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}

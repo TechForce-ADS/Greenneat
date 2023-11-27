@@ -126,10 +126,7 @@ function DadosE() {
                         <strong>Horários de Funcionamento:</strong>{" "}
                         {estabelecimento.horariosFuncionamento}
                     </li>
-                    <li>
-                        <strong>Parceiros:</strong>{" "}
-                        {estabelecimento.possuiParceiros ? "Sim" : "Não"}
-                    </li>
+                   
                     <li>
                         <strong>Crédito:</strong> {estabelecimento.credito} Pontos
                     </li>
@@ -182,13 +179,7 @@ function DadosE() {
                                     value={formData.horariosFuncionamento}
                                     onChange={handleChange}
                                 />
-                                <label htmlFor="possuiParceiros">Possui Parceiros:</label>
-                                <input
-                                    type="text"
-                                    name="possuiParceiros"
-                                    value={formData.possuiParceiros}
-                                    onChange={handleChange}
-                                />
+                               
                                 <button id="botaoEditar" type="submit">Salvar Alterações</button>
                             </form>
                         </div>

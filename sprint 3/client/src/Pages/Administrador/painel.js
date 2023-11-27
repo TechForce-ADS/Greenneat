@@ -77,7 +77,7 @@ function Dashboard() {
 
             <div className='sectionDashboard3'>
 
-              <div className="OleosContainer">
+              <div className="OleosContainer" style={{height:"25%"}}>
               
                 <h2><FaMapMarker style={{ transform: 'rotate(180deg) translateY(-4px)', color: 'green' }} /> Informações sobre Óleos</h2>
                 <OleoContainer oleos={oleos} />

@@ -19,7 +19,7 @@ function NavbarParceiro({ activeLink }) {
 
         <div className="navbar-pages">
           <Link to="/homeP" className={activeLink === '/homeP' ? 'active-link' : ''}>
-            Inicio
+            Início
           </Link>
           <Link to="/painelParceiros" className={activeLink === '/painelParceiros' ? 'active-link' : ''}>
             Painel

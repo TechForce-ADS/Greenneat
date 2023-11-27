@@ -465,5 +465,4 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
 
 > 4° Sprint
 
-< img src = "https://github.com/TechForce-ADS/imagens/blob/main/burnown-greenneat4.png"/>
- 
+<img src = "https://github.com/TechForce-ADS/imagens/blob/main/burnown-greenneat4.png" /> 

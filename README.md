@@ -438,7 +438,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
 
 # Modelo de dados
   
-<img src = "https://github.com/TechForce-ADS/imagens/blob/main/InicioModelagem.jpeg"/> 
+<img src = "https://github.com/TechForce-ADS/imagens/blob/main/ImagensGreenneat/Modelagem%20de%20Dados%20Green.jpeg"/> 
 
 
 # Sprint

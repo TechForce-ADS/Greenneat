@@ -306,61 +306,54 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> :white_check_mark:</td>
     <td> 09/10/2023</td>
   </tr>
-  <tr>
-    <td> 2</td>
-    <td> Eu como administrador, quero o controle de tudo, cadastro de parceiros e estabelecimento, incluindo o saldo e histórico de cada um</td>
-    <td> Gestão do Administrador</td>
-    <td> 80</td>
-    <td> :white_check_mark:</td>
-    <td> DATA</td>
-  </tr>
+
   <tr>
     <td> 3</td>
     <td> Eu como administrador, quero conseguir editar as informações dos Parceiros e dos Estabelecimentos quando necessário</td>
     <td> Permissões do Administrador</td>
     <td> 80</td>
-    <td>  🛠️ </td>
-    <td> DATA</td>
+    <td>  :white_check_mark: </td>
+    <td> 20/10/2023</td>
   </tr>
   <tr>
     <td> 3</td>
     <td> Eu como usuário, quero editar as minhas próprias informações, sem depender do administrador</td>
     <td> Permissões do usuário</td>
     <td> 80</td>
-    <td>  🛠️ </td>
-    <td> DATA</td>
+    <td>  :white_check_mark:</td>
+    <td> 22/10/2023</td>
   </tr>
   <tr>
     <td> 3</td>
     <td> Eu como usuário, gostaria de algumas melhorias nas páginas, como colocar paginações nas tabelas informadas</td>
     <td> Paginação</td>
     <td> 80</td>
-    <td>  🛠️ </td>
-    <td> DATA</td>
+    <td>  :white_check_mark: </td>
+    <td> 25/10/2023</td>
   </tr>
   <tr>
     <td> 3</td>
     <td> Eu como administrador, quero poder parametrizar o valor do óleo usado ou virgem, sempre que necessário</td>
     <td> Parametrização</td>
     <td> 80</td>
-    <td>  🛠️ </td>
-    <td> DATA</td>
+    <td>  :white_check_mark: </td>
+    <td> 29/10/2023</td>
   </tr>
   <tr>
     <td> 4</td>
     <td> Eu como usuário, quero conseguir visualizar as informações de outras maneiras, como gráficos e tabelas, assim ficando intuitivo e com melhor entendimento</td>
     <td> Dashboard</td>
     <td> 80</td>
-    <td> :hourglass:</td>
-    <td> DATA</td>
+    <td> :white_check_mark:</td>
+    <td> 15/10/2023</td>
   </tr>
   <tr>
     <td> 4</td>
     <td> Eu como usuário, gostaria de quando necessário entrar em contato com a empresa para sanar dúvidas sobre o sistema</td>
     <td> Página de Contato</td>
     <td> 80</td>
-    <td> :hourglass:</td>
-    <td> DATA</td>
+    <td> :white_check_mark:</td>
+    <td> 22/10/23</td>
   </tr>
   <tr>
     <td> 4</td>
@@ -368,7 +361,7 @@ https://www.youtube.com/watch?v=GK2BFtIIxo0
     <td> Validação de Dados</td>
     <td> 80</td>
     <td> :hourglass:</td>
-    <td> DATA</td>
+    <td> 19/10/2023</td>
   </tr>
 </table>
 </br>

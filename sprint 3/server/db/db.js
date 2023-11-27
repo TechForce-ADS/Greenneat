@@ -17,21 +17,28 @@ const Estabelecimento = sequelize.define('Estabelecimento', {
   endereco: Sequelize.STRING,
   cidade: Sequelize.STRING,
   horariosFuncionamento: Sequelize.STRING,
-  oleoUsado: Sequelize.FLOAT,
-  oleoNovo: Sequelize.FLOAT,
+  oleoUsado: {
+    type: Sequelize.FLOAT,
+    defaultValue: 0,
+  },
+  oleoNovo: {
+    type: Sequelize.FLOAT,
+    defaultValue: 0,
+  },
   senha: Sequelize.STRING,
-  credito:Sequelize.FLOAT,
-  compras:Sequelize.FLOAT,
-  oleoCedido:Sequelize.FLOAT,
+  credito: Sequelize.FLOAT,
+  compras: Sequelize.FLOAT,
+  oleoCedido: Sequelize.FLOAT,
   token: {
     type: Sequelize.STRING,
-    allowNull: true
+    allowNull: true,
   },
   emailConfirmed: {
     type: Sequelize.BOOLEAN,
     defaultValue: false,
   },
 });
+
 
 // Definição do modelo da tabela "parceiros"
 const Parceiro = sequelize.define('Parceiro', {
@@ -139,6 +146,11 @@ const syncDB = async () => {
     console.log("database synchronized");
  };
 
+
+
+   
+ syncDB();  
+
  const createDefaultAdmins = async () => {
   const admin1 = await Administrador.findOrCreate({
     where: { nome: "PEDRO" },
@@ -155,14 +167,9 @@ const syncDB = async () => {
     defaults: { email: "brener@ADM.com", senha: "123123123" }
   });
 
-  console.log("Dados dos administradores criados:", admin1, admin2, admin3);
 };
-
-// Chamar a função para criar os administradores somente se não existirem
-createDefaultAdmins();
-
-   
- syncDB();  
+//DESCOMENTA QUANDO FOR RODAR PELA PRIMEIRA VEZ
+// createDefaultAdmins(); 
  
  module.exports = { sequelize, Estabelecimento, OleoInfo, VinculoParceiroEstabelecimento, Parceiro, Coleta, Compra, Credito, Administrador, Oleo };
  

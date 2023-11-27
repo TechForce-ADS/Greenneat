@@ -59,9 +59,6 @@ function HistoricoCredito() {
       <div>Carregando...</div>;</>)
   }
 
-  if (creditos.length === 0) {
-    return <div>Nenhum registro encontrado.</div>;
-  }
 
 
   function ShowComprarCreditos() {
@@ -86,28 +83,33 @@ function HistoricoCredito() {
   };
   return (
     <div className='containerLogin'>
-    
-      <table id='tabelaCreditos' className='tabelaCreditos hide'>
-      <thead>
-        <tr>
-          <th>Créditos comprados</th> 
-          <th>Valor</th>
-          <th>Data da Transação</th>
-        </tr>
-      </thead>
-      <tbody>
-        {creditos.map((credito) => (
-          <tr key={credito.id}>
-            <td>{credito.credito}</td>
-            <td>{(credito.valor * 1.29).toFixed(2)}</td>
-            <td>{formatarData(credito.createdAt)}</td>
+      <table id='tabelaCreditos' className='tabelaCreditos hide '>
+        <thead>
+          <tr>
+            <th>Créditos comprados</th> 
+            <th>Valor</th>
+            <th>Data da Transação</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
-    <button id="btnCreditos" onClick={ShowComprarCreditos} className="buttonCreditos"> Comprar mais</button>
+        </thead>
+        <tbody>
+          {creditos.length === 0 ? (
+            <tr>
+              <td colSpan="3">Nenhum registro encontrado.</td>
+            </tr>
+          ) : (
+            creditos.map((credito) => (
+              <tr key={credito.id}>
+                <td>{credito.credito}</td>
+                <td>{(credito.valor * 1.29).toFixed(2)}</td>
+                <td>{formatarData(credito.createdAt)}</td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
+      <button id="btnCreditos" onClick={ShowComprarCreditos} className="buttonCreditos"> Comprar mais</button>
     </div>
-  )
-};
+  );
+}
 
 export default HistoricoCredito;

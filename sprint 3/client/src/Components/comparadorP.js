@@ -31,7 +31,7 @@ const OleoPrecoPorMes = () => {
     
     const precosPorMes = dadosMes.map(dado => ({
       preco: dado.preco,
-      createdAt: format(new Date(dado.createdAt), 'dd/MM/yyyy HH:mm'), // Formato personalizado
+      createdAt: format(new Date(dado.createdAt), 'dd/MM/yyyy'), // Formato personalizado
     }));
 
     return precosPorMes;
@@ -73,7 +73,7 @@ const OleoPrecoPorMes = () => {
     <div>
       <label>
         Escolha o Tipo de Óleo:
-        <select value={tipoSelecionado} onChange={handleTipoChange}>
+        <select style={{marginLeft:"10px"}} value={tipoSelecionado} onChange={handleTipoChange}>
           <option value="usado">Usado</option>
           <option value="novo">Novo</option>
         </select>

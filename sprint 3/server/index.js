@@ -128,7 +128,7 @@ app.post("/registerEstabelecimento", async (req, res) => {
   try {
     const { nomeOrganizacao, email, cnpj, endereco, cidade, horariosFuncionamento, possuiParceiros, senha } = req.body;
 
-    if (!nomeOrganizacao || !email || !cnpj || !senha || !endereco || !cidade || !horariosFuncionamento || !possuiParceiros) {
+    if (!nomeOrganizacao || !email || !cnpj || !senha || !endereco || !cidade || !horariosFuncionamento ) {
       return res.status(400).json({ message: "Preencha todos os campos" });
     }
 

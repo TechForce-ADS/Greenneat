@@ -48,7 +48,7 @@ function ExtratoE() {
 
     return <>
       <NavbarE activeLink="/Compras" />
-      <div><h2>Nenhuma compra encotrada...</h2></div>
+      <div><h2>Nenhuma compra encontrada...</h2></div>
     </>;
   }
 

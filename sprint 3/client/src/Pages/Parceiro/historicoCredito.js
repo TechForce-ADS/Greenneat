@@ -87,7 +87,7 @@ function HistoricoCredito() {
   return (
     <div className='containerLogin'>
     
-      <table id='tabelaCreditos' className='table hide'>
+      <table id='tabelaCreditos' className='tabelaCreditos hide'>
       <thead>
         <tr>
           <th>Créditos comprados</th> 

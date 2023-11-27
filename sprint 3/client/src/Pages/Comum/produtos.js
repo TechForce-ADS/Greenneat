@@ -32,7 +32,7 @@ function Produto() {
           <h3>Multiuso concentrado rende 500 mL</h3>
           <h4>Frasco 100 mL</h4>
           <h5>lavanda</h5>
-          <p>Price: $10.00</p>
+          <p>Preço: R$10.00</p>
           
         </div>
 
@@ -40,7 +40,7 @@ function Produto() {
           <img src={prod2} alt="produto2" />
           <h3>Sabão em pasta</h3>
           <h4>Pote 350 g</h4>
-          <p>Price: $20.00</p>
+          <p>Preço: R$20.00</p>
 
 
         </div>
@@ -49,7 +49,7 @@ function Produto() {
           <img src={prod3} alt="produto3" />
           <h3>Branqueador para roupas</h3>
           <h4>Embalagem zip 400 g</h4>
-          <p>Price: $15.00</p>
+          <p>Preço: R$15.00</p>
 
         
         </div>
@@ -58,7 +58,7 @@ function Produto() {
           <img src={prod4} alt="produto4" />
           <h3>Limpa-vidros concentrado rende 500 mL </h3>
           <h4>Frasco 100 mL</h4>
-          <p>Price: $10.00</p>
+          <p>Preço: R$10.00</p>
         
         </div>
 
@@ -67,7 +67,7 @@ function Produto() {
           <h3>Multiuso concentrado rende 500 mL</h3>
           <h4>Frasco 100 mL</h4>
           <h5>aroma suave</h5>
-          <p>Price: $10.00</p> 
+          <p>Preço: R$10.00</p> 
 
         </div>
 
@@ -76,7 +76,7 @@ function Produto() {
           <h3>Kit Pano encerado</h3>
           <h4>Contém 2 unidades P e M</h4>
           <h5>tecido 100% algodão, cera de abelha, breu e óleo de coco</h5>
-          <p>Price: $10.00</p>
+          <p>Preço: R$10.00</p>
 
         </div>
 
@@ -85,7 +85,7 @@ function Produto() {
           <h3>Bucha vegetal</h3>
           <h4>Para limpeza geral e de louças</h4>
           <h5>1 unidade com alça</h5>
-          <p>Price: $5.00</p>
+          <p>Preço: R$5.00</p>
 
         </div>
 

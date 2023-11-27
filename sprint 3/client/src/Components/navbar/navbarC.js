@@ -19,7 +19,7 @@ function NavbarC({ activeLink }) {
 
         <div className="navbar-pages">
           <Link to="/" className={activeLink === '/' ? 'active-link' : ''}>
-            Inicio
+          Início
           </Link>
           <Link to="/contato" className={activeLink === '/contato' ? 'active-link' : ''}>
             Contato

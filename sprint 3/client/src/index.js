@@ -17,6 +17,7 @@ import Dados from './Pages/Comum/dados';
 import Footer from './Components/footer';
 import Logout from './Pages/Parceiro/logout';
 import LogoutE from './Pages/Estabelecimento/logout';
+import LogoutA from './Pages/Administrador/logout';
 import ProdutoC from './Pages/Comum/produtos';
 import ProdutoE from './Pages/Parceiro/produtos';
 import Gestao from './Pages/Administrador/gestao';
@@ -37,6 +38,7 @@ import ResetarSenhaParceiro from './Pages/resetarSenhaParceiro'
 import Carteira from './Pages/Parceiro/carteira'
 import Estoque from './Pages/Estabelecimento/Estoque';
 import PainelEstabelecimento from './Pages/Estabelecimento/painelEstabelecimento';
+import PainelParceiros from './Pages/Parceiro/painelParceiros';
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
@@ -48,6 +50,7 @@ ReactDOM.render(
         <Route path="/comparador" element={<Comparador />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/logoutE" element={<LogoutE />} />
+        <Route path="/logoutA" element={<LogoutA />} />
         <Route path="/dadosE" element={<DadosE />} />
         <Route path="/transacoes" element={<Transacoes />} />
         <Route path="/transacoesADM" element={<TransacoesADM />} />
@@ -78,6 +81,7 @@ ReactDOM.render(
         <Route path="/carteira" element={<Carteira />} />
         <Route path="/Estoque" element={<Estoque />} />
         <Route path="/painelEstabelecimento" element={<PainelEstabelecimento />} />
+        <Route path="/painelParceiros" element={<PainelParceiros />} />
 
         
         <Route path="/alabama" element={<HomeADM />} />

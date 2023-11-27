@@ -3,7 +3,7 @@ const app = express();
 const mysql = require("mysql2");
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
-const { Estabelecimento, Parceiro, Coleta, Oleo, Compra, Credito, VinculoParceiroEstabelecimento, sequelize } = require("./db/db");
+const { Estabelecimento, OleoInfo, Parceiro, Coleta, Oleo, Compra, Credito, Administrador, VinculoParceiroEstabelecimento, sequelize } = require("./db/db");
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, './.env') });
 const session = require('express-session');
@@ -103,6 +103,22 @@ app.get("/historicoCredito", async (req, res) => {
 });
 
 
+app.get('/oleoInfoPorMes', async (req, res) => {               
+  try {
+    const tipo = req.query.tipo || 'usado'; // Padrão: 'usado'
+
+    const oleoInfoPorMes = await OleoInfo.findAll({
+      where: { tipo }, // Filtrar pelo tipo de óleo
+      attributes: ['createdAt', 'preco'],
+      order: [['createdAt', 'ASC']], // Ordenar pela coluna createdAt em ordem ascendente (mais antiga para mais recente)
+    });
+
+    res.json(oleoInfoPorMes);
+  } catch (error) {
+    console.error(`Erro ao obter dados de oleoInfo (${req.query.tipo}) por mês:`, error);
+    res.status(500).json({ error: `Erro ao obter dados de oleoInfo (${req.query.tipo}) por mês` });
+  }
+});
 
 
 
@@ -112,7 +128,7 @@ app.post("/registerEstabelecimento", async (req, res) => {
   try {
     const { nomeOrganizacao, email, cnpj, endereco, cidade, horariosFuncionamento, possuiParceiros, senha } = req.body;
 
-    if (!nomeOrganizacao || !email || !cnpj || !senha || !endereco || !cidade || !horariosFuncionamento || !possuiParceiros) {
+    if (!nomeOrganizacao || !email || !cnpj || !senha || !endereco || !cidade || !horariosFuncionamento ) {
       return res.status(400).json({ message: "Preencha todos os campos" });
     }
 
@@ -162,7 +178,7 @@ app.post("/registerEstabelecimento", async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedSenha = await bcrypt.hash(senha, salt);
 
-        const EstabelecimentoCriado = await Estabelecimento.create({ nomeOrganizacao, email, cnpj, senha: hashedSenha, endereco, cidade, horariosFuncionamento, possuiParceiros, token, emailConfirmed: false });
+        const EstabelecimentoCriado = await Estabelecimento.create({ nomeOrganizacao, email, cnpj, senha: hashedSenha, endereco, cidade, horariosFuncionamento,  token, emailConfirmed: false });
 
         console.log('E-mail enviado com sucesso:', info.response);
         return res.json({ message: 'Token enviado para o e-mail' });
@@ -601,6 +617,39 @@ app.get("/parceiroDoEstabelecimento/:email", async (req, res) => {
     return res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
+
+app.get("/EstabelecimentoDoParceiro/:email", async (req, res) => {
+  try {
+    const email = req.params.email;
+
+   
+    const parceiro = await Parceiro.findOne({ where: { email: email } });
+
+    if (!parceiro) {
+      return res.status(404).json({ error: 'parceiro não encontrado' });
+    }
+
+    // Encontrar os estabelecimentos relacionados a este parceiro
+    const vinculos = await VinculoParceiroEstabelecimento.findAll({
+      where: { ParceiroId: parceiro.id }
+    });
+
+    const estabelecimentosIds = vinculos.map(vinculo => vinculo.EstabelecimentoId);
+
+    // Encontrar detalhes dos estabelecimentos relacionados
+    const estabelecimentos = await Estabelecimento.findAll({
+      where: { id: estabelecimentosIdsIds }
+    });
+
+    console.log("Parceiros do Estabelecimento:", estabelecimentos);
+
+    return res.status(200).json({ estabelecimentos });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
 
 
 // Add this route to your server code
@@ -1349,6 +1398,27 @@ app.put("/estabelecimento/:id", async (req, res) => {
   }
 });
 
+app.put("/parceiro/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const { nomeOrganizacao, email, senha, endereco, cidade, horariosFuncionamento, possuiParceiros } = req.body;
+
+    await Parceiro.update(
+      { nomeOrganizacao, email, senha, endereco, cidade, horariosFuncionamento, possuiParceiros },
+      {
+        where: {
+          id: id,
+        },
+      }
+    );
+
+    return res.status(200).json({ message: "Usuário atualizado" });
+  } catch (erro) {
+    return res.status(400).json({ message: "Falha ao atualizar o usuário" })
+  }
+});
+
 // Rota para remover um estabelecimento pelo ID
 app.delete("/parceiro/:id", async (req, res) => {
   try {
@@ -1378,11 +1448,25 @@ app.delete("/parceiro/:id", async (req, res) => {
 app.post("/definirPreco", async (req, res) => {
   try {
     const { preco, tipo } = req.body;
+
+    // Verifica se o tipo foi escolhido corretamente
+    if (tipo !== 'usado' && tipo !== 'novo') {
+      return res.status(400).json({ erro: "Escolha um tipo válido ('usado' ou 'novo')." });
+    }
+
     const oleoTipoExistente = await Oleo.findOne({ where: { tipo: tipo } });
 
     if (oleoTipoExistente) {
       oleoTipoExistente.preco = preco;
-      await oleoTipoExistente.save()
+      await oleoTipoExistente.save();
+
+      const novoPreco = new OleoInfo({
+        tipo: tipo,
+        preco: preco,
+      });
+      await novoPreco.save();
+
+      res.status(200).json(oleoTipoExistente);
     }
 
     if (!oleoTipoExistente) {
@@ -1391,14 +1475,20 @@ app.post("/definirPreco", async (req, res) => {
         preco: preco,
       });
       const oleo = await novoOleo.save();
-      console.log(oleo)
+
+      const novoPreco = new OleoInfo({
+        tipo: tipo,
+        preco: preco,
+      });
+      await novoPreco.save();
+
+      console.log(oleo);
       res.status(200).json(oleo);
     }
   } catch (erro) {
-    res.send(erro);
+    res.status(500).json({ erro: "Erro interno do servidor" });
   }
 });
-
 
 
 app.post("/registerAdm", async (req, res) => {
@@ -1476,22 +1566,19 @@ app.post("/loginAdm", async (req, res) => {
       return res.status(404).json({ message: 'Usuário não encontrado' });
     }
 
-    //if (!adm.emailConfirmed) {
-    //return res.status(401).json("E-mail não confirmado. Por favor, confirme seu e-mail para fazer login.");
-    //}
-
-    // Verificar se a senha fornecida corresponde à senha armazenada no banco de dados
-    const match = await bcrypt.compare(senha, adm.senha);
-    if (!match) {
+    // Comparar senhas sem hashing (plaintext)
+    if (senha !== adm.senha) {
       return res.status(401).json({ message: 'Senha incorreta' });
     }
 
     return res.status(200).json({ adm });
 
   } catch (error) {
+    console.error('Error during authentication:', error);
     return res.status(400).json({ message: 'Falha ao autenticar administrador' });
   }
 });
+
 
 
 //editar informações do estabelecimento

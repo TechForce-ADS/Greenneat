@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import LogoQ from '../../img/logoquad.png';
+import ExtratoE from '../Parceiro/historicoCredito'
 import { FaKiwiBird } from 'react-icons/fa';
 import { Formik, Form, Field } from 'formik';
 
@@ -10,12 +11,26 @@ function Creditos() {
   const [credito, setCredito] = useState('');
 
   useEffect(() => {
-    // Verificar se há um usuário logado
     const isLoggedIn = localStorage.getItem('isLoggedIn');
     if (!isLoggedIn) {
       window.location.href = 'http://localhost:3000/';
     }
   }, []);
+
+
+  function ShowTabela() {
+    let Tabela = document.querySelector('#tabelaCreditos');
+    let Creditos = document.querySelector('#Creditos');
+    let BotaoCreditos = document.querySelector('#btnCreditos');
+    let BotaoTabela = document.querySelector('#btnTabela');
+
+    Tabela.classList.remove('hide')
+    Creditos.classList.add('hide')
+    BotaoCreditos.classList.remove('hide')
+    BotaoTabela.classList.add('hide')
+  }
+  
+
 
 
   const handleClickAdicionarCredito = () => {
@@ -48,7 +63,7 @@ function Creditos() {
     <>
       <Navbar activeLink="/ComprarCredito" />
       <body>
-        <div className='containerLogin'>
+        <div id="Creditos" className='containerLogin'>
           <div className="boxDivisao">
             <img src={LogoQ} alt="LogoQ" className="logoQuadDivi" />
             <h2>Comprar Créditos</h2>
@@ -71,11 +86,14 @@ function Creditos() {
                     onChange={(e) => setCredito(e.target.value)}
                   />
                 </div>
-                <button type="button" onClick={handleClickAdicionarCredito}>Adicionar Crédito</button>
+                <button   disabled={credito <= 0}  type="button" onClick={handleClickAdicionarCredito}>Adicionar Crédito</button>
               </Form>
             </Formik>
           </div>
+            <button id="btnTabela"onClick={ShowTabela} className="buttonCreditos">Histórico</button>
+            
         </div>
+        <ExtratoE />
       </body>
     </>
   );

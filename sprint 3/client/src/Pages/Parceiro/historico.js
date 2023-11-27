@@ -1,4 +1,4 @@
-import NavbarP from '../../Components/navbar/navbarParceiro.js';
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -68,6 +68,19 @@ function Historico() {
     setOrdem(ordem === 'asc' ? 'desc' : 'asc');
   };
 
+  function ShowColetas() {
+    let historicoColeta = document.querySelector('#historicoColeta');
+    let Coleta = document.querySelector('#coletas');
+    let VerColetas = document.querySelector('#verColetas');
+    let Coletar = document.querySelector('#coletar');
+
+    historicoColeta.classList.add('hide')
+    Coleta.classList.remove('hide')
+    VerColetas.classList.remove('hide')
+    Coletar.classList.add('hide')
+  }
+
+
   const currentItems = [...coletas].sort((a, b) => {
     if (ordenarPor === 'Estabelecimento') {
       if (ordem === 'asc') {
@@ -93,8 +106,8 @@ function Historico() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <>
-      <NavbarP activeLink="/historico" />
+    <div id='historicoColeta' className='hide'>
+
       <div style={{ marginTop: '20px', textAlign: 'center', }}>
         <div style={{ marginBottom: '20px', }}>
           <button className='ordenacao' onClick={handleSort}>
@@ -138,8 +151,9 @@ function Historico() {
             Próximo
           </button>
         </div>
+        <button className='buttonCreditos' id='coletar' onClick={ShowColetas}>Coletar</button>
       </div>
-    </>
+    </div>
   )
 };
 

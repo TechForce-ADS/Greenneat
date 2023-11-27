@@ -109,10 +109,6 @@ function Dados() {
               {parceiro.horariosFuncionamento}
             </li>
             <li>
-              <strong>Parceiros:</strong>{" "}
-              {parceiro.possuiParceiros ? "Sim" : "Não"}
-            </li>
-            <li>
               <strong>Crédito:</strong> {parceiro.credito} Pontos
             </li>
           </ul>
@@ -164,13 +160,7 @@ function Dados() {
                     value={formData.horariosFuncionamento}
                     onChange={handleChange}
                   />
-                  <label htmlFor="possuiParceiros">Possui Parceiros:</label>
-                  <input
-                    type="text"
-                    name="possuiParceiros"
-                    value={formData.possuiParceiros}
-                    onChange={handleChange}
-                  />
+                 
                   <button id="botaoEditar" type="submit">Salvar Alterações</button>
                 </form>
               </div>

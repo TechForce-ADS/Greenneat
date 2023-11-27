@@ -40,7 +40,7 @@ function ExtratoE() {
   }, [estabelecimento]);
 
   if (compras.length === 0) {
-    return <div>Nenhuma compra encotrada...</div>;;
+    return <div>Nenhuma compra encontrada...</div>;
   }
 
   const formatarData = (dataOriginal) => {

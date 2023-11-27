@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import Navbar from '../../Components/navbar/navbarAdministrador';
 import Cadastrados from '../../Components/dashboard/cadastrados';
 import Grafico from '../../Components/dashboard/parceiroCompras';
@@ -7,6 +7,7 @@ import OleoColetado from '../../Components/dashboard/oleoColetado';
 import ColetaporMes from '../../Components/dashboard/ColetaporMes';
 import OleoCedido from '../../Components/dashboard/oleoCedido';
 
+
 function Dashboard() {
 
     const options = {
@@ -14,6 +15,16 @@ function Dashboard() {
         responsive: true,
     };
 
+    useEffect(() => {
+        // Verificar se há um usuário logado
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const adm = localStorage.getItem('adm');
+        
+        if (!isLoggedIn || !adm) {
+          window.location.href = 'http://localhost:3000/';
+        }
+      }, []);
+      
 
     return (
         <>

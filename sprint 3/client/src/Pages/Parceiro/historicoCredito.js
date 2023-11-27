@@ -1,4 +1,4 @@
-import NavbarP from '../../Components/navbar/navbarParceiro.js';
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -52,12 +52,30 @@ function HistoricoCredito() {
   }, [parceiro]);
 
   if (isLoading) {
-    return <div>Carregando...</div>;
+    
+    return (
+    <>
+   
+      <div>Carregando...</div>;</>)
   }
 
   if (creditos.length === 0) {
     return <div>Nenhum registro encontrado.</div>;
   }
+
+
+  function ShowComprarCreditos() {
+    let Tabela = document.querySelector('#tabelaCreditos');
+    let Creditos = document.querySelector('#Creditos');
+    let BotaoTabela = document.querySelector('#btnTabela');
+    let BotaoCreditos = document.querySelector('#btnCreditos');
+
+    Tabela.classList.add('hide')
+    Creditos.classList.remove('hide')
+    BotaoTabela.classList.remove('hide')
+    BotaoCreditos.classList.add('hide')
+  }
+  
 
   const formatarData = (dataOriginal) => {
     const data = new Date(dataOriginal);
@@ -67,9 +85,9 @@ function HistoricoCredito() {
     return `${dia}-${mes}-${ano}`;
   };
   return (
-    <>
-      <NavbarP activeLink="/historicoCredito" />
-      <table>
+    <div className='containerLogin'>
+    
+      <table id='tabelaCreditos' className='tabelaCreditos hide'>
       <thead>
         <tr>
           <th>Créditos comprados</th> 
@@ -87,7 +105,8 @@ function HistoricoCredito() {
         ))}
       </tbody>
     </table>
-    </>
+    <button id="btnCreditos" onClick={ShowComprarCreditos} className="buttonCreditos"> Comprar mais</button>
+    </div>
   )
 };
 

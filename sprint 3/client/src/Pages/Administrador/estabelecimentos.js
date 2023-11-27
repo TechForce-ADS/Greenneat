@@ -60,12 +60,19 @@ function ListaEstabelecimentos() {
     setIsModalOpen(false);
   };
 
-  const openEditModal = (id) => {
-    // Aqui, pesquise as informações do estabelecimento e defina os dados de edição
-    pesquisaEstabelecimento(id);
-    setEditedEstabelecimento(estabelecimento);
-    setIsEditing(true);
+  const openEditModal = async (id) => {
+    try {
+      // Fetch data
+      const response = await axios.get(`http://localhost:3001/estabelecimento/${id}`);
+      // Set the data to editedEstabelecimento
+      setEditedEstabelecimento(response.data);
+      // Open the edit modal
+      setIsEditing(true);
+    } catch (error) {
+      console.error('Erro ao buscar informações do estabelecimento:', error);
+    }
   };
+  
 
   const closeEditModal = () => {
     setIsEditing(false);

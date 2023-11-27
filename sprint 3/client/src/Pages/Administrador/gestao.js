@@ -27,7 +27,16 @@ function Gestao() {
     fetchOleos();
   }, []);
 
-
+  useEffect(() => {
+    // Verificar se há um usuário logado
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const adm = localStorage.getItem('adm');
+    
+    if (!isLoggedIn || !adm) {
+      window.location.href = 'http://localhost:3000/';
+    }
+  }, []);
+  
 
   return (
     <>
@@ -39,9 +48,11 @@ function Gestao() {
           <ListaEstabelecimentos />
           <Modal />
           <FormDefinirPreco />
+          {oleos.length > 0 && (
           <div className="OleosInfo">
-          <OleoContainer oleos={oleos} />
+            <OleoContainer oleos={oleos} />
           </div>
+        )}
         </div>
       </body>
     </>

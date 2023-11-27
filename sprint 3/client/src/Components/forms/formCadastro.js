@@ -152,10 +152,6 @@ function FormCadastro() {
               <ErrorMessage name='senha' component='span' className='form-error' />
               <ErrorMessage name='confirmSenha' component='span' className='form-error' />
 
-              <ErrorMessage name='nomeOrganizacao' component='span' className='form-error' />
-              <ErrorMessage name='email' component='span' className='form-error' />
-              <ErrorMessage name='senha' component='span' className='form-error' />
-              <ErrorMessage name='confirmSenha' component='span' className='form-error' />
 
               <button type='submit' disabled={loading}>
                 {loading ? 'Aguarde...' : 'Criar Conta'}

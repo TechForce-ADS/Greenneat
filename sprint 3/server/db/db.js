@@ -40,6 +40,7 @@ const Parceiro = sequelize.define('Parceiro', {
   email: Sequelize.STRING,
   endereco: Sequelize.STRING,
   cidade: Sequelize.STRING,
+  cpf: Sequelize.STRING,
   horariosFuncionamento: Sequelize.STRING,
   credito:Sequelize.FLOAT,
   senha: Sequelize.STRING,

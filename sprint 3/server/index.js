@@ -181,9 +181,9 @@ app.post("/registerEstabelecimento", async (req, res) => {
 //registrar Parceiro
 app.post("/registerParceiro", async (req, res) => {
   try {
-    const { nomeOrganizacao, email, endereco, cidade, horariosFuncionamento, senha } = req.body;
+    const { nomeOrganizacao, email, endereco, cidade, cpf, horariosFuncionamento, senha } = req.body;
 
-    if (!nomeOrganizacao || !email || !endereco || !cidade || !horariosFuncionamento || !senha) {
+    if (!nomeOrganizacao || !email || !endereco || !cidade || !cpf || !horariosFuncionamento || !senha) {
       return res.status(400).json({ message: "Preencha todos os campos" });
     }
 
@@ -227,7 +227,7 @@ app.post("/registerParceiro", async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedSenha = await bcrypt.hash(senha, salt);
 
-        const ParceiroCriado = await Parceiro.create({ nomeOrganizacao, email, senha: hashedSenha, endereco, cidade, horariosFuncionamento, token, emailConfirmed: false });
+        const ParceiroCriado = await Parceiro.create({ nomeOrganizacao, email, senha: hashedSenha, endereco, cidade, cpf, horariosFuncionamento, token, emailConfirmed: false });
 
         console.log('E-mail enviado com sucesso:', info.response);
         return res.json({ message: 'Token enviado para o e-mail' });

@@ -6,6 +6,7 @@ import * as yup from 'yup';
 import Swal from 'sweetalert2';
 
 const validationCadastro = yup.object().shape({
+  cpf: yup.string().required('CPF é obrigatório').length(11,'CPF inválido').matches(/^\d+$/, 'CPF deve conter apenas números'),
   nomeOrganizacao: yup.string().required('Nome da organização é obrigatório'),
   email: yup.string().email('Insira um e-mail válido').required('E-mail é obrigatório'),
   senha: yup.string().required('Senha é obrigatório').min(8, 'Senha deve ter 8 caracteres no mínimo'),
@@ -20,6 +21,7 @@ function FormCadastro() {
       .post('http://localhost:3001/registerParceiro', {
         nomeOrganizacao: values.nomeOrganizacao,
         email: values.email,
+        cpf: values.cpf,
         endereco: values.endereco,
         cidade: values.cidade,
         horariosFuncionamento: values.horariosFuncionamento,
@@ -105,7 +107,9 @@ function FormCadastro() {
               <div className='inputWrapper'>
                 <Field type='text' name='email' placeholder='Email' className='form-field' />
               </div>
-
+              <div className='inputWrapper'>
+                <Field type='text' name='cpf' placeholder='CPF' className='form-field' />
+              </div>
               <div className='inputWrapper'>
                 <Field
                   type='text'
@@ -141,6 +145,7 @@ function FormCadastro() {
                 <Field type='password' name='confirmSenha' placeholder='Confirme sua senha' className='form-field' />
               </div>
 
+              <ErrorMessage name='cpf' component='span' className='form-error' />
               <ErrorMessage name='nomeOrganizacao' component='span' className='form-error' />
               <ErrorMessage name='email' component='span' className='form-error' />
               <ErrorMessage name='senha' component='span' className='form-error' />

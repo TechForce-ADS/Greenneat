@@ -10,11 +10,11 @@ function Home() {
       <body>
         <div className='homeBanner'>
           <h1>GREENNEAT</h1>
-          <h2>Somos uma empresa de limpeza sustentável,
+          <h3>Somos uma empresa de limpeza sustentável,
             com a iniciativa de um projeto de reciclagem e
             ressignificação do uso de óleo usados por
             estabelecimentos, assim contribuindo com a
-            economia circular.</h2>
+            economia circular.</h3>
         </div>
         <div className='homeInfo'>
           <div className='homeText'>

@@ -3,12 +3,12 @@ content-type: application/json
 
 
 {
-    "cnpj": "12312312311234",
+    "cnpj": "456451223",
     "nomeOrganizacao": "pedro",
     "email": "breneerestudos@gmail.com",
     "endereco": "dsfsdfds22",
     "cidade": "cidadfdfds22de",
     "horariosFuncionamento": "df22f",
     "possuiParceiros": "sd22fdf",
-    "senha": "123123123",
+    "senha": "123123123"
 }   

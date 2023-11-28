@@ -60,19 +60,12 @@ function ListaEstabelecimentos() {
     setIsModalOpen(false);
   };
 
-  const openEditModal = async (id) => {
-    try {
-      // Fetch data
-      const response = await axios.get(`http://localhost:3001/estabelecimento/${id}`);
-      // Set the data to editedEstabelecimento
-      setEditedEstabelecimento(response.data);
-      // Open the edit modal
-      setIsEditing(true);
-    } catch (error) {
-      console.error('Erro ao buscar informações do estabelecimento:', error);
-    }
+  const openEditModal = (id) => {
+    // Aqui, pesquise as informações do estabelecimento e defina os dados de edição
+    pesquisaEstabelecimento(id);
+    setEditedEstabelecimento(estabelecimento);
+    setIsEditing(true);
   };
-  
 
   const closeEditModal = () => {
     setIsEditing(false);
@@ -121,7 +114,8 @@ function ListaEstabelecimentos() {
             <th>Cidade</th>
             <th>Horários</th>
             <th>Crédito</th>
-            <th>Ações</th>
+            <th>Possui Parceiros</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -135,7 +129,7 @@ function ListaEstabelecimentos() {
               <td>{estabelecimento.cidade}</td>
               <td>{estabelecimento.horariosFuncionamento}</td>
               <td>{estabelecimento.credito}</td>
-      
+              <td>{estabelecimento.possuiParceiros}</td>
               <td>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                   <FaEye title='Visualizar' onClick={() => openModal(estabelecimento.id)} style={{ cursor: 'pointer', margin: '10px' }} />

@@ -60,17 +60,10 @@ function ListaParceiros() {
     setIsModalOpen(false);
   };
 
-  const openEditModal = async (id) => {
-    try {
-      // Fetch data
-      const response = await axios.get(`http://localhost:3001/parceiro/${id}`);
-      // Set the data to editedParceiro
-      setEditedParceiro(response.data);
-      // Open the edit modal
-      setIsEditing(true);
-    } catch (error) {
-      console.error('Erro ao buscar informações do parceiro:', error);
-    }
+  const openEditModal = (id) => {
+    pesquisaParceiro(id);
+    setEditedParceiro(parceiro); // Defina editedParceiro com os dados do parceiro para edição
+    setIsEditing(true);
   };
 
   const closeEditModal = () => {

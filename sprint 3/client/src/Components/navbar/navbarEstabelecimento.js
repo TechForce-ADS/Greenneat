@@ -19,22 +19,16 @@ function Navbar({ activeLink }) {
 
         <div className="navbar-pages">
           <Link to="/homeE" className={activeLink === '/homeE' ? 'active-link' : ''}>
-          Início
-          </Link>
-          <Link to="/painelEstabelecimento" className={activeLink === '/painelEstabelecimento' ? 'active-link' : ''}>
-          Painel
-          </Link>
-          <Link to="/Estoque" className={activeLink === '/Estoque' ? 'active-link' : ''}>
-          Estoque
+            Inicio
           </Link>
           <Link to="/produto" className={activeLink === '/produto' ? 'active-link' : ''}>
             Produtos
           </Link>
           <Link to="/extratoE" className={activeLink === '/extratoE' ? 'active-link' : ''}>
-            Histórico
+            Extrato
           </Link>
           <Link to="/historicoE" className={activeLink === '/historicoE' ? 'active-link' : ''}>
-            Extrato
+            Histórico
           </Link>
          
           <Link to="/dadosE" className={activeLink === '/dadosE' ? 'active-link' : ''}>
@@ -53,7 +47,7 @@ function Navbar({ activeLink }) {
       <div className='mobile-menu'>
         <ul>
           <li mobile-nav-item><Link to="/">
-            Início
+            Inicio
           </Link></li>
           <li mobile-nav-item><Link to="/produto">
             Produtos

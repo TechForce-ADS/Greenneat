@@ -17,42 +17,9 @@ const Estabelecimento = sequelize.define('Estabelecimento', {
   endereco: Sequelize.STRING,
   cidade: Sequelize.STRING,
   horariosFuncionamento: Sequelize.STRING,
-  oleoUsado: {
-    type: Sequelize.FLOAT,
-    defaultValue: 0,
-  },
-  oleoNovo: {
-    type: Sequelize.FLOAT,
-    defaultValue: 0,
-  },
+  possuiParceiros: Sequelize.STRING,
   senha: Sequelize.STRING,
-  credito: Sequelize.FLOAT,
-  compras: Sequelize.FLOAT,
-  oleoCedido: Sequelize.FLOAT,
-  token: {
-    type: Sequelize.STRING,
-    allowNull: true,
-  },
-  emailConfirmed: {
-    type: Sequelize.BOOLEAN,
-    defaultValue: false,
-  },
-});
-
-
-// Definição do modelo da tabela "parceiros"
-const Parceiro = sequelize.define('Parceiro', {
-  nomeOrganizacao: Sequelize.STRING,
-  //cpf: Sequelize.STRING,
-  email: Sequelize.STRING,
-  endereco: Sequelize.STRING,
-  cidade: Sequelize.STRING,
-  cpf: Sequelize.STRING,
-  horariosFuncionamento: Sequelize.STRING,
   credito:Sequelize.FLOAT,
-  senha: Sequelize.STRING,
-  compras:Sequelize.FLOAT,
-  litrosColetados:Sequelize.FLOAT,
   token: {
     type: Sequelize.STRING,
     allowNull: true
@@ -61,42 +28,52 @@ const Parceiro = sequelize.define('Parceiro', {
     type: Sequelize.BOOLEAN,
     defaultValue: false,
   },
-  
 });
 
-const OleoInfo = sequelize.define('Oleoinfo', {
-  preco: Sequelize.FLOAT,
-  tipo: Sequelize.STRING,
-})
-
-
-const VinculoParceiroEstabelecimento = sequelize.define('VinculoParceiroEstabelecimento', {
+// Definição do modelo da tabela "parceiros"
+const Parceiro = sequelize.define('Parceiro', {
+  nomeOrganizacao: Sequelize.STRING,
+  email: Sequelize.STRING,
+  endereco: Sequelize.STRING,
+  cidade: Sequelize.STRING,
+  horariosFuncionamento: Sequelize.STRING,
+  credito:Sequelize.FLOAT,
+  senha: Sequelize.STRING,
+  token: {
+    type: Sequelize.STRING,
+    allowNull: true
+  },
+  emailConfirmed: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false,
+  },
 });
-
-
-
 
 const Administrador = sequelize.define("Administrador", {
   nome: Sequelize.STRING,
   email:Sequelize.STRING,
   senha:Sequelize.STRING,
- 
+  token: {
+    type: Sequelize.STRING,
+    allowNull: true
+  },
+  emailConfirmed: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false,
+  },
 });
-
 
 
 // Definição do modelo da tabela "coleta"
 const Coleta = sequelize.define('Coleta', {
   quantidade: Sequelize.FLOAT,
   tipo:Sequelize.STRING,
-  credito:Sequelize.FLOAT,
 });
 
 const Credito = sequelize.define('Credito', {
   credito: Sequelize.FLOAT,
   valor: Sequelize.FLOAT,
 });
-Credito.belongsTo(Parceiro, { foreignKey: 'ParceiroId' });
 
 
 // Definição do modelo da tabela "óleos"
@@ -125,12 +102,12 @@ const Compra = sequelize.define('Compra', {
 });
 
 Parceiro.hasMany(Credito);
+Credito.belongsTo(Parceiro);
 Estabelecimento.hasMany(Coleta);
 Parceiro.hasMany(Coleta);
 Coleta.belongsTo(Estabelecimento);
 Coleta.belongsTo(Parceiro);
-Parceiro.belongsToMany(Estabelecimento, { through: VinculoParceiroEstabelecimento });
-Estabelecimento.belongsToMany(Parceiro, { through: VinculoParceiroEstabelecimento });
+
 
 
 const syncDB = async () => {
@@ -140,38 +117,13 @@ const syncDB = async () => {
     await Compra.sync({ force: false});
     await Credito.sync({ force: false});
     await Administrador.sync({force:false});
-    await OleoInfo.sync({force: false});
     await Oleo.sync({force:false});
-    await VinculoParceiroEstabelecimento.sync({force:false});
     console.log("database synchronized");
  };
-
-
-
    
- syncDB();  
-
- const createDefaultAdmins = async () => {
-  const admin1 = await Administrador.findOrCreate({
-    where: { nome: "PEDRO" },
-    defaults: { email: "pedro@ADM.com", senha: "123123123" }
-  });
-
-  const admin2 = await Administrador.findOrCreate({
-    where: { nome: "DEBORA" },
-    defaults: { email: "debora@ADM.com", senha: "123123123" }
-  });
-
-  const admin3 = await Administrador.findOrCreate({
-    where: { nome: "BRENER" },
-    defaults: { email: "brener@ADM.com", senha: "123123123" }
-  });
-
-};
-//DESCOMENTA QUANDO FOR RODAR PELA PRIMEIRA VEZ
-// createDefaultAdmins(); 
+ syncDB();
  
- module.exports = { sequelize, Estabelecimento, OleoInfo, VinculoParceiroEstabelecimento, Parceiro, Coleta, Compra, Credito, Administrador, Oleo };
+ module.exports = { sequelize, Estabelecimento, Parceiro, Coleta, Compra, Credito, Administrador, Oleo };
  
  sequelize.authenticate()
    .then(() => {

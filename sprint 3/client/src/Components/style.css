@@ -24,9 +24,9 @@ body {
 
 .containerCadastro {
   padding: 2%;
-  margin-top: 3%;
+  margin-top: 5%;
   width: clamp(300px, 35%, 1000px);
-  height: 1350px;
+  height: 120%;
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -192,7 +192,6 @@ header {
   font-size: 20px;
   background-color: transparent;
   margin-left: 5px;
-  
   font-weight: bold;
   cursor: pointer;
 }
@@ -248,7 +247,7 @@ header {
   border: none;
   font-size: 18px;
   border-radius: 20px;
-  height: 50px;
+  height: 12%;
   background-color: #D8DFBE;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
@@ -347,56 +346,7 @@ header {
   background-color: #138842;
 }
 
-/*---------- TELA CONTATO ------------*/
 
-.boxContato{
-  width: 500px;
-  height: 600px;
-  border-radius: 25px;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  align-items: center;
-  text-align: center;
-  margin-top: 5%;
-}
-
-
-.boxContato input{
-  width: 90%;
-  height: 20%;
-  border-radius: 20px;
-  border: none;
-  outline: none;
-  margin-bottom: 5%;
-  background-color: #FAF7E1;
-  padding: 0px 0px 0px 10px;
-}
-
-.boxContato textarea{
-  width: 90%;
-  height: 50%;
-  border-radius: 20px;
-  border: none;
-  outline: none;
-
-  background-color: #FAF7E1;
-  padding: 0px 0px 0px 10px;
-  resize: none;
-
-}
-
-.boxContato button {
-  width: 35%;
-  border: none;
-  font-size: 18px;
-  border-radius: 20px;
-  height: 50px;
-  background-color: #D8DFBE;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
 
 
 
@@ -500,22 +450,6 @@ header {
   margin-bottom: 20px;
 }
 
-
-.buttonCreditos {
-  width: 10%;
-  margin-top: 3%;
-  border: none;
-  font-size: 18px;
-  border-radius: 20px;
-  height: 50px;
-  background-color: #D8DFBE;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  margin-bottom: 20px;
-  animation: fadeIn 1s;
-}
-
-
 .formLogin button:hover {
   background-color: #bfc5a9;
 }
@@ -538,413 +472,6 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
-  animation: fadeIn 1s;
-}
-
-
-.containerDashboard {
-  width: 80%;
-  height: 100vh;
-  display: flex;
-  margin-top: 5%;
-  gap: 20px;
-
-}
-
-.sectionDashboard1{
-  width: 30%;
-  align-items: center;
-
-}
-
-.sectionDashboard2{
-  width: 40%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.sectionDashboard3{
-  width: 30%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-
-
-.OleosContainer{
-  width: 400px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  height: 115px;
-  background-color: white;
-  border-radius: 15px;
-  align-items: center;
-  justify-content: space-around;
-
-
-}
-
-.OleosInfo{
-  width: 300px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  height: 100px;
-  background-color: white;
-  border-radius: 15px;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 20px;
-  
-}
-
-.PedidosContainer{
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  height: 300px;
-  background-color: white;
-  border-radius: 15px;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 15px;
-}
-
-.SaldoContainer{
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  height: 200px;
-  background-color: white;
-  border-radius: 15px;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-top: 15px;
-  
-}
-
-.ExtratoContainer{
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 15px;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-top: 15px;
-  
-}
-
-
-
-.TransacoesContainer{
-  width: 600px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  height: 215px;
-  background-color: white;
-  border-radius: 15px;
-  align-items: center;
-  justify-content: space-around;
-  
-}
-
-
-.EstoqueContainer{
-  width: 600px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  height: 250px;
-  background-color: white;
-  border-radius: 15px;
-  align-items: center;
-  justify-content: space-around;
-}
-
-
-.EstoqueOleo{
-  width: 80%;
-  text-align: center;
-  display: flex;
-  height: 100%;
-  align-items: end;
-  gap: 5%;
-}
-
-.Oleo{
-  width: 50%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  align-items: center;
-  justify-content: end;
-  border-radius: 15%;
-  transition: all 0.1s ease-in;
-
-}
-
-.Oleo:hover{
- transform: scale(1.1);
-}
-
-
-
-.OleoImg1 {
-  width: 25%;
-  ;
-}
-.OleoImg2 {
-  width: 15%;
-  ;
-}
-
-
-
-.ComparadorContainer{
-  width: 600px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  height: 300px;
-  background-color: white;
-  border-radius: 15px;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 15px;
-}
-
-
-.GraficoContainer{
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 15px;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.ListaContainer{
-  display: flex;
-  padding: 20px;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 15px;
-  align-items: center;
-  width: 90%;
-  margin-left: 5%;
-}
-
-
-.nomesParceiros{
-  margin-top: 2%;
-}
-
-/*----- DASHBOARD -----*/
-
-.graficos{
-  width: 80%;
-  height: 80%;
-  margin-top: 3%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-}
-
-.DashboardContainer2{
-  width: 500px;
- text-align: center;
-  border-radius: 15px;
- background-color: white;
- margin: 25px;
- padding: 20px;
-  
-}
-
-.DashboardContainer1{
-  width: 800px;
- text-align: center;
-  border-radius: 15px;
- background-color: white;
- margin: 25px;
- padding: 20px;
-  
-}
-
-
-.DashboardContainer{
-  width: 470px;
- text-align: center;
-  border-radius: 15px;
- background-color: white;
- margin: 25px;
- padding: 20px;
-  
-}
-
-
-.RecuperarSenha {
-  padding: 1%;
-  width: clamp(300px, 30%, 1000px);
-  height: 500px;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 5%;
-  animation: fadeIn 1s;
-  margin-top: 10%;
-  align-items: center;
-  justify-content: center;
-}
-
-.RecuperarSenha button {
-  width: 150px;
-  border: none;
-  font-size: 18px;
-  border-radius: 20px;
-  height: 50px;
-  background-color: #D8DFBE;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-.RecuperarSenha form{
-  height: 250px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.RecuperarSenha button:hover {
-  background-color: #bfc5a9;
-}
-
-.RecuperarSenha input {
-  width: 70%;
-  height: 50px;
-  border-radius: 20px;
-  border: none;
-  outline: none;
-  margin-bottom: 5%;
-  background-color: #FAF7E1;
-  padding: 0px 0px 0px 10px;
-}
-
-.confirmContainer {
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-}
-
-.confirmContainer h1 {
-  color: #333;
-}
-
-.confirmContainer p {
-  margin-bottom: 15px;
-  color: #555;
-}
-
-.btnConfirm button {
-  background-color: #00BF63;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btnConfirm button:hover {
-  background-color: #07df15;
-}
-
-
-
-/* TELA DA CARTEIRA*/
-
-.VincularBox{
-  padding: 1%;
-  width: 350px;
-  height: 200px;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 5%;
-  animation: fadeIn 1s;
-  margin-top: 10%;
-  align-items: center;
- 
-}
-.Vinculos{
-  padding: 1%;
-  width: 350px;
-  height: 500px;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 5%;
-  animation: fadeIn 1s;
-  margin-top: 10%;
-  align-items: center;
- 
-}
-
-.Vinculos{
-  padding: 1%;
-  width: 350px;
-  height: 500px;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 5%;
-  animation: fadeIn 1s;
-  margin-top: 10%;
-  align-items: center;
- 
-}
-
-.Vinculos button {
-  width: 150px;
-  border: none;
-  font-size: 18px;
-  border-radius: 20px;
-  height: 30px;
-  background-color: #D8DFBE;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  margin-bottom: 20px;
-  margin-left: 10px;
-
-}
-.Vinculos button:hover {
-  background-color: #bfc5a9;
-}
-
-.Vinculos li {
-  list-style: none;
-  font-size: 18px;
-  font-weight: bolder;
 }
 
 .containerProduto {
@@ -963,12 +490,6 @@ header {
   width: 25%;
   margin-bottom: 5%;
 }
-
-/* 
-.logoTeste {
-  width: 10%;
-  margin-bottom: 5%;
-} */
 
 .inputWrapper {
   position: relative;
@@ -1097,7 +618,7 @@ iframe {
 
 }
 
-.homeBanner h2 {
+.homeBanner h3 {
   width: 50%;
   color: #FFF;
 }
@@ -1176,7 +697,7 @@ table {
   margin: 0 auto;
   /* Centraliza a tabela na página */
   border-collapse: collapse;
-  animation: fadeIn 1s;
+  /* Junta as bordas das células */
   margin-top: 20px;
   /* Espaçamento superior */
 }
@@ -1437,28 +958,8 @@ tr:hover {
 }
 
 
-#bt-voltar2 {
-  width: 10%;
-  height: 40px;
-  margin-top: 2%;
-  margin-bottom: 0%;
-  transition: all 0.2s ease-in-out;
-  animation: fadeIn 1s;
-}
 
-.pedidosTable{
-background-color: rgba(255, 255, 255, 0.836);
-}
 
-.pedidosTable th{
-  background-color: #00BF63;
-  }
-  
-.containerTotal{
-  width: 100%;
-  text-align: center;
-  margin-top: 2%;
-}
 
 
 @media (max-width: 730px) {
@@ -1606,17 +1107,6 @@ background-color: rgba(255, 255, 255, 0.836);
     display: none;
   }
 
-
-
-  .containerDashboard {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin-top: 5%;
-    gap: 20px;
-  
-  }
 
 }
 
@@ -1783,7 +1273,6 @@ background-color: rgba(255, 255, 255, 0.836);
   margin-top: 5%;
   align-items: center;
   width: 580px;
-  animation: fadeIn 1s;
 }
 
 .setOilPriceForm input {
@@ -1795,11 +1284,12 @@ background-color: rgba(255, 255, 255, 0.836);
   border-radius: 4px;
 }
 
-
+/* Style the wrapper */
 .inputWrapper {
   margin: 10px;
 }
 
+/* Style the select element */
 .form-field {
   width: 50%;
   padding: 8px;
@@ -1813,12 +1303,14 @@ background-color: rgba(255, 255, 255, 0.836);
   color: black;
 }
 
-
+/* Style the options */
 .form-field option {
   font-size: 16px;
   padding: 8px;
   background-color: white;
+  /* Change this as needed */
   color: black;
+  /* Change this as needed */
 }
 
 #botaoDefinirPreco {
@@ -1848,31 +1340,4 @@ background-color: rgba(255, 255, 255, 0.836);
   margin-inline-end: 0px;
   font-weight: bold;
   margin-left: 170px;
-}
-
-.td7{
-  border: none;
-}
-
-.estabelecimentos-table{
-  animation: fadeIn 1s;
-}
-
-
-.estabelecimentos-table:hover td:nth-child(9){
-  background-color: #FAF7E1;
-}
-
-#OleoButton {
-  background-color: #138842;
-  width: 125px;
-  font-size: 15px;
-  height: 40px;
-
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }

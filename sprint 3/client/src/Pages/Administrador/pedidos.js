@@ -25,19 +25,6 @@ function HistoricoComprasADM() {
         fetchData();
     }, []);
 
-
-
-    useEffect(() => {
-        // Verificar se há um usuário logado
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
-        const adm = localStorage.getItem('adm');
-        
-        if (!isLoggedIn || !adm) {
-          window.location.href = 'http://localhost:3000/';
-        }
-      }, []);
-      
-
     const formatarData = (dataOriginal) => {
         const data = new Date(dataOriginal);
         const ano = data.getFullYear();
@@ -55,8 +42,8 @@ function HistoricoComprasADM() {
     return (
         <>
             <NavbarP activeLink="/" />
-           <div className='containerTotal'> <h2>VALOR TOTAL DE VENDAS: R${totalGanho.toFixed(2)}</h2></div>
-            <table className='pedidosTable'>
+
+            <table>
                 <thead>
                     <tr>
 
@@ -103,7 +90,7 @@ function HistoricoComprasADM() {
                         Próximo
                     </button>
                 </div>
-                
+                <h3>Total ganho: ${totalGanho.toFixed(2)}</h3>
             </div>
             <div>
                 <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 0}>

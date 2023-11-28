@@ -19,16 +19,13 @@ function NavbarParceiro({ activeLink }) {
 
         <div className="navbar-pages">
           <Link to="/homeP" className={activeLink === '/homeP' ? 'active-link' : ''}>
-            Início
-          </Link>
-          <Link to="/painelParceiros" className={activeLink === '/painelParceiros' ? 'active-link' : ''}>
-            Painel
-          </Link>
-          <Link to="/carteira" className={activeLink === '/carteira' ? 'active-link' : ''}>
-              Administrar
+            Inicio
           </Link>
           <Link to="/transacoes" className={activeLink === '/transacoes' ? 'active-link' : ''}>
-            Coleta
+            Transações
+          </Link>
+          <Link to="/historico" className={activeLink === '/historico' ? 'active-link' : ''}>
+            Histórico
           </Link>
           <Link to="/produtoE" className={activeLink === '/produtoE' ? 'active-link' : ''}>
             Produtos
@@ -37,9 +34,11 @@ function NavbarParceiro({ activeLink }) {
             Compras
           </Link>
           <Link to="/ComprarCredito" className={activeLink === '/ComprarCredito' ? 'active-link' : ''}>
-            Créditos
+            Creditos
           </Link>
-        
+          <Link to="/historicoCredito" className={activeLink === '/historicoCredito' ? 'active-link' : ''}>
+            GREE
+          </Link>
           <Link to="/dadosP" className={activeLink === '/dadosP' ? 'active-link' : ''}>
             Perfil
           </Link>
@@ -57,7 +56,7 @@ function NavbarParceiro({ activeLink }) {
       <div className='mobile-menu'>
         <ul>
           <li mobile-nav-item><Link to="/">
-            Início
+            Inicio
           </Link></li>
           <li mobile-nav-item><Link to="/produto">
             Produtos

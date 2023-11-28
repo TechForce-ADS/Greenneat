@@ -69,7 +69,7 @@ function ConfirmaParceiro() {
         <div className='confirmContainer'>
           <h1>Email Confirmado!</h1>
           <p>O seu email foi confirmado com sucesso!</p>
-          <p>Voce já pode fechar essa guia.</p>
+          <p>Voce jâ pode fechar essa guia.</p>
         </div>
       )}
     </div>

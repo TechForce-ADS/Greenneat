@@ -10,7 +10,7 @@ import axios from 'axios';
 function saveLoginData(email, senha) {
   localStorage.setItem('email', email);
   localStorage.setItem('senha', senha);
-  localStorage.setItem('adm', false);
+  localStorage.setItem('parceiro', true);
 }
 
 
@@ -24,80 +24,44 @@ function ShowDivisao() {
 
 
 const handleClickLoginParceiro = (values) => {
-  axios
-    .post('http://localhost:3001/loginParceiro', {
+  axios.post('http://localhost:3001/loginParceiro', {
       email: values.email,
       senha: values.senha,
-    })
-    .then((response) => {
+  })
+  .then((response) => {
       Swal.fire({
-        icon: 'success',
-        title: 'Login efetuado com sucesso!',
-        showConfirmButton: false,
-        timer: 1500,
+          icon: 'success',
+          title: 'Login efetuado com sucesso!',
+          showConfirmButton: false,
+          timer: 1500
       }).then(() => {
-        localStorage.setItem('isLoggedIn', true);
-        saveLoginData(values.email, values.senha);
-        window.location.href = 'http://localhost:3000/HomeP';
+          localStorage.setItem('isLoggedIn', true);
+          saveLoginData(values.email, values.senha);
+          window.location.href = 'http://localhost:3000/HomeP';
       });
-    })
-    .catch((error) => {
-      let errorMessage = 'Usuário ou senha incorretos';
-      let confirmButtonColor = 'red'; 
-
+  })
+  .catch((error) => {
+      let errorMessage = 'Erro ao fazer login. Por favor, tente novamente mais tarde.';
+      let confirmButtonColor = 'red'; // 
       if (error.response) {
-        if (error.response.status === 400) {
-          if (error.response.data === 'parceiro não encontrado') {
-            errorMessage = 'Este email não está registrado';
-          } else if (error.response.data === 'senha incorreta') {
-            errorMessage = 'Email ou senha incorretos';
+          if (error.response.status === 400) {
+              if (error.response.data === 'parceiro não encontrado') {
+                  errorMessage = 'Este email não está registrado';
+              } else if (error.response.data === 'senha incorreta') {
+                  errorMessage = 'Email ou senha incorretos';
+              }
           }
-        } else if (error.response.status === 401) {
-          errorMessage = 'Usuário ou senha incorretos';
-        }
       }
 
       Swal.fire({
-        icon: 'error',
-        text: errorMessage,
-        iconColor: '#FF0000',
-        confirmButtonColor: confirmButtonColor,
+          icon: 'error',
+          text: errorMessage,
+          iconColor: 'red',
+          confirmButtonColor: confirmButtonColor
       });
-    });
+  });
 };
 
-
-
-function handleForgotPassword(email) {
-  axios
-    .post('http://localhost:3001/recuperarSenhaParceiro', {
-      email: email,
-    })
-    .then((response) => {
-      console.log(response.data);
-      Swal.fire({
-        icon: 'success',
-        title: 'Email de recuperação de senha enviado com sucesso',
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    })
-    .catch((error) => {
-      console.log(error.response.data);
-      let errorMessage = 'Este email não existe';
-
-      if (error.response && error.response.status === 400) {
-        const { message } = error.response.data;
-        errorMessage = message;
-      }
-      Swal.fire({
-        iconColor: '#FF0000',
-        icon: 'error',
-        confirmButtonColor: '#FF0000',
-        text: errorMessage,
-      });
-    });
-}
 
 
 function FormLoginParceiros() {
@@ -112,7 +76,7 @@ function FormLoginParceiros() {
         <img src={LogoQ} alt="LogoQ" className="logoQuadlogin" />
         <h2>Entrar como Parceiro</h2>
         <Formik initialValues={{}} onSubmit={handleClickLoginParceiro} validationSchema={validationLogin}>
-          {({ errors, touched, values }) => (
+          {({ errors, touched }) => (
             
             <Form action="submit" className="formLogin">
              
@@ -125,11 +89,12 @@ function FormLoginParceiros() {
       
               <div className="inputWrapper">
                 <i><FaLock /></i>
-                <Field name="senha" type="password"  placeholder='Senha' className="form-field" /> </div>
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="password" href="#" onClick={() => handleForgotPassword(values.email)}>
-                Esqueceu sua senha?
-                </a>
+                <Field name="senha"
+                type="password" 
+                placeholder='Senha' 
+                className="form-field" />
+              </div>
+
               {errors.email && touched.email && <span className="form-error">{errors.email}</span>}
               {errors.senha && touched.senha && <span className="form-error">{errors.senha}</span>}
 

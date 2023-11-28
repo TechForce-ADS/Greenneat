@@ -10,7 +10,6 @@ function Logout() {
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('email');
     localStorage.removeItem('parceiro');
-    localStorage.removeItem('adm');
     // Redirecionar para a página inicial
     window.location.href = 'http://localhost:3000/';
   }
